@@ -1,0 +1,4 @@
+#!/bin/bash 
+
+host=`date`
+printf "$host"
