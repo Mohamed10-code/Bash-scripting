@@ -1,0 +1,25 @@
+#!/bin/bash 
+count_down() {
+myvar=1
+while [ $myvar -le 100 ]
+do
+	echo $myvar
+	myvar=$(( $myvar + 5 ))
+	sleep 0.5
+done
+}
+
+printf "welcome to my count down. do you wanna see my count down. (y/n).\n"
+
+read user_input
+
+if [[ "$user_input" == "y" ]]; then
+	echo "starting now"
+	count_down
+elif [[ "$user_input" == "n" ]]; then
+	echo "good never mind"
+else
+	echo " please input y for yes no for no"
+	exit 
+	echo "bye bye"
+fi 

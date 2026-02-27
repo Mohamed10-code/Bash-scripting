@@ -1,0 +1,6 @@
+#!/bin/bash 
+FIRST_NAME=OMAR 
+LAST_NAME=FARAH 
+
+echo hello $FIRST_NAME $LAST_NAME 
+

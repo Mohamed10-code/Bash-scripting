@@ -1,0 +1,11 @@
+#!/bin/bash
+
+
+if [[ "$user_input" == "y" ]]; then
+    echo "Starting..."
+    greet
+elif [[ "$user_input" == "n" ]]; then
+    echo "Good, never mind."
+else
+    echo "Invalid input. Please type 'y' or 'n'."
+fi
