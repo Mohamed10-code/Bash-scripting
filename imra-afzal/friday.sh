@@ -3,6 +3,6 @@ if [[ "$a" == "Thu" ]]
 then
 	echo "today is $a"
 else
-	echo "today is not Friday"
+	echo "today is not monday"
 fi 
 
