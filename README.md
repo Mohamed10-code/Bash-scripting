@@ -5,4 +5,6 @@ begin.
 this github contains beginner bash scripting where you can train yourself. 
 when i finished how to learn bash i taught myself github and now i write the my scripting using VIM and i push it to github through command line 
 you should try if you are new to bash or git.
-Thanks alot 
+Thanks alot
+
+i have add new lesson check out.. 
