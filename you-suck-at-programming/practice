@@ -1,6 +1,16 @@
 #!/bin/bash 
 
-for thing in "$@"
+greet() {
+	local name=$1 #name="$1" same as name="farah" or user_input
+	echo hello "$name"
+
+} 
+
+
+for name in "$@"
 do
-	echo "hello:" "$thing"
-done 
+	greet "$name"
+
+done
+echo $?
+
