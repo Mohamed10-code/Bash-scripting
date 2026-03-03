@@ -1,0 +1,13 @@
+#!/bin/bash 
+
+printf "updating the system\n"
+echo "press 1 if you wanna update your system: "
+echo "press 2 to decline the update: "
+
+read choice 
+
+case $choice in 
+	1) sudo dnf update -y;;
+	2) echo "NO";;
+	*) echo "idk";;
+esac
