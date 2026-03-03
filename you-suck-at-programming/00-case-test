@@ -1,0 +1,16 @@
+#!/bin/bash 
+
+
+greet () {
+echo "please enter your number: "
+read name
+case "$name" in 
+	1) echo "hey.. farah";;
+ 	2) echo "hello.. yare";;
+	3) echo "ooh.. omar";;
+	*) echo "i really dont know this number: "
+esac
+
+}
+
+greet
