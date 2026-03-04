@@ -1,14 +1,20 @@
 #!/bin/bash 
   
 greet(){
-if (( $# == 0 )) 
+
+read -p "what is your name: " name 
+
+if [[ "$name" == "farah" ]]
 then
-	echo "name is requred!" >&2
-fi 
+	echo "the name is found. and its is $name: "
+else
+	echo "please try again: "
+fi
+
+
 }
 
-read -p "what is your name: " name
-while $name 
+while [[ "$name" != "farah" ]]
 do 
-	greet
+	greet 
 done

@@ -3,20 +3,19 @@
 
 greet() {
 
-name=""
 read -p "what is your name: " name 
 
-if [[ "$name" == "farah" ]]
+if [[ $name == "farah" ]]
 then
-	echo "$name is correct"
+	echo "the name is $name:"
 else
-	echo "NO"
-	echo "try again"
+	echo "no..try again"
 fi
+
 
 }
 
-while [[ "$name" != "farah" ]]
+while [[ $name != "farah" ]]
 do
-	greet
+	greet "$name"
 done

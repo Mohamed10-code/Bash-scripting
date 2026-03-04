@@ -1,0 +1,13 @@
+#!/bin/bash 
+
+
+my="/home/moha/kkk"
+
+if  [[ "$?" == "$my" ]]
+then
+	echo "the sever is up"
+else
+	echo "the server is down"
+fi 
+
+ 
