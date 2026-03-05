@@ -1,8 +1,11 @@
 #!/bin/bash 
 
-distro=("ubuntu" "centos" "arch")
 
-for name in "${distro[@]}"
+array=("ubuntu" "parrat" "arch")
+array+=("kali" "mint")
+
+
+for name in "${array[@]}"
 do
-	echo "updating the $name...[Done]"
+	echo "updating the distro: $name"
 done

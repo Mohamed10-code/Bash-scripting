@@ -1,0 +1,14 @@
+#!/bin/bash
+
+array=(
+	mohamed
+	dalka
+	farah
+	malyun
+)
+
+IFS=,
+echo "hello ${array[*]}"
+
+
+
