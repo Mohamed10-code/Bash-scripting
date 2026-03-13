@@ -15,3 +15,4 @@ and he has Dave Eddy website which you go there and learn a lot of short bash co
 the website is y.s.a.p.sh you can curl in your terminal and see it 
 Am still beginner when it comes to bash scripting but it not something that you can teach yourself in days or weeks
 for example i thought myself Git in two days now i can use Git confidently   
+#--So you can also do this am very excite for my next journey 
