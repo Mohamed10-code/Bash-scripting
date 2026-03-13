@@ -1,0 +1,12 @@
+#!/bin/bash
+
+declare -A shells
+while IFS=: read -r name pass uid gid gecos home shell; do
+	# skip comment
+	if [[ $name == '#'* ]]; then
+		continue
+	fi
+	
+	shells[$name]=$shell
+done < /etc/passwd
+echo "moha has the shell: ${shells[moha]}"
