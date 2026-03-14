@@ -1,0 +1,40 @@
+# ps command 
+ps -u root: will show you all the process rin by the root 
+ps -ef: to see every running process on the system
+nice -n sleep 100: you will give sleep high process value 
+recover root password: restart your computer then edit the grup change the password then reboot 
+--sudo dnf install vim -y &>/dev/null && echo successfull # if the vim is successfully downloaded it will print successfull on the screen dev/null is black hole for linux mean whatever you direct there will be lost 
+--nmcli is network manager command line interfer it shows which network is connected to the your machine  
+-- lscup |grep -i '^cpu(s)' will show you have many cpu you have
+--(man strftime) --command it view option of format date and time.. try it very nice and helpfull
+#--cockpit  is web based console which very usefull the command is localhost:192.168.122.179
+--time is command that count how many minutes took the command to execute
+
+#This for cockpit web based console command it very usefull 
+https://server-ip:9090
+
+NIC = Network Interface Card (PC or Laptop) 
+NIC bonding is also known as network bonding it can be defined as the aggregation or 
+combination of multiple NIC into a single bond interface 
+
+#USING NMCLI TO CONFIGURE STATIC IP
+nmcli connection modify enpo0s3 ipv4.addresses 10.255.255.255/24
+ 
+nmcli connection modify enpo0s3 ipv4.gateway 10.255.1.1/24
+nmcli connection modify enp0s3 ipv4.method manual 
+nmcli connection modify enp0s3 ipv4.dns 8.8.8.8
+nmcli connection down enp0s3 $$ nmcli connection up enp0s3
+ip address show enp0s3
+#This command to assign your Machine static IP 
+#
+#SSH file to edit
+sudo vim /ect/ssh/sshd_conf #This where you can edit all of ssh login and security hardening 
+
+#How does ssh-key works 
+--if you want to login to your sever withiout password 
+you can generate ssh-key on your machine 
+[command for generating the ssh-key is ssh-keygen ]
+after you generate the key the key will be store in [~/.sshd]
+then you can copy the ssh-key to the server 
+by ssh-copy-id moha@192.168.122.1
+
