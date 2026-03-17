@@ -55,4 +55,16 @@ ascii_upload_enable=YES
 ascii_download_enable=YES
 # Add at the end of the line 
 use_localtimes=yes
+# ON THE CLIENT SIDE 
+Become root 
+install ftp 
+su - moha 
+touch kruger (kruger is the name of the file..)
 
+#transfer file from client to server using FTP 
+ftp --ip--for-server
+then enter the username and the password when you see successfully logined in
+bi 
+hash 
+put kruger (kruger is the name of the file you want to transfer)
+bye --- for exit 
