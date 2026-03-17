@@ -38,3 +38,21 @@ after you generate the key the key will be store in [~/.sshd]
 then you can copy the ssh-key to the server 
 by ssh-copy-id moha@192.168.122.1
 
+
+
+
+#FTP - FILE TRANSFER PROTOCOL CONFIGRE ON THE SERVER 
+--installing and configure FTP on the remove server 
+
+-become root 
+-rpm -qa |grep ftp 
+yum install vsftpd
+vim /etc/vsftpd/vsftpd.conf
+#enable this lines 
+anonymous_enable=NO
+#uncommnet this lines 
+ascii_upload_enable=YES
+ascii_download_enable=YES
+# Add at the end of the line 
+use_localtimes=yes
+
