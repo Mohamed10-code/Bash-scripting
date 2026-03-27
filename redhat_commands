@@ -109,4 +109,13 @@ firewall-cmd --get-services
 firewall-cmd --add-port=1110/tcp
 #to reject incoming traffic from ip address use this command 
 #
+
 firewall-cmd -add-rich-rule-='rule family="ipv4" source address="192.168.122.177" reject'
+
+# sudo firewall-cmd  --permanent --add-icmp-block-inversion   (this command will make your server not pinged)
+#
+# to block specific website you can use this command 
+sudo firewall-cmd  --permanent  --direct --add-rule ipv4 filter OUTPUT 0 -d 57.144.138.1 -j DROP    (57.144.138.1 is ip for facebook)
+then do 
+sudo firewall-cmd --reload 
+host -t a www.facebook.com  (this command will get the ip of the website ) 
