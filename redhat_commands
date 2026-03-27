@@ -95,3 +95,15 @@ rsync -azvh script/redhat_commands mohamed@192.168.122.1:/home/mohamed/redhat_co
 #
 find / -type f -user bandit7 -group bandit6 -size 33c >2/dev/null
 sort data.txt | uniq -c | grep " 1 " this command will help you to extarct line with no repeat 
+
+# if you wanna create firewall-cmd for 3rd party you can go to this file and edit 
+# /usr/lib/firewalld/services 
+the you create xml file then you can vim into and create configuration 
+the easiest way is by copying one file and modify accord to your needs 
+
+#firewalld is the enginee and firewall-cmd is the cli 
+the basic command is 
+filewall-cmd --add-services=http
+filewall-cmd --list-all
+firewall-cmd --get-services
+
