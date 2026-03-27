@@ -1,0 +1,9 @@
+#collecting git command instead of looking it Chatgpt
+
+#This command will help you delete code or file from github using CLI
+rm README.md
+git rm README.md
+git commit -m "Remove README"
+git push -m main
+
+

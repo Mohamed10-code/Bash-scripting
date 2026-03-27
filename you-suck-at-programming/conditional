@@ -1,9 +1,0 @@
-#!/bin/bash 
-
-while [[ -f file ]]
-do 
-	echo 'file exist'
-	sleep 1
-done
-
-echo "file is gone"

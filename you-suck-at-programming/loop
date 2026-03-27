@@ -1,7 +1,0 @@
-#!/bin/bash 
-
-
-for thing in farah yare malyun
-do
-	echo hello "$thing"
-done

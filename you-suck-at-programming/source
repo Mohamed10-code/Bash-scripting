@@ -1,9 +1,0 @@
-#!/bin/bash
-
-source ./lib/greetings || exit 1
-
-greet farah
-greet yare
- 
-goodbye omar
-

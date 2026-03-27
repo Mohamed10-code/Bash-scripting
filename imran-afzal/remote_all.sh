@@ -1,6 +1,6 @@
 #!/bin/bash 
 
-host="/home/moha/my"
+host="/home/moha/ip"
 
 for ip in $(cat $host)
 do

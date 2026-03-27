@@ -1,9 +1,0 @@
-#!/bin/bash
-
-
-array=(loo moo koo)  #you can store multiple data in array
-
-for item in "${array[@]}"
-do
-	echo "hello: $item"
-done

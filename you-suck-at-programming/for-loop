@@ -1,7 +1,0 @@
-#!/bin/bash 
-
-for thing in  {1..4}
-do
-	echo "$thing"
-
-done
