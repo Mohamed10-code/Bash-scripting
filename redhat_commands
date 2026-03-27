@@ -104,6 +104,7 @@ if you wanna undo app or command that you have just installed
 you can do 
 #yum history undo 96 
 (96 is ID of the command )
+<<<<<<< HEAD
 to see the command of the ID you run #yum history# 
 
 
@@ -116,3 +117,20 @@ systemctl mask  this command means no one can restart the systemctl eveb root
 firewalld is the main engine and firewall-cmd is the cli 
 #sudo firewall-cmd --list-all (will list all of the services in firewalld )
 learn more about firewall 
+=======
+to see the command of the ID you run #yum history#
+
+#Chronyd 
+purpose = Time synchronizatio 
+package name = chronyd 
+program command = chronyc --source will show what time you are connected to 
+
+#basic mail send on the terminal 
+the comnmand to install is [postfix and s-nail]
+then you will configure on 
+cd /etc/postfix 
+then vim main.cf 
+
+
+ 
+>>>>>>> 28b7e22a2d9c32ce66759c71aebea4eda074691b
