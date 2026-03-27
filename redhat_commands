@@ -106,4 +106,7 @@ the basic command is
 filewall-cmd --add-services=http
 filewall-cmd --list-all
 firewall-cmd --get-services
-
+firewall-cmd --add-port=1110/tcp
+#to reject incoming traffic from ip address use this command 
+#
+firewall-cmd -add-rich-rule-='rule family="ipv4" source address="192.168.122.177" reject'
