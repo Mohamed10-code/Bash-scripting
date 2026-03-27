@@ -1,0 +1,24 @@
+#!/bin/bash
+
+printf  "Please Enter Your Name:\n" 
+read username
+
+if id "$username" &>/dev/null 
+then
+
+	echo "$username already exist"
+	exit 1
+fi
+	sudo adduser -m "$username"
+
+echo "user $username created"
+#Giving user password 
+sudo passwd "$username"
+
+#add user to sudo group
+sudo usermod -aG wheel "$username" || sudo usermod -aG sudo "$username"
+#wheel  are for rhel distro and centos likes distro
+#sudo  are for ubuntu likes distro 
+ 
+	
+

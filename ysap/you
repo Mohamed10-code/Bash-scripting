@@ -1,0 +1,21 @@
+#!/bin/bash 
+
+
+greet() {
+
+read -p "what is your name: " name 
+
+if [[ $name == "farah" ]]
+then
+	echo "the name is $name:"
+else
+	echo "no..try again"
+fi
+
+
+}
+
+while [[ $name != "farah" ]]
+do
+	greet "$name"
+done

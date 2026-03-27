@@ -1,0 +1,18 @@
+
+###This is my personal notes about Bash 
+--shellchecker: checks your scripts before it run it very usefull
+--bash -u checks for undifined variable in your scripts 
+--bash -n looks for syntax error in your code 
+ 
+
+if ! (return 2>/dev/null); then
+	#we are being called directly
+	greet dave
+fi 
+#This code above is for source when you have library and you want call for source and This code check if it being called 
+as source or being runs directly. very use when u have alot of library
+
+--name=${1:-farah} This when you prompt user and they did not provide any name you can automatically set it to farah the name 
+--printf '&s\n' file
+
+

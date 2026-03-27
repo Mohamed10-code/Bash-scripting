@@ -1,0 +1,11 @@
+#!/bin/bash 
+
+host="192...255"
+
+if ping -c1 $host > /dev/null
+then
+	echo "the server is up"
+else
+	echo "$host is Down"
+fi
+

@@ -1,0 +1,7 @@
+#!/bin/bash 
+array=(far foo boo)
+
+for item in "${array[@]}"
+do
+	echo "hello: $item"
+done

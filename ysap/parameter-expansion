@@ -1,0 +1,12 @@
+#!/bin/bash 
+
+
+
+
+array=(1  3 4 )
+
+for name in "${array[@]}"
+do
+	echo "hello $name"
+done
+	

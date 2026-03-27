@@ -1,0 +1,33 @@
+#!/bin/bash 
+
+greet(){
+	local name=$1
+	echo "hello $name"
+
+
+}
+
+goodbye(){
+	local name=$1
+	echo "bye $name"
+
+}
+
+munira(){
+
+
+name="farah"
+
+if [[ "$name" == "farah" ]]
+then
+	echo "hello mr $name:.."
+fi 
+
+}
+
+if ! (return 2>/dev/null); then
+	# we are being called directly
+	greet dave 
+	goodbye john
+fi
+

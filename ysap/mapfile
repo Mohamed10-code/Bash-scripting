@@ -1,0 +1,5 @@
+#!/bin/bash
+
+mapfile -t -n 3 fo < data.txt
+
+printf '<%s>\n' "${fo[@]}"
