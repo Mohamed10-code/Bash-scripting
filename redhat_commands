@@ -90,46 +90,8 @@ and (/home/mohamed is where you dowload it too)
 #This command is specific to sending redhat_commands from the server to my local machine
 rsync -azvh script/redhat_commands mohamed@192.168.122.1:/home/mohamed/redhat_commands
 #-------------------------------------------------------------------------------------
+
+# To find specific file with owner and group you can you this command 
 #
-
-#Internet speed tester 
-speedtest-cli 
-this command will test the speed of your internet 
-
-
-# Yum history 
---This command will show history off downloaded command or apps and 
-with there ID 
-if you wanna undo app or command that you have just installed 
-you can do 
-#yum history undo 96 
-(96 is ID of the command )
-<<<<<<< HEAD
-to see the command of the ID you run #yum history# 
-
-
-#firewall and iptables-services 
-sudo systemctl list-unit-files |grep mask (this command will list systemctl that are mask)
-
-systemctl mask  this command means no one can restart the systemctl eveb root
- it very strong compare to stop 
-# sudo firewall-cmd   --add-service=http   (this command will help add services to firewalld)
-firewalld is the main engine and firewall-cmd is the cli 
-#sudo firewall-cmd --list-all (will list all of the services in firewalld )
-learn more about firewall 
-=======
-to see the command of the ID you run #yum history#
-
-#Chronyd 
-purpose = Time synchronizatio 
-package name = chronyd 
-program command = chronyc --source will show what time you are connected to 
-
-#basic mail send on the terminal 
-the comnmand to install is [postfix and s-nail]
-then you will configure on 
-cd /etc/postfix 
-then vim main.cf 
-
-
- 
+find / -type f -user bandit7 -group bandit6 -size 33c >2/dev/null
+sort data.txt | uniq -c | grep " 1 " this command will help you to extarct line with no repeat 
