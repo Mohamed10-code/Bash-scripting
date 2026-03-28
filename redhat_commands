@@ -135,6 +135,9 @@ for monitor and daily usaged use desktop
 nice -n -15 top 
 ps axo pid,comm,nice,cls --sort=-nice
 
+#configuration file for kitty terminal
+sudo vim ~/.config/kitty/kitty.conf
+
 
 
 
