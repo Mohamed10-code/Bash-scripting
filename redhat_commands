@@ -119,3 +119,39 @@ sudo firewall-cmd  --permanent  --direct --add-rule ipv4 filter OUTPUT 0 -d 57.1
 then do 
 sudo firewall-cmd --reload 
 host -t a www.facebook.com  (this command will get the ip of the website ) 
+
+
+# A dynamic system tuning daemon for Linux
+tuned-adm active                    # Show current active profile
+tuned-adm list                      # List all available profiles
+tuned-adm recommend                 # Get profile recommendation
+tuned-adm profile_info [profile]    # Show details of a profile
+
+tuned will tell you which profile you have use for aws you should aws-profile
+for monitor and daily usaged use desktop 
+
+#this command will help to view who is running with higher priority
+#the actual command is nice and nice will give process higher priority 
+nice -n -15 top 
+ps axo pid,comm,nice,cls --sort=-nice
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
