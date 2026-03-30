@@ -138,8 +138,26 @@ ps axo pid,comm,nice,cls --sort=-nice
 #configuration file for kitty terminal
 sudo vim ~/.config/kitty/kitty.conf
 
+#command for podman 
+podman run -dt -p 8082:80/tcp docker.io/library/httpd (this command will create contain for httpd)
+sudo podman pull docker.io/arm32v7/httpd (command to download podman image)
+podman ps (list podman)
+podman stop ID
+podman images (shows you the downloaded images)
+podman logs -l (logs of the podman)
+podman search httpd   (search httpd premaid container)
+podman image exists
 
 
+#Docker 
+#
+docker run -it -p 8080:80 ubuntu bash
+apt update && apt install -y nginx
+service nginx start
+# From host: http://localhost:8080
+this command will help you run docker and create ubuntu contain and test your web server nginx 
+
+  
 
 
 
