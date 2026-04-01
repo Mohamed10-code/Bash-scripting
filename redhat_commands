@@ -173,6 +173,35 @@ executes runlevel program
 runlevel program are executes from /etc/rc.d/rc*.d/
 
 
+#CUSTOMIZE MESSAGE OF THE DAY 
+#
+once again, message of the is the first message users will see when 
+they login to the linux machine 
+
+STEPS 
+create a new file in  /etc/profile.d/motd.sh 
+add desired commands in motd.sh file 
+Modify the /etc/ssh/sshd_config file to edit 
+#PrintMotd yes to PrintModt no
+Restart sshd services by
+sudo systemctl reload sshd
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
