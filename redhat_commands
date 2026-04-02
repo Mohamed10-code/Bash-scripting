@@ -191,7 +191,13 @@ Modify the /etc/ssh/sshd_config file to edit
 Restart sshd services by
 sudo systemctl reload sshd
 
+#cheat command it like man page or tldr 
+#but more advance 
+sudo pip3 install cheat 
+this command ill install cheat via 
+python3 
 
+And the command is cheat commandname
 
 
 
