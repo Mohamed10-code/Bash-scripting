@@ -156,6 +156,8 @@ apt update && apt install -y nginx
 service nginx start
 # From host: http://localhost:8080
 this command will help you run docker and create ubuntu contain and test your web server nginx 
+docker container run -itd --name web-server-nginx -p 8080:80 nginx:latest 
+this command will help you create nginx in container 
 
 #Linux Boot Process
   
