@@ -161,6 +161,25 @@ this command will help you create nginx in container
 dockerfile (build)
 docker image (ship)
 container (run)
+ 
+To build docker image for yourself 
+you need cd in /ect/docker and then touch dockerfile 
+then vim into it and create this code 
+
+ARG CODE_VERSION=16.04
+
+FROM ubuntu:${CODE_VERSION}
+
+RUN apt-get update -y
+
+CMD ["bash"]
+
+after that you can do sudo docker -t build img_from .
+then do will build custom image for you 
+
+
+
+
 
 #Linux Boot Process
   
@@ -200,7 +219,14 @@ python3
 And the command is cheat commandname
 
 
+#Swap memory is virtual memory for your machine
+#
+sudo dd if=/dev/zero of=/newswap bs=1M count=1024
+this command will help you create swap memory 
 
+#This command will help you resize your Qemu-VM
+sudo qemu-img resize /var/lib/libvirt/images/centos-stream9.1774449128 +10G   
+then you can you this command -lsblk-
 
 
 
