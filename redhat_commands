@@ -68,3 +68,61 @@ bi
 hash 
 put kruger (kruger is the name of the file you want to transfer)
 bye --- for exit 
+#SCP >>secure copy protocol 
+scp filename moha@192.122.122.122:/home/moha
+it will ask you the password of the moha(note moha is the name of  the server means you are sending file to moha)
+#Tar the file 
+tar cvf backup.tar .  (. means the current file or home)
+
+
+#rsync command 
+rsync -azvh /tmp/backups/ mohamed@192.16.1.1:/tmp/backups/ ----
+#--------------------------------------------------------- 
+ (rsync -azvh is the command)(/tmp/backup is the file i was sending to the 
+server) (mohamed@192.112..12. is the server)and (/tmp/backups is the destination )
+
+# when you want to download from the server 
+-- rsync -avzh moha@192.168.12.9:/home/moha/serverfile /home/mohamed 
+(moha@192 is the name of the server)
+(/home/moha/serverfile---is the path of the file that you wanna download)
+and (/home/mohamed is where you dowload it too)                            
+
+#This command is specific to sending redhat_commands from the server to my local machine
+rsync -azvh script/redhat_commands mohamed@192.168.122.1:/home/mohamed/redhat_commands
+#-------------------------------------------------------------------------------------
+#
+
+#Internet speed tester 
+speedtest-cli 
+this command will test the speed of your internet 
+
+
+# Yum history 
+--This command will show history off downloaded command or apps and 
+with there ID 
+if you wanna undo app or command that you have just installed 
+you can do 
+#yum history undo 96 
+(96 is ID of the command )
+to see the command of the ID you run #yum history# 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

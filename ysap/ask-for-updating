@@ -2,7 +2,7 @@
 
 clear
 greet() {
-host="192.168.255.255"
+host="192.168.122.179"
 
 if ping -c1 "$host" > /dev/null
 then
@@ -14,8 +14,9 @@ fi
 }
 
 echo "WELCOME:.............................................................................................................................."
-printf "Do You Wanna Update Your Parrot OS\n"
-read user_input
+echo "......................................................................................................................................"
+printf "Do You Wanna Update Your Centos OS\n"
+read -r user_input
 
 if [[ "$user_input" == "yes" ]]
 then

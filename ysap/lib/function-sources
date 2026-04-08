@@ -1,12 +1,15 @@
 #!/bin/bash 
 
 greet(){
-	echo "hello $1"
+	local name=$1
+	echo "hello $name"
+
 
 }
 
 goodbye(){
-	echo "bye $1"
+	local name=$1
+	echo "bye $name"
 
 }
 

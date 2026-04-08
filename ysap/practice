@@ -1,0 +1,20 @@
+#!/bin/bash 
+
+printf "Please Enter your name:...\n"
+read username
+
+if id "$username" &>/dev/null
+then
+	echo "the $username exist:.."
+	exit 1
+fi
+
+sudo adduser -m "$username"
+sudo passwd "$username"
+#Give the user power off sudo 
+sudo usermod -aG wheel "$username"
+
+
+
+
+

@@ -1,0 +1,8 @@
+#!/bin/bash 
+
+
+host="farah"
+yare="yare"
+echo "hello $host"
+
+

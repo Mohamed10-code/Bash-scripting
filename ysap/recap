@@ -1,0 +1,4 @@
+#!/bin/bash
+
+#get shell
+cat /etc/passwd |grep moha | cut -d : -f 7
