@@ -1,0 +1,779 @@
+
+Meetings
+Notion AI
+Inbox
+Library
+RED HAT LINUX 
+September 16, 2025  
+Comments
+This is cron-tab schedule time 
+│  │  │  │  │
+│  │  │  │  └── Day of week (0–7)
+│  │  │  └──── Month (1–12)
+│  │  └────── Day of month (1–31)
+│  └──────── Hour (0–23)
+└────────── Minute (0–59)
+Linux sees everything as a file: regular files, directories, devices, and more.
+🗂️ Access Control Lists (ACLs)
+ACLs provide more fine‑grained permissions than the traditional rwx model and let you grant specific users or groups access to files or directories.
+View ACLs: getfacl <path>
+Add or change a user entry: setfacl -m u:<user>:<perm> <path>
+Example: setfacl -m u:alice:rw test.txt
+Add or change a group entry: setfacl -m g:<group>:<perm> <path>
+Remove a user entry: setfacl -x u:<user> <path>
+Remove all ACLs: setfacl -b <path>
+🔁 Redirection and Pipes
+📘 Linux Redirection Cheat Sheet
+Stream
+Number
+Operator
+Meaning
+Example
+stdout (standard output)
+1
+>
+Redirect output (overwrite file)
+ls > files.txt
+stdout
+1
+>>
+Redirect output (append to file)
+echo "hi" >> log.txt
+stdin (standard input)
+0
+<
+Take input from file
+wc -l < file.txt
+stderr (standard error)
+2
+2>
+Redirect errors (overwrite file)
+ls /fakepath 2> errors.txt
+stderr
+2
+2>>
+Redirect errors (append to file)
+ls /fakepath 2>> errors.txt
+stdout + stderr
+1+2
+&>
+Redirect both to one file (overwrite)
+command &> all.txt
+stdout + stderr
+1+2
+>> file 2>&1
+Redirect both (append)
+command >> all.txt 2>&1
+Quick memory tricks:
+> sends output
+< takes input
+2> captures errors
+&> captures everything
+Practice ideas:
+pwd > findpath && cat findpath
+echo "this is what I found" >> findpath
+Redirect errors: ls -l /root 2> errorfile
+Combine with pipes: ls -l | tail -1
+Paginate: ls -l | more
+Count files: ls | wc -l
+🔍 Text Processing Essentials
+cut
+Characters: cut -c1-3 filename
+Ranges: cut -c1-4,6-8 filename
+Fields with delimiter: cut -d: -f6 /etc/passwd
+Shells on system: cut -d: -f7 /etc/passwd | sort -u
+🔹 Hard Link
+A hard link is a mirror of the original file — both share the same data on disk.
+If you delete one, the other still works.
+🧩 Example:
+✅ This creates a hard link called file2.txt that points to file1.txt.
+​
+awk
+First field: awk '{print $1}'
+Custom separator: awk -F: '{print $1}' /etc/passwd
+Filter by condition: awk '$3 > 50000 { print $1, $2 }' employees.txt
+Count fields: ls -l | awk '{print NF}'
+Match pattern in file: awk '/jerry/' seinfeld-characters
+grep and egrep
+Case‑insensitive search: grep -i keyword file
+Exclude matches: grep -v pattern file
+Show line numbers: grep -n keyword file
+Count matches: grep -c keyword file
+Filter pipeline: ls -l | grep -i desktop
+Multiple patterns: egrep -i "seinfeld|costanza" seinfeld-characters
+sort and uniq
+Remember: uniq only removes adjacent duplicates
+Typical flow: sort fruit | uniq
+With counts: sort fruit | uniq -c
+wc
+Option
+Counts
+Example
+wc -l
+Lines
+wc -l file.txt
+wc -w
+Words
+wc -w file.txt
+wc -c
+Bytes
+wc -c file.txt
+wc -m
+Characters
+wc -m file.txt
+🧭 Finding Files and Handling Errors
+Find by name: find . -name "kramer"
+System‑wide with errors to file: find / -name passwd 2> bin
+Mirror to screen and file: date | tee system-repo
+Append while mirroring: df -h | tee -a system-repo
+🪄 Wildcards
+Create many files: touch moha{1..10}
+Match prefix: ls -l moha*
+Match digits anywhere: ls -l *[0-9]*
+Wildcard Practice Exercises
+Setup
+​
+Asterisk *
+​
+Brackets []
+​
+Combination
+​
+Challenges
+​
+Tip: After each pattern, verify with ls [pattern] and echo [pattern].
+🔐 Permissions Quick Tips
+Remove execute from all on a directory: sudo chmod a-x <dir>
+Re‑add execute for current user: sudo chmod u+x <dir>
+Directory execute means you can cd into it.
+🧩 TMUX Basics
+New session: tmux new -s yare
+List sessions: tmux ls
+Attach to last session: tmux a 
+to kill session: tmux kill-session -t yare
+tmux -t yare
+📦 Archiving and Compression
+tar
+Create archive: tar cvf moha.tar .
+Extract archive: tar xvf moha.tar
+gzip
+Compress: gzip filename
+Decompress: gunzip filename or gzip -d filename
+Keep original: gzip -k filename
+🧪 Mini Practice Set
+Count items in current folder: ls | wc -l
+Show last entry in long list: ls -l | tail -1
+Page through output: ls -l | more
+Replace second field in a file with awk: cat seinfeld-characters | awk '{ $2 = "yare"; print $0 }'
+Grep then post‑process: grep -i seinfeld seinfeld-characters | awk '{print $1}' | cut -c1-3
+Keep exploring: practice cut, awk, grep, egrep, sort, uniq, wc regularly for mastery.
+you can split file in linux 
+split -l 2 countries sep (this will split everything in file counties into two and called it separated file sepa sepb sepc
+🧭 Step 2: Understand the two main modes
+vi works in modes, and this confuses many beginners at first — but it’s simple once you get it:
+Mode
+What it does
+How to enter
+Normal mode
+Moving around, deleting, copying
+Press Esc
+Insert mode
+Typing or editing text
+Press i, a, or o
+✍️ Step 3: Practice basic editing
+Once inside vi, try these:
+Key
+Action
+i
+Insert before cursor (start typing)
+a
+Append after cursor
+o
+Open a new line below and start typing
+Esc
+Go back to Normal mode
+x
+Delete one character
+dd
+Delete a full line
+yy
+Copy (yank) a line
+p
+Paste after cursor
+u
+Undo last action
+Ctrl + r
+Redo
+:w
+Save (write) the file
+:q
+Quit
+:wq
+Save and quit
+:q!
+Quit without saving
+vim learn about it its like vi editor but vim is very powerful you learn on website called 
+openvim or vim adventure 
+SED 
+text editor like vi or nano.
+sed is useful when you want to replace text or sentences in a large file.
+Example:
+
+sed -i 's/kramer/yare/g' seinfeld
+
+Here, sed is the command. The -i flag stands for “in-place,” meaning it will replace the text permanently, and the previous text will be lost. The 's' stands for substitute, /kramer is the text to be replaced, and /yare is the new text. The g stands for global, meaning it will replace the text everywhere in the file. 
+when you want to remove text from file using sed 
+sed -i ‘s/puddy//g’ seinfeld (you are removing puddy from seinfeld)
+sed ‘/yare/d’ seinfeld (it will dalete any text with yare)
+sed ‘/^$/d’ seinfeld (this will delete empty space in the seinfeld file)
+sed ‘1d’ seinfeld (to delete the first line of seinfeld)
+sed ‘s/\t/ /g’ seinfeld ( this will remove tabs )
+sed 's/\t/ /g' seinfeld-character
+sed -n 1,12p seinfeld (it will show you line 1 to 12 only )
+sed 5,11d seinfeld (it means that you will not see line 5 to 11 in seinfeld file)
+sed G seinfeld (this will give you spaces in every sentence )
+sed ‘8!s/seinfeld/s’ seinfeld (this mean except 8 change the rest with s from seinfeld)
+when you are in vim and want to replace words you can :%s/kramer/moha/g (this will replace kramer to moha inside vim editor )
+                                     
+USER ACCOUNT MANAGEMENT
+USERADD
+GROUPADD
+USERDELL
+GROUPDELL
+USERMOD
+files
+/etc/passwd
+/etc/group
+/etc/shadow
+Action
+Command
+What it Affects
+Delete user account only
+sudo userdel spiderman
+Removes user entry from /etc/passwd, but leaves home folder
+Delete user + home directory
+sudo userdel -r spiderman
+Removes both account and /home/spiderman
+Delete home directory only
+sudo rm -r /home/spiderman
+Removes folder, but user still exists in system files
+Force remove just files (no user deletion)
+sudo rm -rf /home/spiderman
+Deletes files; user account remains untouched
+my understanding 
+if you user rm -r spiderman (means it will delete home dir of spiderman but the user stays on the system)
+if you use userdel spiderman (it will delete user account but the home dir will remain the same )
+if you user userdel -r (it will delete account plus home dir )
+usermod -G superhores yare (means we are adding superheros group to yare user)
+chgrp -R superhores yare (superhores will be the main group for user yare
+useradd -g superheros -s /bin/bash -c "dalka user" -m -d /home/dalka dalka
+(this will create dalka user and give him home dir and /bin/bash login )
+
+
+What Each Option Does:
+g superheros
+Primary group = "superheros"
+User's main group membership
+s /bin/bash
+Shell = /bin/bash
+Default command interpreter for the user
+c "dalka user"
+Comment/Description = "dalka user"
+Usually contains full name or description
+m
+Create home directory
+Makes /home/dalka directory
+Copies skeleton files from /etc/skel/
+d /home/dalka
+Home directory path = /home/dalka
+Where the user's personal files are stored
+password aging(very important)
+command chage 
+chage -l username     # show password aging info
+chage username        # edit it
+chage -m 2 -M 30 -W 5  -I 5  
+chage [-m minimum-day] [-M maxmum-day] [-W warning-day] [-I inactive] 
+if you what to make passwd aging defualt in the system you edit in ( /etc/login.defs)
+i when went to /etc/login.def and edit passwd aging instead of putting passwd policy for every
+user that i create  
+usermod -aG wheel maryan (this mean you giving sudo privilege to maryan)
+grep wheel /etc/group (you can see who has sudo privilege )
+monitor user 
+who (it print about user who currently logged in )
+Command
+Shows
+Data source
+w
+Active users + what they’re doing
+/var/run/utmp, /proc
+who
+Active users only
+/var/run/utmp
+last
+Login history (past logins)
+/var/log/wtmp
+talking to users
+users 
+wall (wall broadcast message to all users but if you are only root otherwise its hard because some user can turn they mesg no and you can not  broadcast if you are not root )
+write maryan (means you will write message to maryan only ) note if only maryan’s mesg is y 
+Special Permissions: setuid, setgid, sticky bit
+📋 Quick Reference Card
+Permission
+Numeric
+Symbolic
+On Files
+On Directories
+setuid
+4
+u+s
+Runs as file owner
+(Rarely used)
+setgid
+2
+g+s
+Runs as file group
+Files inherit directory's group
+sticky bit
+1
+o+t
+(Historical)
+Only owner can delete files
+🎯 RHCSA Exam Objectives
+Identify special permissions using ls -l
+Set special permissions using symbolic and numeric notation
+Understand practical use cases
+Apply setgid for collaborative directories
+1. setuid (Set User ID)
+🎯 Purpose
+Files: Program runs with file owner's privileges, not executor's privileges
+Security: Allows controlled privilege escalation
+📝 Syntax
+bash
+​
+🔍 Identification
+bash
+​
+🛠️ Practice Exercises
+bash
+​
+🌟 Real-world Examples
+bash
+​
+2. setgid (Set Group ID)
+🎯 Purpose
+Files: Runs with file's group privileges
+Directories: New files inherit directory's group ownership
+📝 Syntax
+bash
+​
+🔍 Identification
+bash
+​
+🛠️ Practice Exercises
+bash
+​
+🌟 Real-world Use Case
+bash
+​
+3. Sticky Bit
+🎯 Purpose
+Directories: Users can only delete their own files
+Prevents: "File deletion wars" in shared directories
+📝 Syntax
+bash
+​
+🔍 Identification
+bash
+​
+🛠️ Practice Exercises
+bash
+​
+🌟 Real-world Examples
+bash
+​
+🔢 Numeric Notation Summary
+Combination
+Numeric
+Example
+setuid only
+4xxx
+chmod 4755 file
+setgid only
+2xxx
+chmod 2755 file
+sticky only
+1xxx
+chmod 1777 dir
+setuid + setgid
+6xxx
+chmod 6755 file
+All three
+7xxx
+chmod 7777 file
+📊 Permission Calculation
+bash
+​
+🎯 RHCSA Practice Lab
+🚀 Complete Setup Exercise
+bash
+​
+🔍 Verification Commands
+bash
+​
+⚠️ Security Best Practices
+🔒 setuid/setgid Security
+bash
+​
+🎯 RHCSA Exam Tips
+Memorize numeric values: setuid=4, setgid=2, sticky=1
+Understand ls -l output: s vs S, t vs T
+Practice both notations: symbolic (u+s) and numeric (4755)
+Know use cases: When to use each special permission
+❓ Quick Quiz
+What does chmod 2750 directory do?
+How to identify a sticky bit directory in ls -l output?
+Why does /usr/bin/passwd need setuid?
+What's the difference between s and S in ls -l?
+How to make a shared directory where files inherit group ownership?
+📚 Summary Cheat Sheet
+bash
+​
+to find all executable in linux with setuid setgid permission 
+find / -perm  /6000 -type f
+system utility command 
+cal (calendar )
+uname (which system are using )
+date (it will show you current date)
+uptime (it will show you how long is the system up for or running)
+hostname (it will show you the system host name mine is parrot )
+which (where is command find or file or command for example locate file is /usr/bin/locate)
+bc (basic calculator )
+systemctl
+⚙️ 1️⃣ systemctl — Manage Systemd Services
+Definition:
+Used to start, stop, enable, disable, restart, and check status of systemd services.
+Common Commands
+Command
+Description
+systemctl status sshd
+Check service status
+systemctl start firewalld
+Start a service
+systemctl stop firewalld
+Stop a service
+systemctl restart firewalld
+Restart a service
+systemctl enable firewalld
+Start on boot
+systemctl disable firewalld
+Disable on boot
+systemctl list-units --type=service
+List active services
+kill
+☠️ 2️⃣ kill — Terminate Processes
+Definition:
+Sends a signal to a process (usually to stop or restart it).
+Common Usage
+Command
+Description
+kill PID
+Politely stop a process (SIGTERM)
+kill -9 PID
+Forcefully kill (SIGKILL)
+kill -l
+List all available signals
+killall firefox
+Kill all processes with the name “firefox”
+Tip:
+Always try kill before kill -9.
+top
+📊 3️⃣ top — Real-time System Monitor
+Definition:
+Shows live process activity (CPU, RAM, uptime, etc.)
+Usage
+​
+Inside top
+Key
+Action
+M
+Sort by memory
+P
+Sort by CPU
+k
+Kill process
+u
+Filter by user
+d
+Change refresh time
+q
+Quit
+Example:
+top -o %MEM → sort processes by memory usage.
+ps
+👀 4️⃣ ps — Process Status
+Definition:
+Displays information about running processes.
+Common Options
+Command
+Description
+ps
+Show your own shell’s processes
+ps -e
+Show all system processes
+ps -ef
+Full-format listing of all processes
+ps aux
+Show all processes (BSD format)
+ps -u username
+Show processes by user
+ps -p PID
+Show specific process info
+Tip:
+Combine with grep to filter results:
+​
+🧩 Quick Summary Table
+Command
+Purpose
+Example
+systemctl
+Manage services
+systemctl restart sshd
+kill
+Terminate a process
+kill -9 1234
+top
+Monitor running processes
+top
+ps
+View process details
+ps -ef
+kill -9 (kill the process forcefully)
+PROCESS AND SIGNAL
+Process is running program 
+signal is a message to program 
+to terminate vim while you are in vim
+go to another window in terminal write ps -aux |grep vim then take the process Id 
+then kill -SIGKILL 3020 this will kill vim without saving 
+kill -SIGTERM 3020 (this will terminate vim slowly and save it file )
+ CRONTAB
+crontab it is task schidule for example if you do anything always you can
+automate using crontab 
+command is crontab -e (it will give you vim editor then you can spicify hour day month year )
+crontab -l (will list all the crontab )
+crontab -r (will delete crontabe )
+  
+Each * represents a time field:
+Field
+Meaning
+Values
+1st
+Minute
+0–59
+2nd
+Hour
+0–23
+3rd
+Day of month
+1–31
+4th
+Month
+1–12
+5th
+Day of week
+0–6 (Sun–Sat)
+6th
+Command to execute
+e.g., echo "hello"
+Command
+Description
+crontab -e
+Edit your cron jobs
+crontab -l
+List your cron jobs
+crontab -r
+Remove all your cron jobs
+sudo crontab -e -u username
+Edit cron jobs for another user
+atq command will give at jobs with number for example at 6 0r 7
+you can do atrm 6 and it will remove at 6 
+AT 2:45 AM 101621 (0ct 16 2021 at 2:45 AM) 
+AT 4PM + days (4 PM 4 days from now )
+at now +5 hours (5 hour from now )
+at 8:00PM sun (next sunday )
+at 8:00PM next month 
+additional crontab (hourly, daily, weekly, monthly, )
+process management 
+sleep 1000 then 
+ctrl + z then 
+jobs(list background running process) then 
+bg(background it will send the running process background ) then
+fg(foreground it will foreground the process)
+nohup command 
+nohup sleep 75 > /dev/null 2>&1 & (this will send all the massage to dev/null file)
+nice -n 5 sleep 5 (find out more)
+system monitoring command 
+ top
+What it does:
+Shows real-time system performance: CPU, memory, and running processes.
+How to use:
+​
+What you'll see:
+System uptime and load
+Number of running/sleeping processes
+CPU usage breakdown
+Memory usage (total, used, free)
+List of processes with PID, user, CPU%, memory%
+Useful keyboard shortcuts:
+Key
+Action
+q
+Quit
+P
+Sort by CPU
+M
+Sort by memory
+k
+Kill a process
+u
+Filter by user
+1
+Show each CPU core
+Examples:
+​
+When to use it:
+Monitor system performance
+Find processes using too much CPU or memory
+Check system load
+ ,dmesg, du ,netstat, free, iostat (iostat (input output statistic))
+sudo du -sh /home (it will show how much disk it is using)
+sudo du -sh /home/malyun (it will show for malyun)
+du -sh .(Check total disk usage in current directory)
+ssh
+Excellent — the ss command is one of the most powerful network troubleshooting tools in Linux 🔥​
+It stands for Socket Statistics and is used to display information about network connections, similar to netstat, but faster and more modern.
+Show more details including process info
+ss -t -p
+Show all connections (TCP , UDP , UNIX sockets)
+ss -a
+ss -t
+Show listening ports
+ss -t -l
+Show both listening and established connections
+ss -tuln
+Absolutely ✅ — here’s a clean, concise note version of the top command, perfect for adding to your Notion study page:
+🧠 Linux Command: top
+Purpose:
+Displays real-time system performance — CPU, memory, and process usage.
+📜 Syntax:
+​
+💡 Key Info Displayed:
+Uptime and system load (top line)
+Tasks: number of total, running, sleeping processes
+CPU usage: user, system, idle, I/O wait
+Memory usage: total, used, free, buffers
+Process list: PID, user, CPU%, MEM%, time, command
+⚙️ Common Shortcuts (While top Is Running):
+Key
+Action
+q
+Quit top
+h
+Help menu
+P
+Sort by CPU usage
+M
+Sort by memory usage
+k
+Kill a process (enter PID)
+r
+Renice a process (change priority)
+1
+Show CPU usage per core
+u
+Filter by user
+Shift + E
+Toggle memory unit (KB/MB/GB)
+🧰 Examples:
+​
+📈 Use Case:
+Monitor CPU/memory usage
+Identify heavy processes
+Check system load and uptime
+✅ Summary:
+top = Real-time process monitor for CPU, memory, and system resource usage.
+Think of it as Linux’s “Task Manager” in the terminal.
+Would you like me to make a similar Notion-style summary for htop next (the improved, colorful version of top)?
+system log monitor
+go to cd /var/log then look for boot.log with sudo cat if its says ok for all its means 
+the system is ok at boot if it says failed means there’s problem at boot 
+1. boot
+2. chronyd
+3. cron
+4. maillog
+5. secure (tail -f secure you will monitor verything live, how logged in where they logged from )
+6. messages
+7. httpd
+go to /var/log then 
+tail -f secure  you will see who logged in where they logged in from
+ df -h (disk free -h human readable )
+free ( displays the total amount of free and used physical and swap memory in the
+           system,)
+who -b (will show you when system is booted)
+last | awk ‘{print $1}’ |sort -u (this will show you how many people are available on your system
+nice 
+free 
+uname 
+hostname 
+system maintenance command 
+shutdown 
+init 0-6
+reboot 
+halt 
+changing system hostname 
+hostnamectl set-hostname (put your new hostname here)
+then run hostname command 
+then sudo reboot 
+or 
+go to /etc then find hostname 
+vim hostname and edit from there 
+finding system information 
+uname, dmidecode 
+cat /etc/redhat-release
+become root and run this command dmidecode (it will show you everything about your machine )
+What is system architecture in Linux?
+“System architecture” means how your computer’s CPU and operating system are built to process data and run instructions.
+It tells you how many bits (binary digits) the CPU can handle at once.
+to find out if your system is 32bt or 64bt 
+run this command (arch or uname -m )
+                   SOS REPORT 
+🧰 What is sosreport?
+sosreport is a diagnostic command used to collect system configuration and troubleshooting information into one report.
+It helps support engineers or admins quickly analyze a system’s state when there’s a problem.
+                      script 
+🧰 What script does
+The script command records everything you type and see in a terminal session — like a screen recorder for text.
+It saves all your terminal input and output into a text file (by default, called typescript).
+script  file.log
+everything will be saved here 
+🧠 Common uses
+Keeping a record of troubleshooting steps
+Creating training or audit logs
+Sending command history to support teams
+Saving output of interactive commands
+RECOVER ROOT PASSWORD
+Restart your computer, edit grup, change the password , reboot 
+✅ Quick summary:
+Edit GRUB → add rd.break
+Mount system → mount -o remount,rw /sysroot
+Enter system → chroot /sysroot
+Reset password → passwd root
+Fix SELinux → touch /.autorelabel
+Exit and reboot
+shred -z -u filename “this will overwrite the file and delete it. it is the best way to delete a file ”
+when you want to change system date 
+sudo date -s "22 Aug 1998 13:00:00"
+after change you can set back your original time 
+sudo timedatectl set-time "current-date, current-time"
+
+
+
