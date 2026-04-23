@@ -4,6 +4,182 @@
 rm README.md
 git rm README.md
 git commit -m "Remove README"
-git push -m main
+git push -u origin main
 
+# GitHub SSH Setup & Troubleshooting Guide
+
+## 🔐 1. Generate SSH Key (if not already)
+
+```bash
+ssh-keygen -t ed25519 -C "your_email@example.com"
+```
+
+Files created:
+
+* `~/.ssh/id_ed25519` → **Private key (KEEP SECRET)**
+* `~/.ssh/id_ed25519.pub` → **Public key (SHARE THIS)**
+
+---
+
+## 📤 2. Add Key to GitHub
+
+```bash
+cat ~/.ssh/id_ed25519.pub
+```
+
+* Copy the output
+* Go to GitHub → Settings → SSH and GPG keys
+* Click **New SSH key** → Paste key → Save
+
+---
+
+## 🔍 3. Check Current Remote URL
+
+```bash
+git remote -v
+```
+
+### If you see:
+
+```bash
+https://github.com/username/repo.git
+```
+
+❌ This uses username/password (token)
+
+---
+
+## 🔧 4. Switch to SSH
+
+```bash
+git remote set-url origin git@github.com:username/repo.git
+```
+
+---
+
+## 🔐 5. Test SSH Connection
+
+```bash
+ssh -T git@github.com
+```
+
+Expected:
+
+```
+Hi username! You've successfully authenticated...
+```
+
+---
+
+## 🚀 6. Push Code
+
+```bash
+git push -u origin main
+```
+
+✔ No password required
+
+---
+
+# 🛠️ Troubleshooting
+
+## ❌ Still asking for username/password
+
+👉 Cause: Remote is still HTTPS
+✔ Fix:
+
+```bash
+git remote set-url origin git@github.com:username/repo.git
+```
+
+---
+
+## ❌ Permission denied (publickey)
+
+👉 Cause: SSH key not loaded
+✔ Fix:
+
+```bash
+eval "$(ssh-agent -s)"
+ssh-add ~/.ssh/id_ed25519
+```
+
+---
+
+## ❌ SSH agent not running
+
+✔ Fix:
+
+```bash
+eval "$(ssh-agent -s)"
+```
+
+---
+
+## ❌ Wrong key being used
+
+Check available keys:
+
+```bash
+ls ~/.ssh
+```
+
+---
+
+## ❌ Bad permissions on key
+
+✔ Fix:
+
+```bash
+chmod 600 ~/.ssh/id_ed25519
+chmod 644 ~/.ssh/id_ed25519.pub
+```
+
+---
+
+## ❌ First-time connection warning
+
+You may see:
+
+```
+The authenticity of host 'github.com' can't be established
+```
+
+✔ Type:
+
+```
+yes
+```
+
+---
+
+# 🧠 Key Concepts
+
+* SSH uses **keys instead of passwords**
+* `.pub` file → goes to GitHub
+* private key → stays on your machine
+* SSH URL → `git@github.com:...`
+* HTTPS URL → `https://github.com/...`
+
+---
+
+# ✅ Quick Checklist
+
+* [ ] Public key added to GitHub
+* [ ] Remote URL uses SSH
+* [ ] SSH connection test works
+* [ ] Key added to ssh-agent
+
+---
+
+# 🔥 Pro Tip
+
+Check everything quickly:
+
+```bash
+git remote -v
+ssh -T git@github.com
+```
+
+If both are correct → you're good to go 🚀
 
