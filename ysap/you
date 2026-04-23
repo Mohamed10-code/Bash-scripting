@@ -3,7 +3,7 @@
 
 greet() {
 
-read -p "what is your name: " name 
+read -p "what is your name:" name 
 
 if [[ $name == "farah" ]]
 then

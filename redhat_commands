@@ -106,17 +106,71 @@ you can do
 (96 is ID of the command )
 to see the command of the ID you run #yum history# 
 
+learn how to use zsh and plugin 
+
+you must learn how to use zsh
 
 
+# This is lesson are from Redhat courses 
+There are  3 redirect in linux 
+1- standrd input (stdin) and it has file descriptor number as 0 
+    ls >> file.txt
+2- standrd output (stdout) and it has file descriptor number as 1
+    cat < file.txt
+3- standrd error  (stderr) and it has file descriptor number as 2
+    ls invalidfile 2> error.txt
+
+#monitor and manage process
+
+df 
+du 
+uptime -p 
+top 
+free 
+lsof 
+tcpdump 
+ps  
+kill 
+w 
+you can run man command on all this command 
 
 
+# top process 
+PID - process ID 
+USER - the owner of the process
+PR - process priority 
+NI - the nice value of process
+VIRT - amount of virtual memory used by the process
+RES - amount of resident memory used by process
+SHR - amount of shared memory used by process
+S - status of the process (see the list below for the value this field can take)
+%CPU - the shared of cpu time used by the process since the last time 
+%MEM - the share of physical memory used
+TIME - total cpu time used by the task in hundredths of second 
+command - the command name or command line (name + options)
 
 
+# This command will help you find which file is using more space 
+#
+du -k / |sort -nr |more 
+
+du -- is disk usage 
+-k -- is in kilobyte 
+sort -nr -- n means number and r means reverse 
 
 
+#troubleshooting disk full  
+you can run this command df -hP and it will show you how much used disk space in percentage 
+then you can run this command du -k / |sort -nr |more this command will show which file
+is using more disk then you delete that file to free up some spaces in your server or 
+machine 
 
-
-
+#some files can contain more 10M size and you need find with command
+#and see those files and eliminate them 
+#this also another technique for troubleshooting
+find / -size +10M 
+is a Linux command that searches for files larger than 10 megabytes 
+across the entire filesystem.
 
 
 

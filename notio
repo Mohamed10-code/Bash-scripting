@@ -1,12 +1,9 @@
 
-Meetings
-Notion AI
-Inbox
-Library
 RED HAT LINUX 
 September 16, 2025  
-Comments
-This is cron-tab schedule time 
+
+#This is cron-tab schedule time 
+
 │  │  │  │  │
 │  │  │  │  └── Day of week (0–7)
 │  │  │  └──── Month (1–12)

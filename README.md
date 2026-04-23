@@ -30,3 +30,11 @@ For example, I taught myself **Git in about two days**, and now I feel confident
 But if I can do it, **you can do it too**.
 
 I’m very excited for my next learning journey.
+
+
+
+
+
+
+
+

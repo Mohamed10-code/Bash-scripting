@@ -2,12 +2,12 @@
 
 clear
 greet() {
-host="192.168.122.179"
+host="192.168.1.4"
 
 if ping -c1 "$host" > /dev/null
 then
 	echo "is the server is UP attempting to update.."
-	sudo dnf update && sudo dnf upgrade -y
+	sudo pacman -Syu && yay -Syu  
 else
 	echo "NO INTERNET"
 fi	
@@ -15,7 +15,7 @@ fi
 
 echo "WELCOME:.............................................................................................................................."
 echo "......................................................................................................................................"
-printf "Do You Wanna Update Your Centos OS\n"
+printf "Do You Wanna Update Your omarchy  OS\n"
 read -r user_input
 
 if [[ "$user_input" == "yes" ]]
