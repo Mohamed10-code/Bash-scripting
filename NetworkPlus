@@ -1,0 +1,423 @@
+
+
+NETWORK FUNDAMENTAL 
+
+**HUBS**: is old device. its broadcast the data its get from other device. it has collision because one device broadcast at once when the rest broadcast it creates collision. and it has not intelligent.
+
+**BRIDGE**:A bridge is a **Layer 2 (Data Link Layer)** device that connects two or more network segments. Unlike a hub, which just passes electrical signals, a bridge makes decisions based on the **MAC (Media Access Control) address** of the devices.
+
+**SWITCHES**: A switch is a **Layer 2 (Data Link Layer)** device that connects multiple devices together on a single network. Unlike a hub (which shouts to everyone), a switch talks only to the specific device it needs to.
+
+WAPS:  **WAP (Wireless Access Point)**—often just called an **AP**—is a Layer 2 device that allows wireless devices to connect to a wired network using the IEEE 802.11 standards (Wi-Fi).
+
+ROUTERS:used to connect different networks together 
+
+firewall: security barriers between internal network and external networks(usually internet)
+
+### 1. What is NAS?
+
+Think of a NAS as a specialized computer that has one job: **serving files**. It contains its own processor, RAM, and a specialized operating system (often Linux-based) optimized for storage tasks.
+
+MEDIA:in world of networking this refer physical material used to transmit data 
+
+pan: personal area network or pan, smallest type of wired or wireless which usually cover around 10 feet
+
+lan: local area network, its connect component in a limited distance 
+
+can: campus area network, it spread through some building 
+
+man: metropolitan area network: its connects locations across the city 
+
+wan: wide area networks, it covers large geographical location such as city to city, or across the world 
+
+full-mesh topology: where every nodes are connected to the each other 
+
+for 3 nodes you need three cable but for 6 nodes you need 15 cable. the math formula for this is ( x = n(n-1)/2 
+
+n = number of the nodes 
+
+mesh-topology
+
+bus topology 
+
+star topology 
+
+hub and spike topology 
+
+infrastructure mode: the most common type of wireless 
+
+wireless mesh topology: interconnection different types of nodes and device and radios. it is a four or five different technology to create a mesh networks 
+
+DATA-CENTER TOPOLOGY 
+
+**northbound traffic = leaving the data-center** 
+
+**southbound traffic = entering the data-center** 
+
+**east-west: refer to data flow within the data-center** 
+
+# O.S.I MODEL (OPEN SYSTEM INTERCONNECT)
+
+# PHYSICAL
+
+---
+
+**ASYNCHRONOUS**: is uses start and stop bits to indicate when transmission occur from the send to the receiver. for example when you send voice to your friend. this is considered as asynchronous transmission
+
+**synchronous**:  uses reference clocks to coordinate the transmissions by both the sender and receiver. for example when you do direct phone call its considered as synchronous.
+
+**broadband**: divide the bandwidth into separate channel: best example is TV its comes in with single cable and it broadcast million channel.
+
+b**ase-band**: uses all the available frequencies on the medium (cable) to transmit data. best example is home phone that uses all the cable to transmit phone data.
+
+    **layer 1 device just repeat what you just told them no intelligent behind it** 
+
+    **remember very media is considered as layer 1 devices**  
+
+ 
+
+# DATA LINK
+
+                  ****
+
+---
+
+**Data Link Layer** (Layer 2) is the bridge between the physical electrical signals and the logical network addressing. It is responsible for transferring data between two nodes that are on the same network segment.
+
+mac address, bridge and switch are the best example of the layer 2 of o.s.i 
+
+ 
+
+# NETWORK
+
+---
+
+**package switching**: data is divided into package then forwarded based on their IP address 
+
+**circuit switching**: dedicated communication link is established  between two devices 
+
+**massage switching**: data is divided into message which may be stored and then forwarded 
+
+**package reordering**: split big data into small data and send it different route to get to same destination 
+
+# TRANSPORT
+
+---
+
+choosing between **TCP** and **UDP** is a trade-off between **reliability** and **speed**. Both protocols live at **Layer 4 (Transport Layer)**, but they handle data very differently.
+
+if you what make sure that some data has reached their use T.C.P(Transmission Control Protocol). this is good for banking, website,  
+
+use U.D.P(User Data-gram Protocol) if you want to skip a little data. this best for radio video and voice files  
+
+Think of it like a regular postcard or a live radio broadcast. You send it and hope it gets there, but you don't wait for a confirmation.
+
+          T.C.P                             U.D.P
+
+| reliable  | unreliable  |
+| --- | --- |
+| connection-oriented  | connection-less |
+| segment re-transmission  | no windowing  |
+| flow control through windowing  | no sequencing  |
+| segment sequencing  | no acknowledge  |
+| acknowledge segment  |  |
+
+# SESSION
+
+---
+
+**session layer**: keeps conversion separate to prevent intermingling of data.
+
+in session layer you can setup, maintain, and tear down. means you start conversion and maintain and tear it down 
+
+**H.323**: used setup, maintain, and tear down video and voice connection 
+
+**Net-bios**: used share file over a networks 
+
+PRESENTATION: format the data to be exchanged and secure that data with proper encryption 
+
+APPLICATION: email application, web browsing, D.N.S,FTP, remote access. all of this is example of application layer 7 
+
+**as data moves from layer 7 to layer 1, it undergoes encapsulation** 
+
+1. **physical = bits** 
+2. **data links = frame** 
+3. **network = package** 
+4. **transport = segment** 
+5. **session = data** 
+6. **presentation = data** 
+7. **application = data** 
+
+# **PORT AND PROTOCOL**
+
+**PORT**: it virtual exit and entries point of communication used by software to exchange information 
+
+**protocol**: it is set of rules and convention for data exchange between network devices.
+
+well-known-port: range 0 to 1,023
+
+registered ports: 1023 to 49,151
+
+tcp three way handshakes: the client will send to server asking to establish connection and the server will response back saying he has received the package and willing to establish the connection and the client will send him back to confirm that establish of the connect. this is three way connection (SYN, SYN-ACK ACK)
+
+TCP: if the package is lost the tcp will acknowledge and will ask to re-transmission of the data 
+
+tcp: will also employs flow control to prevent the sender to overwhelming the receiver
+
+by using protocol called windowing. windowing. T.C.P operate at the transport layer of the osi model 
+
+ 
+
+- **SYN (Synchronize):** The client sends a packet asking to start a session.
+- **SYN-ACK (Synchronize-Acknowledge):** The server replies, saying "I received your request and I am also ready.
+- **ACK (Acknowledge):** The client says "Got it! Let's start sending data.
+
+**UDP**: packet are much smaller and simpler then TCP. because it does not have three way handshake it start sending package. only contains source and destination port number, length file and checksum. and UDP header has only 8 bytes while TCP header contain 20 bytes 
+
+EMAIL PROTOCOL
+
+**SMTP** (Simple Mail Transfer Protocol)
+● The standard protocol used for sending emails over the internet
+● Operates over port 25
+○ Default port used by email servers. The secure version of the SMTP is SMTPS and it operate on port 465 and 587
+
+**POP3** (Post Office Protocol version 3)
+● Used to retrieve emails from a remote server to a local client
+● Operates over port 110
+● Designed to download and delete messages from the server
+● Transmits emails in plain text (insecure)
+● POP3S (POP3 Secure)
+○ A secure variant of POP3 that overcomes the limitations of
+POP3
+○ Operates over port 995 via SSL/TL
+
+IMAP (Internet Message Access Protocol)
+● Offers more flexibility than POP3
+● Operates over port 143
+● Allows managing emails directly on the server, synchronizing
+across multiple devices
+
+○ SMTP and SMTPS are used for sending emails
+○ POP3 and IMAP are both used for receiving emails
+
+FILE TRANSFER PROTOCOLS:
+
+FTP: file transfer protocol its one of the oldest file transfer. FTP has a lot of securities issue its send your file in plain text  it operate on port 20 and 21 
+
+for port 20 it transfer actual data 
+
+for port 21 it send control command. like i want send this data and updates 
+
+SSH OR SFTP: is file transfer protocol it operate on port 22 and its secure and encrypt your data 
+
+server massage block(SMB) operate over 445 allow computer apps to write and read to file and request services from the server program 
+
+DNS: domain name services operate on port 56 and uses TCP for large massage and UDP for smaller massage 
+
+**DYNAMIC HOST CONFIGURATION PROTOCOL** :D.H.C.P used to automate the assignment of IP address subnet, mass gateways, and other networking parameters to client device   
+
+SIP is a signaling protocol used to **setup, manage, and tear down** real-time voice and video sessions over an IP network. When you pick up a VoIP phone and dial a number, SIP is the "operator" that finds the other person and rings their phone. but the sip itself does not carry the data. **(Real-time Transport Protocol)** carries the actual audio/video stream. 
+
+## **MEDIA AND CONNECTOR**
+
+RJ-11: standard connector for telephone wiring 
+
+- Registered JACK
+    
+    THE 11 AND 45 ARE JUTS PLACEHOLDER
+    
+
+RJ-45:standard connector for data and network that utilize cobber cable to create ethernet network 
+
+# **WIRELESS NETWORK**
+
+---
+
+AD HOC: network device that connect directly to each other rather than through a central access point 
+
+ssid: name of your wifi 
+
+extender server set( its like wifi booster 
+
+point-to-point wireless network: connect two distinct location over long distance using high antenna 
+
+mesh: in a mesh topology, every device (node) is connected to multiple other devices. This creates multiple paths for data to travel. they connect to as many device as possible to reach they destination 
+
+wireless antenna: devices designed to send and receive radio frequencies 
+
+their is three main type of antenna:
+
+**om-ni-directional** antenna: designed to transmit and receive wireless frequencies from all the direction equally 
+
+like the antenna that we have in cell phone
+
+unidirectional antenna: focuses on a single direction beam to provide more concentrate 
+
+parabolic antenna: this special type of unidirectional antenna which we use for d.s.t.v and satellite
+
+2.4 GHz band: one of the widely used frequencies for wireless networking and it known for its long-range 
+
+and better penetration through the wall or solid object 
+
+channel that we can use for 2.4
+
+- channel 11
+- channel 13
+- channel 14
+
+when you are using 2.4 GHz you should always use
+
+ **channel 1, channel 6, channel 11. because this channels don’t overlap** 
+
+- 6 GHz
+
+relatively new spectrum opened up for WiFi use that after even more channel and bandwith to allow for faster connection and less congestion 
+
+### **1. The 5 GHz Band (The Balanced Performance Band)**
+
+This has been the "standard" for high-performance Wi-Fi for years (used in Wi-Fi 4, 5, and 6).
+
+- **Spectrum:** It has about **500 MHz** of available spectrum.
+- **Channels:** It offers up to **23 non-overlapping channels**. This makes it much easier to avoid interference compared to the crowded 2.4 GHz band.
+- **Speed:** Faster than 2.4 GHz, typically reaching up to **1 Gbps** in real-world use.
+- **Range:** Shorter than 2.4 GHz. It struggles more with thick walls and floors because higher frequency waves are absorbed more easily by physical objects.
+
+### **2. The 6 GHz Band (The "Superhighway")**
+
+Introduced with **Wi-Fi 6E** and continued into **Wi-Fi 7**, the 6 GHz band is a brand-new space for wireless traffic.
+
+- **Spectrum:** It offers a massive **1,200 MHz** of spectrum—more than double the size of 5 GHz.
+- **Exclusivity:** This is its biggest advantage. Only Wi-Fi 6E and Wi-Fi 7 devices can use this band. This means **zero interference from older "legacy" devices** (like older laptops or phones).
+- **Speed:** Blazing fast, with potential speeds exceeding **2 Gbps** and even reaching up to 40+ Gbps in theoretical Wi-Fi 7 environments.
+- **Range:** The **shortest range** of all. Because the frequency is so high, it almost requires a "line of sight" or being in the same room as the access point for the best performance.
+    
+    # 802.11 Standard
+    
+    ---
+    
+    wireless-a (802.11a): operate in the 5 GHz band at speed of 54mpbs with the range of the 35 meter 
+    
+    at the time wireless-a was very expensive and didn’t gain popularity in the market. so they come up with wireless-b
+    
+    wireless-b: operate at the 2.4 band at a speed of up to 11 mbps withe a range of 140 meter use case are camera securities walkie takie baby monitor and microwave this made wireless-b much cheap and widely used one
+    
+    wireless-g (802.11g): operate in 2.4 GHz band at a speed of up to 54 MBPS with a range of 140 meter 
+    
+    wireless-n operate in the 5 GHz band at a speed of up to 600 MBPS withe range of 35 meter 
+    
+    wireless-ac operate in the 5 GHz band at speeds exceeding 6.9 Gbps 
+    
+    MU_MIMO: multipath wireless communication technology that allows multiple users to access the wireless network and access point at the same time (mimo: acts like a hub) (mu-mimo acts like switch)
+    
+    wireless ax: operate in the 2.4, 5, and 6 GHz bands at speed of up to 9.6 Gbps 
+    
+    grouped them to remember (2.4 GHz b,g,n,ax) (5 GHz a,n,ac,ax) (6 GHz ax)  
+    
+    # **wireless security**
+    
+    pre-shared key: Security authentication where the same password or key is being used on both the wireless access point and any connecting client device trying to gain access to the network. this means the normal password we use for our WI-FI to login. the problem is that you share with everyone and when you want to block someone you have to change the password. this is not good for enterprise company.
+    
+    802.1x: its enterprise authentication system where you have to provider your username and password
+    
+
+ RADIO GUIDE (R.G-X): series for coaxial cable, used in high-speed internet, television, and radio connection RG-6   FOR CABLE TV 
+
+wired equivalent privacy (wep): original 802.11 wireless security standard which is an insecure security protocol 
+
+this was made in 1990 and can be easily brute forced never use this one to make wep more secure they have used to add more byte like 128 but the wep itself rely on weak encryption called (rc4) 
+
+WI-FI PROTECTED ACCESS (WPA) designed as a replacement for wep and uses temporal key integrity protocol (TKIP)
+
+this wpa wifi can also be cracked by modern laptop don’t use it. and it relies on (RC4) encryption 
+
+MASSAGE INTEGRITY CHECK (MIC): relies on hashing the data before it’s sent over the network
+
+WIFI PROTECTED ACCESS 2(WPA2): created as part of the IEEE 802.11i standard and was first implemented
+
+with wireless-g and then used again with wireless-n wireless-a and wireless-ac networks. is more secured then the previous one, and it uses A.E.S advanced encryption standard. which then can be also used for personal mode means they use password for the wifi and enterprise mode means big companies uses username and passwords for they wiif access or connections.
+
+WIFI PROTECTED ACCESS 3 (WPA3): Introduced in 2018 as an improvement over WPA2 
+
+SIMULTANEOUS AUTHENTICATION OF EQUALS(SEA): security protocol that was designed to enhance the handshakes process used in wifi authentication. this protocol introduced to replace pre-shared key for WPA,WPA2. because the pre-shared-key was discretionary attack based 
+
+| **Protocol** | **Encryption** | **Key Management** | **Status** |
+| --- | --- | --- | --- |
+| **WEP** | RC4 | Static IV | **Broken** |
+| **WPA** | RC4 | TKIP | **Deprecated** |
+| **WPA2** | **AES** | **CCMP** | **Standard** |
+| **WPA3** | **AES** | **SAE** | **Latest/Best** |
+
+| **Feature** | **WPA2 (Older)** | **WPA3 (Newer)** |
+| --- | --- | --- |
+| **Authentication** | PSK (Pre-Shared Key) | **SAE (Simultaneous Auth of Equals)** |
+| **Handshake** | 4-Way Handshake | **Dragonfly Key Exchange** |
+| **Brute-Force Risk** | High (Vulnerable to offline attacks) | **Extremely Low (Protected by SAE)** |
+| **Encryption Type** | AES-CCMP | **AES-GCMP (Stronger/Faster)** |
+
+### **What is WPS?**
+
+WPS was created to allow users with little technical knowledge to connect devices to a WPA2-protected network without typing in a long, complex password. on your router their small bottom that allows you to connected your wifi with the password. its easy but very vulnerable to the hacker don’t use it never use wep,wpa,wps they can be easily cracked 
+
+any time you hear about the wep think about initialization vector(IV) when you hear wpa2 think about CCMP and AES 
+
+# ETHERNET
+
+---
+
+ETHERNET:is a **wired networking technology** used to connect computers, servers, switches, and routers using **cables** instead of Wi-Fi.
+
+deterministic Ethernet: is data travel at once. means when you in the classroom and the teacher talks to one student this may take time because the teacher has to talks so many times
+
+contention: this is when everyone talks at the same times. this is good for ethernet technology because this the efficient way of transmitting data faster. but they use technology that allows them to detect collision. when the collision happen every device pick random millisecond and then start transmitting the data again this half-duplex the device cannot talks and listen so they do one thing at time. when its full-duplex then can listen and talk at same time because of the modern switches 
+
+| **Standard** | **Speed** | **Cable Type** | **Max Distance** |
+| --- | --- | --- | --- |
+| **10BASE-T** | 10 Mbps | Cat 3/5 Copper | 100 meters |
+| **100BASE-TX** | 100 Mbps | Cat 5/5e Copper | 100 meters |
+| **1000BASE-T** | 1 Gbps | Cat 5e/6 Copper | 100 meters |
+| **10GBASE-T** | 10 Gbps | Cat 6/6a Copper | 100 meters (Cat 6a) |
+| **1000BASE-LX** | 1 Gbps | Fiber (Single-mode) | 5 km |
+| **10GBASE-SR** | 10 Gbps | Fiber (Multi-mode) | 300–400 meters |
+
+| **Feature** | **Half-Duplex** | **Full-Duplex** |
+| --- | --- | --- |
+| **Data Flow** | One direction at a time. | Both directions simultaneously. |
+| **Analogy** | Walkie-talkie or a one-lane bridge. | Telephone or a two-lane highway. |
+| **Collisions** | Possible (uses CSMA/CD). | **Impossible.** |
+| **Efficiency** | Lower (waiting for the line to be clear). | 100% (No waiting). |
+| **Hardware** | Hubs. | Switches. |
+
+ 
+
+# NETWORK DEVICES
+
+---
+
+**HUBS**: known as a multi-port repeater is is layer 1 device that connects multiple network device and workstation. hubs are dump devices that only repeat it was told. we have passive, active and smart hubs. passive hubs juts repeat data active hubs booster the data and smart hubs give you remote configuration or control 
+
+**BRIDGE**: Analzes source MAC address and make intelligent forwarding decisions based on the destination MAC in the frame 
+
+**SWITCH**: known as a multi-port bridge, it is layer 2 device that connects multiple network segments together 
+
+**ROUTER**: layer 3 device that connects multiple networks and makes forwarding decision based on logical network information 
+
+# **IPV4**
+
+---
+
+| Mask | CIDR | Block |
+| --- | --- | --- |
+| 255.255.255.0 | /24 | 1 |
+| 255.255.254.0 | /23 | 2 |
+| 255.255.252.0 | /22 | 4 |
+| 255.255.248.0 | /21 | 8 |
+| 255.255.240.0 | /20 | 16 |
+| 255.255.224.0 | /19 | 32 |
+
+a **multicast address** is a special IP address used for **one-to-many communication**—sending data from one source to multiple specific recipients simultaneously, without bothering everyone else on the network.
+
+**IPv4 Multicast Range (Class D):**
+
+- **Unicast**: One-to-one (like a phone call)
+- **Broadcast**: One-to-all (like shouting in a room, blocked by routers)
+- **Multicast**: One-to-group (like a conference call with specific participants)
