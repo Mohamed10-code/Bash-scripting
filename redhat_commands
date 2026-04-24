@@ -27,6 +27,26 @@ nmcli connection down enp0s3 $$ nmcli connection up enp0s3
 ip address show enp0s3
 #This command to assign your Machine static IP 
 #
+
+#Network Files and basic commands 
+files 
+/etc/sysconfig/network-scripts 
+/etc/hosts
+/etc/hostname
+/etc/resolv.conf 
+/etc/nsswitch.conf
+
+commands
+ping 
+ip a  
+ifup or ifdown 
+tcpdump 
+traceroute 
+dig 
+
+
+
+
 #NMTUI: this command will you configure your ip and hostname as GUI 
 #SSH file to edit
 sudo vim /ect/ssh/sshd_conf #This where you can edit all of ssh login and security hardening 
