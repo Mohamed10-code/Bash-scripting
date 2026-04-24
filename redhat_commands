@@ -43,6 +43,7 @@ ifup or ifdown
 tcpdump 
 traceroute 
 dig 
+ethtool
 
 
 
