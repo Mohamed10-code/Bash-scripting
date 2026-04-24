@@ -10,11 +10,11 @@ git push -u origin main
 
 ## 🔐 1. Generate SSH Key (if not already)
 
-```bash
+#bash
 ssh-keygen -t ed25519 -C "your_email@example.com"
 ```
 
-Files created:
+#Files created:
 
 * `~/.ssh/id_ed25519` → **Private key (KEEP SECRET)**
 * `~/.ssh/id_ed25519.pub` → **Public key (SHARE THIS)**
@@ -23,7 +23,7 @@ Files created:
 
 ## 📤 2. Add Key to GitHub
 
-```bash
+#bash
 cat ~/.ssh/id_ed25519.pub
 ```
 
