@@ -93,11 +93,13 @@ bye --- for exit
 #SCP >>secure copy protocol 
 scp filename moha@192.122.122.122:/home/moha
 it will ask you the password of the moha(note moha is the name of  the server means you are sending file to moha)
+
+
 #Tar the file 
 tar cvf backup.tar .  (. means the current file or home)
+tar xvf backup.tar  (this command will untar)
 
-
-#rsync command 
+#rsync comiand 
 rsync -azvh /tmp/backups/ mohamed@192.16.1.1:/tmp/backups/ ----
 #--------------------------------------------------------- 
  (rsync -azvh is the command)(/tmp/backup is the file i was sending to the 
