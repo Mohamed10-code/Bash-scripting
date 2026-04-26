@@ -77,6 +77,12 @@ ascii_upload_enable=YES
 ascii_download_enable=YES
 # Add at the end of the line 
 use_localtimes=yes
+
+#enable the services 
+
+sudo systemctl start vsftpd
+sudo systemctl enable vsftpd
+
 # ON THE CLIENT SIDE 
 Become root 
 install ftp 
@@ -205,6 +211,22 @@ conf file = /etc/chronyd.conf
 log file = /var/log/chrony 
 
 
+#compress file 
+you can use this command to compress files and compress
+
+tar cvf backup .   (c= create v= verbose f= files  . means current directory)
+this command will tar the current directory 
+tar xvf backup.tar (x= extract ) 
+this command will uncompress the file 
+
+#gzip gunzip and zcat 
+The  gzip command reduces the size of the named files using Lempel-Ziv coding 
+gunzip will redo gzip file and 
+zcat will cat that file withiout gunzip it 
+
+gzip -d filename... is the command that you will 
+Compressed  files  can  be restored to their original
+form using gzip -d or gunzip 
 
 
 
