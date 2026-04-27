@@ -454,6 +454,9 @@ Command
 Description
 systemctl status sshd
 Check service status
+
+#firewall 
+
 systemctl start firewalld
 Start a service
 systemctl stop firewalld
