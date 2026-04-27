@@ -230,4 +230,67 @@ form using gzip -d or gunzip
 
 
 
+# Linux filesystem 
+
+1 /boot 
+this contains the files needed to start (boot) Linux 
+
+2 /etc 
+This contains configurations files (like ssh,network,services config,)
+
+3 /var 
+var means varible data (this folder contains log,cache, mail, databases)
+
+4 /home 
+store user personal files 
+
+5 /root 
+This is the home directory of the root user (administrator)
+
+6 /usr 
+This contains most installed programs and system files
+
+7 /bin 
+essential system commands nereded for vooting and repair 
+
+8 /sbin 
+system administration commands (like reboot fsck)
+
+9 /tmp 
+Tempopary files, programs store short-term files there
+
+10 /dev 
+special devices files, in linux devices are treated like files 
+
+11 /proc 
+virtual filesystem that show system and process information  
+
+12 /mn and media 
+used for mounted drives (like USB drives and extra disks)
+
+
+
+Easy memory trick
+
+Here’s a simple way to remember:
+
+/boot → startup files
+/etc → settings
+/var → changing data / logs
+/home → your files
+/usr → programs
+/tmp → temporary
+/dev → devices
+/proc → system info
+
+
+
+
+
+
+
+
+
+
+
 
