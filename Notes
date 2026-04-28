@@ -284,7 +284,11 @@ Here’s a simple way to remember:
 /proc → system info
 
 
-
+#Claude Ai  setup 
+first download openvpn then go to vpnbook.com and  dowload nearest server to you 
+cd into the vpnbook server you hace dowloaded and use this command to run vpn 
+--sudo openvpn vpnbook-uk68-tcp443.ovpn then it will ask you username and password
+you can the username and the password from vpnbook.com website 
 
 
 
