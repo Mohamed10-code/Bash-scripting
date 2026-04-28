@@ -1,0 +1,16 @@
+#!/bin/bash 
+
+read -r -p "do you wanna update your arch  (y/n):  " user_input 
+
+
+if [[ "$user_input"  == "y" ]]
+then
+      echo "updating the system"
+      yay -Syu -y 
+else
+    echo "No Thanks"
+    exit 0 
+fi 
+ 
+clear 
+fastfetch 

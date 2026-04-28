@@ -1,0 +1,14 @@
+#!/bin/bash 
+
+read -r -p "what is your name:  " name 
+
+echo "$name"
+
+if [[ "$name" == "farah"  ]]
+then 
+    echo "you are right"
+else
+      echo "try again"
+      exit 
+fi
+    

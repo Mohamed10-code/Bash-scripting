@@ -421,3 +421,6 @@ a **multicast address** is a special IP address used for **one-to-many communica
 - **Unicast**: One-to-one (like a phone call)
 - **Broadcast**: One-to-all (like shouting in a room, blocked by routers)
 - **Multicast**: One-to-group (like a conference call with specific participants)
+
+
+
