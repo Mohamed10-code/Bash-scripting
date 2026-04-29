@@ -278,7 +278,7 @@ Here’s a simple way to remember:
 /etc → settings
 /var → changing data / logs
 /home → your files
-/usr → programs
+usr → programs
 /tmp → temporary
 /dev → devices
 /proc → system info
