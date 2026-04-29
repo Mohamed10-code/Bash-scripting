@@ -10,15 +10,32 @@ September 16, 2025
 │  │  └────── Day of month (1–31)
 │  └──────── Hour (0–23)
 └────────── Minute (0–59)
-Linux sees everything as a file: regular files, directories, devices, and more.
+Linux sees  everything as a file: regular files, directories, devices, and more.
+
 🗂️ Access Control Lists (ACLs)
+
 ACLs provide more fine‑grained permissions than the traditional rwx model and let you grant specific users or groups access to files or directories.
-View ACLs: getfacl <path>
-Add or change a user entry: setfacl -m u:<user>:<perm> <path>
+--View ACLs: getfacl <path>
+
+#Add or change a user entry: 
+
+setfacl -m u:moha:rwx filename
+
 Example: setfacl -m u:alice:rw test.txt
-Add or change a group entry: setfacl -m g:<group>:<perm> <path>
-Remove a user entry: setfacl -x u:<user> <path>
-Remove all ACLs: setfacl -b <path>
+
+#Add or change a group entry:
+
+setfacl -m g:moha:rwx filename
+
+#Remove a user entry:
+
+setfacl -x u:moha filename
+
+#Remove all ACLs:
+
+setfacl -b filename
+
+
 🔁 Redirection and Pipes
 📘 Linux Redirection Cheat Sheet
 Stream
