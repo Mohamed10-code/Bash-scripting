@@ -17,92 +17,44 @@ Linux sees  everything as a file: regular files, directories, devices, and more.
 ACLs provide more fine‑grained permissions than the traditional rwx model and let you grant specific users or groups access to files or directories.
 --View ACLs: getfacl <path>
 
-#Add or change a user entry: 
+        Add or change a user entry: 
 
 setfacl -m u:moha:rwx filename
 
 Example: setfacl -m u:alice:rw test.txt
 
-#Add or change a group entry:
+             Add or change a group entry:
 
 setfacl -m g:moha:rwx filename
 
-#Remove a user entry:
+             Remove a user entry:
 
 setfacl -x u:moha filename
 
-#Remove all ACLs:
+             Remove all ACLs:
 
 setfacl -b filename
 
 
-🔁 Redirection and Pipes
-📘 Linux Redirection Cheat Sheet
-Stream
-Number
-Operator
-Meaning
-Example
-stdout (standard output)
-1
->
-Redirect output (overwrite file)
-ls > files.txt
-stdout
-1
->>
-Redirect output (append to file)
-echo "hi" >> log.txt
-stdin (standard input)
-0
-<
-Take input from file
-wc -l < file.txt
-stderr (standard error)
-2
-2>
-Redirect errors (overwrite file)
-ls /fakepath 2> errors.txt
-stderr
-2
-2>>
-Redirect errors (append to file)
-ls /fakepath 2>> errors.txt
-stdout + stderr
-1+2
-&>
-Redirect both to one file (overwrite)
-command &> all.txt
-stdout + stderr
-1+2
->> file 2>&1
-Redirect both (append)
-command >> all.txt 2>&1
-Quick memory tricks:
-> sends output
-< takes input
-2> captures errors
-&> captures everything
-Practice ideas:
-pwd > findpath && cat findpath
-echo "this is what I found" >> findpath
-Redirect errors: ls -l /root 2> errorfile
-Combine with pipes: ls -l | tail -1
-Paginate: ls -l | more
-Count files: ls | wc -l
-🔍 Text Processing Essentials
-cut
 Characters: cut -c1-3 filename
+
 Ranges: cut -c1-4,6-8 filename
+
 Fields with delimiter: cut -d: -f6 /etc/passwd
+
 Shells on system: cut -d: -f7 /etc/passwd | sort -u
-🔹 Hard Link
+
+                  🔹 Hard Link
+
 A hard link is a mirror of the original file — both share the same data on disk.
-If you delete one, the other still works.
-🧩 Example:
-✅ This creates a hard link called file2.txt that points to file1.txt.
-​
-#awk
+
+command -- ln yare /home/moha/koko
+command -- ln -s yare /home/moha/koko   << this create softlink 
+
+If This creates a hard link called file2.txt that points to file1.txt.
+                         
+
+                         AWK 
 First field: awk '{print $1}'
 
 Custom separator: awk -F: '{print $1}' /etc/passwd
@@ -168,7 +120,7 @@ Characters
 
 wc -m file.txt
 
-#🧭 Finding Files and Handling Errors
+                                🧭 Finding Files and Handling Errors
 
 Find by name:
 find . -name "kramer"
@@ -181,7 +133,7 @@ Append while mirroring:
 
 df -h | tee -a system-repo
 
-#🪄 Wildcards
+                    🪄   Wildcards
 
 Create many files:
 
@@ -313,7 +265,7 @@ when you are in vim and want to replace words you can :%s/kramer/moha/g (this wi
 
 #user account management
 
-#USER ACCOUNT MANAGEMENT
+    USER ACCOUNT MANAGEMENT
 USERADD
 
 GROUPADD
@@ -324,7 +276,7 @@ GROUPDELL
 
 USERMOD
 
-#files that uses live in 
+    FILE  THAT  USER  LIVE IN  
 /etc/passwd
 /etc/group
 /etc/shadow
@@ -366,7 +318,7 @@ usermod -G superhores yare (means we are adding superheros group to yare user)
 chgrp -R superhores yare (superhores will be the main group for user yare
 
 
-#This will create dalka user and give him home dir and /bin/bash login 
+>> This will create dalka user and give him home dir and /bin/bash login 
 
 useradd -g superheros -s /bin/bash -c "dalka user" -m  /home/dalka dalka
 useradd -s /bin/bash -c "user description" -m  /home/farah farah 
@@ -410,9 +362,9 @@ password aging(very important)
 
 command chage 
 
-chage -l username     # show password aging info
+chage -l username     >> show password aging info
 
-chage username        # edit it
+chage username        >> edit it
 
 chage -m 2 -M 30 -W 5  -I 5  
 
@@ -430,24 +382,24 @@ grep wheel /etc/group (you can see who has sudo privilege )
 
 monitor user 
 
-who   #it print about user who currently logged in 
+who   >>  It print about user who currently logged in 
 
 
 
 
-w   # W is linux command  
+w   >> W is linux command  
 
 Active users + what they’re doing
 
 /var/run/utmp, /proc
 
-who  #show who logged in 
+who  >> show who logged in 
 
 Active users only
 
-/var/run/utmp #This file contains user data
+/var/run/utmp   >> This file contains user data
 
-last #last and lastb --show a listing of last logged in user 
+last     >> last and lastb --show a listing of last logged in user 
 
 Login history (past logins)
 
@@ -457,48 +409,47 @@ talking to users
 
 users 
 
-wall #wall broadcast message to all users but if you are only root otherwise its hard because some user can turn they mesg no and you can not  broadcast if you are not root 
+wall -- wall broadcast message to all users but if you are only root otherwise its hard because some user can turn they mesg no and you can not  broadcast if you are not root 
 
 write maryan (means you will write message to maryan only ) note if only maryan’s mesg is y 
 
 Special Permissions:
 setuid, setgid, sticky bit
 
-chmod u+s file      # setuid
-chmod g+s dir       # setgid
-chmod +t dir        # sticky bit
+chmod u+s file      -- setuid
+chmod g+s dir        -- setgid
+chmod +t dir         -- sticky bit
 
-#This is numeric permissions
-chmod 4755 file     # setuid (4)
-chmod 2755 dir      # setgid (2)
-chmod 1755 dir      # sticky (1)
-
-
+      This is numeric permissions
+chmod 4755 file     -- setuid (4)
+chmod 2755 dir       -- setgid (2)
+chmod 1755 dir       -- sticky (1)
 
 
 
 
-# To  find all executable in linux with setuid setgid permission 
+
+
+   To  find all executable in linux with setuid setgid permission 
 
 find / -perm  /6000 -type f
-fd    #finf entries in the filesystem (actually fd is very useful) 
+fd    -- finf entries in the filesystem (actually fd is very useful) 
 
-# System utility command 
+                          System utility command 
 
+cal    -- Calendar 
 
-cal  #Calendar 
+uname -r  --  print system information
 
-uname -r  # print system information
+date   -- print or set the system date and time 
 
-date   #print or set the system date and time 
+uptime -- Tt will show you how long is the system up for or running
 
-uptime # Tt will show you how long is the system up for or running
+hostname   -- it will show you the system host name mine is parrot 
 
-hostname # it will show you the system host name mine is parrot 
+which      --where is command find or file or command for example locate file is /usr/bin/locate
 
-which # where is command find or file or command for example locate file is /usr/bin/locate
-
-bc    #Basics calculator 
+bc   --Basics calculator 
 
 systemctl
 
@@ -511,7 +462,7 @@ and check status of systemd services.
 
 systemctl status sshd
 
-#firewall 
+                          FIREWALL  
 
 systemctl start firewalld
 
