@@ -165,7 +165,7 @@ w
 you can run man command on all this command 
 
 
-# top process 
+ top process 
 PID - process ID 
 USER - the owner of the process
 PR - process priority 
@@ -180,8 +180,8 @@ TIME - total cpu time used by the task in hundredths of second
 command - the command name or command line (name + options)
 
 
-# This command will help you find which file is using more space 
-#
+   This command will help you find which file is using more space 
+
 du -k / |sort -nr |more 
 
 du -- is disk usage 
@@ -189,7 +189,7 @@ du -- is disk usage
 sort -nr -- n means number and r means reverse 
 
 
-#troubleshooting disk full  
+                  ☣️Troubleshooting disk full  
 you can run this command df -hP and it will show you how much used disk space in percentage 
 then you can run this command du -k / |sort -nr |more this command will show which file
 is using more disk then you delete that file to free up some spaces in your server or 
@@ -204,22 +204,23 @@ across the entire filesystem.
 
 
 
-#Chronyd =time synchronization 
+                              Chronyd =time synchronization 
 
 package name = Chronyd
 conf file = /etc/chronyd.conf 
 log file = /var/log/chrony 
 
 
-#compress file 
-you can use this command to compress files and compress
+                                    compress file 
 
+you can use this command to compress files and compress
 tar cvf backup .   (c= create v= verbose f= files  . means current directory)
 this command will tar the current directory 
 tar xvf backup.tar (x= extract ) 
 this command will uncompress the file 
 
-#gzip gunzip and zcat 
+                              gzip gunzip and zcat 
+
 The  gzip command reduces the size of the named files using Lempel-Ziv coding 
 gunzip will redo gzip file and 
 zcat will cat that file withiout gunzip it 
@@ -230,7 +231,7 @@ form using gzip -d or gunzip
 
 
 
-# Linux filesystem 
+                                            Linux filesystem 
 
 1 /boot 
 this contains the files needed to start (boot) Linux 
@@ -270,7 +271,7 @@ used for mounted drives (like USB drives and extra disks)
 
 
 
-Easy memory trick
+            Easy memory trick
 
 Here’s a simple way to remember:
 
@@ -284,11 +285,39 @@ usr → programs
 /proc → system info
 
 
-#Claude Ai  setup 
-first download openvpn then go to vpnbook.com and  dowload nearest server to you 
-cd into the vpnbook server you hace dowloaded and use this command to run vpn 
---sudo openvpn vpnbook-uk68-tcp443.ovpn then it will ask you username and password
-you can the username and the password from vpnbook.com website 
+
+
+
+
+
+Linux Boot Process
+
+1 BIOS = basic input/output system (firmware interface)
+    POST = power-on self-test started
+
+         ⬇️ 
+
+2 MBR =master Boot record 
+    information saved in first sector of a hard disk that indicate where the GRUB2 is located so it can be loaded in the computer RAM 
+
+         ⬇️
+
+3 GRUB2- grand unified boot loader v2 
+  loads linux learned 
+    /boot/grub2/grub.cfg 
+
+          ⬇️
+
+4 kerner -is core of operating system
+    loads required drives from initrd.img 
+    start the first OS process(systemd)
+          
+          ⬇️
+
+5 systemd -system Daemon (PID 1)
+    it then starts all the required process 
+      read /etc/system/default.taget to bring the system to the run-level 
+        total of 7 run-level(0 throght  6)
 
 
 
@@ -297,4 +326,20 @@ you can the username and the password from vpnbook.com website
 
 
 
+simple version of linux boot process
 
+Power On
+   ↓
+BIOS/UEFI (firmware check)
+   ↓
+GRUB (shows boot menu, ~2-5 seconds)
+   ↓
+Kernel loads & decompresses (~1-2 seconds)
+   ↓
+Kernel init (mount filesystems, detect hardware)
+   ↓
+systemd starts (runlevel/target selection)
+   ↓
+Services launch (SSH, database, web server, etc.)
+   ↓
+Login prompt appears (5-15 seconds total from power-on)
