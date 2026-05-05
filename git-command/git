@@ -6,7 +6,19 @@ git rm README.md
 git commit -m "Remove README"
 git push -u origin main
 
+wheb=n you lost some files in the git directory you can restore by this command 
+git reflog 
+then look for file id and copy the id 
+git reset --hard past-id 
+
+
+
+
+
+
+
 # GitHub SSH Setup & Troubleshooting Guide
+
 
 ## 🔐 1. Generate SSH Key (if not already)
 
