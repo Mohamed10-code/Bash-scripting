@@ -343,3 +343,24 @@ systemd starts (runlevel/target selection)
 Services launch (SSH, database, web server, etc.)
    ↓
 Login prompt appears (5-15 seconds total from power-on)
+
+
+
+linux run-level 
+
+/runlevel0.target -> poweroff.target
+            ⬇️
+/runlevel1.target -> rescue.target
+            ⬇️
+/runlevel2.target -> multi-user.target
+            ⬇️
+/runlevel3.target -> multi-user.target
+            ⬇️
+/runlevel4.target -> multi-user.target
+            ⬇️
+/runlevel5.target -> graphical.target
+            ⬇️
+/runlevel6.target -> reboot.target
+
+
+
