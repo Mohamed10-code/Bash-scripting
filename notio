@@ -656,143 +656,253 @@ Kill a process
 u
 Filter by user
 1
+
 Show each CPU core
+
 Examples:
-​
+
 When to use it:
+
 Monitor system performance
+
 Find processes using too much CPU or memory
+
 Check system load
- ,dmesg, du ,netstat, free, iostat (iostat (input output statistic))
+
+,dmesg, du ,netstat, free, iostat (iostat (input output statistic))
+
 sudo du -sh /home (it will show how much disk it is using)
+
 sudo du -sh /home/malyun (it will show for malyun)
+
 du -sh .(Check total disk usage in current directory)
+
 ssh
+
 Excellent — the ss command is one of the most powerful network troubleshooting tools in Linux 🔥​
+
 It stands for Socket Statistics and is used to display information about network connections, similar to netstat, but faster and more modern.
+
 Show more details including process info
+
 ss -t -p
+
 Show all connections (TCP , UDP , UNIX sockets)
+
 ss -a
+
 ss -t
+
 Show listening ports
+
 ss -t -l
+
 Show both listening and established connections
 ss -tuln
+
 Absolutely ✅ — here’s a clean, concise note version of the top command, perfect for adding to your Notion study page:
+
 🧠 Linux Command: top
+
 Purpose:
+
 Displays real-time system performance — CPU, memory, and process usage.
+
 📜 Syntax:
-​
+
 💡 Key Info Displayed:
+
 Uptime and system load (top line)
+
 Tasks: number of total, running, sleeping processes
+
 CPU usage: user, system, idle, I/O wait
+
 Memory usage: total, used, free, buffers
+
 Process list: PID, user, CPU%, MEM%, time, command
+
 ⚙️ Common Shortcuts (While top Is Running):
 Key
 Action
 q
-Quit top
-h
-Help menu
-P
-Sort by CPU usage
-M
-Sort by memory usage
-k
-Kill a process (enter PID)
-r
-Renice a process (change priority)
-1
-Show CPU usage per core
-u
+Quit top h
+Help menu >>P
+
+Sort by CPU usage >>M
+
+Sort by memory usage >>k
+
+Kill a process (enter PID) >> r 
+
+Renice a process (change priority) >> 1 
+
+
+Show CPU usage per core >> u
+
 Filter by user
+
 Shift + E
+
 Toggle memory unit (KB/MB/GB)
-🧰 Examples:
-​
+
 📈 Use Case:
+
+
 Monitor CPU/memory usage
+
 Identify heavy processes
+
 Check system load and uptime
+
 ✅ Summary:
+
 top = Real-time process monitor for CPU, memory, and system resource usage.
+
 Think of it as Linux’s “Task Manager” in the terminal.
+
 Would you like me to make a similar Notion-style summary for htop next (the improved, colorful version of top)?
+
 system log monitor
+
 go to cd /var/log then look for boot.log with sudo cat if its says ok for all its means 
+
 the system is ok at boot if it says failed means there’s problem at boot 
+
 1. boot
+
 2. chronyd
+
 3. cron
+
 4. maillog
+
 5. secure (tail -f secure you will monitor verything live, how logged in where they logged from )
+
 6. messages
+
 7. httpd
+
 go to /var/log then 
+
 tail -f secure  you will see who logged in where they logged in from
- df -h (disk free -h human readable )
+
+df -h (disk free -h human readable )
+
 free ( displays the total amount of free and used physical and swap memory in the
-           system,)
+
+system,)
+
 who -b (will show you when system is booted)
+
 last | awk ‘{print $1}’ |sort -u (this will show you how many people are available on your system
+
 nice 
+
 free 
+
 uname 
+
 hostname 
+
 system maintenance command 
+
 shutdown 
+
 init 0-6
+
 reboot 
+
 halt 
+
 changing system hostname 
+
 hostnamectl set-hostname (put your new hostname here)
+
 then run hostname command 
+
 then sudo reboot 
+
 or 
+
 go to /etc then find hostname 
+
 vim hostname and edit from there 
+
 finding system information 
+
 uname, dmidecode 
+
 cat /etc/redhat-release
+
 become root and run this command dmidecode (it will show you everything about your machine )
+
 What is system architecture in Linux?
+
 “System architecture” means how your computer’s CPU and operating system are built to process data and run instructions.
+
 It tells you how many bits (binary digits) the CPU can handle at once.
+
 to find out if your system is 32bt or 64bt 
+
 run this command (arch or uname -m )
-                   SOS REPORT 
+
+SOS REPORT 
+
 🧰 What is sosreport?
+
 sosreport is a diagnostic command used to collect system configuration and troubleshooting information into one report.
+
 It helps support engineers or admins quickly analyze a system’s state when there’s a problem.
                       script 
 🧰 What script does
+
 The script command records everything you type and see in a terminal session — like a screen recorder for text.
+
 It saves all your terminal input and output into a text file (by default, called typescript).
+
 script  file.log
+
 everything will be saved here 
+
 🧠 Common uses
+
 Keeping a record of troubleshooting steps
+
 Creating training or audit logs
+
 Sending command history to support teams
+
 Saving output of interactive commands
-RECOVER ROOT PASSWORD
+
+                                RECOVER ROOT PASSWORD
+
 Restart your computer, edit grup, change the password , reboot 
+
 ✅ Quick summary:
+
 Edit GRUB → add rd.break
+
 Mount system → mount -o remount,rw /sysroot
+
 Enter system → chroot /sysroot
+
 Reset password → passwd root
+
 Fix SELinux → touch /.autorelabel
+
 Exit and reboot
+
 shred -z -u filename “this will overwrite the file and delete it. it is the best way to delete a file ”
+
 when you want to change system date 
+
 sudo date -s "22 Aug 1998 13:00:00"
+
 after change you can set back your original time 
+
 sudo timedatectl set-time "current-date, current-time"
+
 
 
 
