@@ -362,5 +362,8 @@ linux run-level
             ⬇️
 /runlevel6.target -> reboot.target
 
+To check the current target or run-level
+   >>systemctl get-default 
+   >>who -r 
 
 
