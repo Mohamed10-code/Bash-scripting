@@ -877,7 +877,10 @@ Saving output of interactive commands
 
                                 RECOVER ROOT PASSWORD
 
-Restart your computer, edit grup, change the password , reboot 
+Restart your computer, 
+edit grup,                                                     
+change the password
+ reboot 
 
 ✅ Quick summary:
 
@@ -888,6 +891,19 @@ Mount system → mount -o remount,rw /sysroot
 Enter system → chroot /sysroot
 
 Reset password → passwd root
+
+commands to reset root passwd
+1-- rw init=/sysroot/bin/sh 
+2-- ctr x    (to exit interactive)
+3-- chroot /sysroot 
+4-- passwd root 
+5-- exit 
+6-- reboot 
+
+
+
+
+
 
 Fix SELinux → touch /.autorelabel
 
