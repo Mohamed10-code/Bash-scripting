@@ -1,9 +1,9 @@
-# ps command 
+ ps command 
 ps -u root: will show you all the process rin by the root 
 ps -ef: to see every running process on the system
 nice -n sleep 100: you will give sleep high process value 
 recover root password: restart your computer then edit the grup change the password then reboot 
---sudo dnf install vim -y &>/dev/null && echo successfull # if the vim is successfully downloaded it will print successfull on the screen dev/null is black hole for linux mean whatever you direct there will be lost 
+--sudo dnf install vim -y &>/dev/null && echo successfull >>> if the vim is successfully downloaded it will print successfull on the screen dev/null is black hole for linux mean whatever you direct there will be lost 
 --nmcli is network manager command line interfer it shows which network is connected to the your machine  
 -- lscup |grep -i '^cpu(s)' will show you have many cpu you have
 --(man strftime) --command it view option of format date and time.. try it very nice and helpfull
@@ -25,10 +25,10 @@ nmcli connection modify enp0s3 ipv4.method manual
 nmcli connection modify enp0s3 ipv4.dns 8.8.8.8
 nmcli connection down enp0s3 $$ nmcli connection up enp0s3
 ip address show enp0s3
-#This command to assign your Machine static IP 
-#
+This command to assign your Machine static IP 
 
-#Network Files and basic commands 
+
+Network Files and basic commands 
 files 
 /etc/sysconfig/network-scripts 
 /etc/hosts
@@ -48,11 +48,15 @@ ethtool
 
 
 
-#NMTUI: this command will you configure your ip and hostname as GUI 
-#SSH file to edit
+NMTUI: this command will you configure your ip and hostname as GUI 
+
+SSH file to edit
+
 sudo vim /ect/ssh/sshd_conf #This where you can edit all of ssh login and security hardening 
 
-#How does ssh-key works 
+
+How does ssh-key works 
+
 --if you want to login to your sever withiout password 
 you can generate ssh-key on your machine 
 [command for generating the ssh-key is ssh-keygen ]
@@ -63,7 +67,8 @@ by ssh-copy-id moha@192.168.
 
 
 
-#FTP - FILE TRANSFER PROTOCOL CONFIGRE ON THE SERVER 
+FTP - FILE TRANSFER PROTOCOL CONFIGRE ON THE SERVER 
+
 --installing and configure FTP on the remove server 
 
 -become root 
