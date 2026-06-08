@@ -7,7 +7,7 @@ echo "press 2 to decline the update: "
 read choice 
 
 case $choice in 
-	1) sudo dnf update -y;;
+	1) sudo pacman -Syu ;;
 	2) echo "NO";;
 	*) echo "idk";;
 esac

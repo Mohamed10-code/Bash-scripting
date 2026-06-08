@@ -1,0 +1,332 @@
+                                         🎒This file will contain what i have learned today 
+
+today i have learned how to create user and add to group 
+i can also create the policy group and add to existing 
+users 
+i have leaned about cloudtrail which will help you to collect activist across your account and store in aws s3 
+the service itself is free but you may pay for s3 and other related services 
+
+what i have learned today
+IAM credential report:
+      it report your users information when they have logged in who is using correct password.
+      and many more and it will give you the report as excel or libreoffice and this report
+      is account level 
+
+IAM Access advisory
+This one is user level when was permission grand and when they last used and many more 
+you can find this permission on IAM-Users and last accessed section 
+
+both of this tools we use it for security purpose on aws clouds 
+
+if you wanna allow IAM users to look at billing information you can go to root account and press account then IAM user and role access to Billing information
+  press allow after all the user can see the billing information. but this is not good practice 
+
+
+  learn more about billing. how to set billing
+
+aws instances pricing models 
+on-demand: you pay as you are using it like old internet coffes (this is one of expensive one)
+spot: aws may have unused servers they will rent it to you and when they need it they can suddely 
+    take from you they give you 2 minutes notices only 
+reserved: long commitment you rent servers from aws for maybe 3 years 
+
+firewall around ec2 in aws 
+you can allow any ip to connect to your ec2 
+or you can deny ip address to connect to your machine 
+this helps to secure your ec2 instances because you don't 
+wants anybody to brute-force your instances
+
+                                    IAM-role-for-instances
+you can create and attach IAM role to instances 
+that does this mean if you created instances and did not attach the IAM-Roles and you login to that instances and you use aws iam list-users the command 
+will not show you anything because it does not have IAM-Roles attached to it 
+when you type this command it the instances with IAM-Roles it will tell you. credential not found means the instances have not permission to perform this command.
+the command is (aws iam list-users)
+
+i really like how IAM rules work i should learn more about iam roles for instances 
+
+
+Think of an AWS EC2 instance like a house.
+
+Security Group = the security guard / firewall at the door
+IAM Role = the ID badge / permissions the house has to access AWS services
+
+They solve completely different problems.
+
+
+                 i have finish ec2 section 
+but ec2 or instances is the most pupolar or important services that aws offer 
+and you need to learn more about it and do hand on it 
+fact about ec2 instances. ec2 is overall services that aws offer 
+while instances is the servers. 
+  when you launch instances you can attach role to it that can allow instance to perform action on behalf 
+  of you. you can attachs role that allow instances to read-only roles that will make the instances to read-only 
+  for you to find out the instances has iam roles you can use cli or the management console 
+    the cli is (aws iam list-users this command will help you list all the users in your account)
+when you are buy the servers their some option mostly three which allows you to rent instances flixable 
+there on-demand,spot,reserved, there three is different when you buying the most expensive is the on-demand one 
+and the least expensive is spot one because they rent you the idle servers but they can take away time. they will 
+only give you 2 minutes notices. this kind of instances is not good for critical apps and database. on-demand is the best 
+for expriement because there no commitment to the instances you start now and you destroy in a minutes which ideal for testing 
+the spot one is good for budgetting and you can get for very cheap prices.
+instances has types which makes them ideal for machine learning to small instances you can choose the type you want. the ram,cpu and storage 
+but they are more expensive then  each other when you choosing the instances makes you. you go for the best for you scanario but for the most time 
+go for general purpose.   
+
+
+
+                                                        IAM
+identity access management: is the services that allows you to create user and assign them roles what they can do on your account.
+iam is not only for users it can be used for instances to you create roles and assign to your servers which will perform the action 
+on your behalf. iam is allows you to create and manager users and give them permissions.
+it not good idea to use root account for everyday task instead of that create user and give him administrator permissions.
+aws has lot of iam roles which ready to use but if you want you can create your own and customise it according to your needs
+and what you have to know iam is free services. of the best features is that iam help you set MFA to users can. you can also
+impose user to use strong password mean you can administrator the account. like what you have learned on linux course 
+IAM is much bigger than this you have play around it. put it in your toolbox 
+
+
+
+about ebs you can not create ebs and attach to instances that is not on the same region with the ebs 
+means if the instances is us-east-1a and your ebs is us-west-1b  you can not attach it. they need to be in the same region
+
+i have learned about ebs (which stands for elastic block store) it is network store that you can create and attach to your running 
+instances. ebs and the instances has to be in the same availability zones. if not on the same availability zones you can attach to it 
+and you can only attach one ebs storage to one instances.
+
+
+what i have learned about security group:
+first all it like firewall in linux but it lives outside of your instances.if you do not attach correct
+security group you can't even ssh into your machine. everytime when you are creating don't create 
+new security group. create one nice and best that can fix your instances and always attach that one 
+
+                                             Recycle Bin 
+aws has Recycle bin as the name indicate. it  Recycle what you have delete it 
+but when you are creating you need to specify how many day that the bin has to hold the resources 
+that you have delete it. and when creating the bin select retain all the resources and for the resources
+type specify ebs snapshot and give it name so that you can defferntial from the other Recycle bin if you have it one 
+when you create the snapshot you can even achive the resources so that you reduce the cost of the resources bing hold 
+
+            how to create Recycle bin 
+first create volume then snapshot of that volume then create Recycle bin. when creating the Recycle bin make sure you configure it
+so that is work for you 
+snapshot is the best way to prevent accidental deletion. i have to add to my project but find out more about the services whether is paid 
+or free. Recycle bin itself is not paid services but what you store there is still be paid like if you have ebs storage and you delete it 
+and went to the Recycle bin you will keep paying for the storage not the bin itself. Think the recycle bin trash on window or phones. it 
+greet when you are learning aws and cloud itself. you can turn it on and whenever you delete something you can store it back 
+
+
+
+
+                              AMI 
+amazon machine image: is like dcoker image if you remember it you can create instances and customise it with all the applications you want 
+and then from that instances you can create AMI image which will be exactly like your first instances loaded with the same apps. 
+how to create AMI. first create instances and load the apps and the servers that you wants after that create AMI image from it and next when you are
+launching instances you can use that one with all the apps and services loaded to it
+
+
+
+                               EC2 instance store 
+it's physical ssd drives that are physical attach to your server which gives you better performance and good data process.
+the ec2 instance store is good for that you will replicate because when you stop or shutdown your instances you will lose the data.
+unlike ebs. ebs is network storage you can attach and detach from any instance when the instances stop you will Not lose yourd data  
+but ebs is slow and compare to ec2 instance store
+
+
+EFS (elastic file system): it's for linux for system that aws offer you the best feature is that you can attach to 100 linux servers 
+it's hightly available for storage and nice. ebs only attach to one server at a time. but efs can attach to many and it available 
+in multi-az
+
+
+                          exam may ask you 
+        scalabilty vs elasticity (vs agility)
+scalabilty: ability to accommodate a large load by making the hardware stronger (scale up), or by adding nodes (scale out)
+
+elasticity: once a systen is scalable, elasticity means that there will be some "auto-scaling" so that the system can scale based on the load. This is 'cloud-friendly':
+pay-per-use match demand, optimize costs 
+
+agility:(not related to scalability - distractor) new IT resources are only one click away which means that yiu reduce the time to make those resources
+available to your developers from week to just minutes 
+
+
+4 kinds of load balancers offered by AWS:
+applications load balancer (HTTP/HTTPS only) - layer 
+Network load balancer (ultra-high performance,allow for TCP) -layer 
+Gateway load balancer -layer -3
+classic load balancer (retired in 2023) - layer 4 & 7
+
+applications load balancer: is used for HTTP HTTPS and static DNS (URL)
+network load balancer: tcp/udp static IP through Elastic IP
+Gateway load balancer: route traffic to firewall that you manage on ec2 instances 
+intrusion detection 
+
+
+              i have just built load balancer
+first create two instances and download httpd and enalbe the httpd you can do that by placing bash script into user data when you are creating instances
+after proceed to load balancer when you are creating read all the requirement and create the load balancer. after that you can target groups in this context 
+means the instances. afer that you can attach to load balancer and wait for it untill it becomes active after it will give the url copy that and to web and test 
+by refreshing it. if it does not work it is  most properly the security groups check that Whether it has proper security groups and note security groups are like
+firewalls. load balancer is what enable us to distribute the traffic and the load balancer are three types. which is application load balancer, network load balancer
+and gateway load balancers  
+
+
+                                          i have just launch auto scaling groups
+auto scaling is the way you scale your instances automatically without you do anything but you need to configure it well. 
+it uses load balancer and AMI instances template launch and it asks you alot of configuration which you can do it you are not 
+sure of what to pick just google and watch some video 
+auto-scaling group itself is free but you only pay for the resources that you have used and according to me load balancer and 
+auto-scaling groups is good for managing your resources and your apps 
+
+
+
+i learned to about aws policy Generator
+  :it's graphical interface of creating aws policies for json. instead of creating json configuration from scratch you can use
+  aws policy Generator:it's nice tool use it to Generate your iam roles or any json configuration
+
+
+                             amazon s3 
+amazon s3 is a aws storage service and it's backbone of the aws. it's offers storage like google drives but this one is more advances that google
+and its has Infinite cloud storage most of the website on amazon uses aws s3 and they host their website like big company netflix and bbc 
+
+how to use s3 storage when you create the Bucket give and name. when you wanna create statcic website their s3 policies or roles that you need to create 
+after creating the policy apply to S3. when you creating the policy you do not need to create the json configure from scratch use aws policy Generator.
+it's free and nice graphical use 
+
+i hosted my website on aws statcic web
+first i created created Bucket then then uploaded my code to aws s3 Bucket and give it all the permission to s3 for user to access the code or web
+after that i added Json policy for the Bucket which allows everone to access the web. if you do not add the Json policy you can not access the web
+and the url will just show 4004 error 
+
+versionioning works as like me say as git but it's amazon native tool  
+how are you gonna use the version 
+first enable versioning and go to your code in your local machine and edit the code or add code after that come to aws console 
+and upload the same file that you edited to the aws s3 and refresh your website you will see the new code and version of your file 
+to rull back to Previous delete the current file or version
+
+if you delete the file for example yare.css aws will keep this file as deleted marker but ill will disappear from your website
+  if you wanna get back the file you delete the "deleted marker"
+
+amazon replication: is good for when you are copy data from account to another via asynchronous. we have what we call 
+cross-region replication and same-region replication
+
+
+version Bucket and how to do it 
+  first create bucket and upload pic then create another one and come back to the first one and create replication rule and fill all the requirement
+  note when creating the bucket both of them enable versioning. when you are creating the replication rules read about the form when i say form i mean 
+  the configuration on the console 
+
+This is the types of s3 storage
+
+S3 Standard: General-purpose storage for frequently accessed data with high durability and low latency. 
+S3 Intelligent-Tiering: Automatically moves data to the most cost-effective access tier based on changing usage patterns. 
+S3 Express One Zone: High-performance, single-Availability Zone storage for latency-sensitive applications requiring single-digit millisecond access. 
+S3 Standard-Infrequent Access (S3 Standard-IA): Low-cost storage for data accessed less frequently but requiring rapid access. 
+S3 One Zone-Infrequent Access (S3 One Zone-IA): Stores infrequently accessed data in a single Availability Zone for lower costs. 
+S3 Glacier Instant Retrieval: Lowest-cost archive storage for data rarely accessed but requiring millisecond retrieval. 
+S3 Glacier Flexible Retrieval: Low-cost storage for rarely accessed archive data with retrieval times ranging from minutes to hours. 
+S3 Glacier Deep Archive: The lowest-cost storage option for long-term archival with retrieval times in hours.
+
+when you create bucket  you can choose which type you want for your files. and then you can automate the process of changing the storage types which is very handy 
+if you have  bucket and the files it's contains is standard. yuo can go to the console and automate it. by creating lifecycle rules and then give it unique name 
+  after that choose apply to all the object in the bucket and then lifecycle rule action choose transition current version of object between storage classess 
+then choose the s3 types and after how many day they have to transition to the next storage type level. This is handy when you wanna use aws s3 and reduces your cost 
+
+Database is something that you can download into your instances and manage it by yourself. but it can take a lot of time and resources it is better you use 
+aws database managed by aws. it's easy and they do everything for you. you just focus on your works 
+
+when you create database you can also create snapshot of your database. then you can go to that snapshot and create new database out of that database. it handy when 
+you wanna create identical database but do not wanna repeat the process. and also you can copy your database from the snapshot and launch it in another AZ. can you also 
+share your database copy with another account. in short learn more about aws it's full of features 
+
+                    read replica 
+read replica is when you have applications that server read and you have alot of customer that comes to read instead giving all the work to the main Database you can 
+create small read replica which will help you to reduces heavy work from the main database the application write and read to the main database but small one has only read 
+and also you can create upto 15 read replica
+
+                      multi-az
+is when you have main database and you create another database in another AZ. which has read and write we use the second database for failover which mean when you have problem 
+with the main database and you fall it over the backup one all of your data. and you can only have one AZ 
+so in short we use multi-az RDS for backup
+
+                        multi-region
+it's same as read replica but in the different region which we use for disaster recovery. your applications read from local DB but write to main DB in different region
+this is good for applications performance and it comes with cost
+
+
+elastiCache is database managed by aws as redis or memcached. it's fast in-memory database which uses ram(ramdon access memory) instead of ssd or disk. that what makes it 
+fast. and it can relief preasure from database or RDS
+
+
+AWS Caching is a technique that stores frequently accessed data in a high-speed, 
+temporary storage layer to reduce latency, lower costs, and improve scalability 
+by minimizing reliance on slower disk-based databases. 
+
+      dynamoDB: is nosql database that are managed by aws and its first and reliable. it's serverless services when you are using dynamoDB you only create the table 
+      the rest is handled by aws it's not relational database the table do not interlink. be carefull when creating the item in the dynamoDB. when we say it's 
+      serverless means the server is managed by aws. and dynamoDB can scale very fast from GB to TB which is huge and it's suitable for very business or apps 
+      and dynamoDB has something called dax(amazon dynamoDB accelerator) which is like caches for dynamoDB. it's help you accelerator your access to your database
+      and it's 10x faster then the normal dynamoDB
+
+      the different are RDS are used for banks hospital 
+      and dynamoDB is used for mobile apps and gaming
+
+when you hear cluster it means group of thing that works together
+
+Lambda is very cheap and it's very popular for serverless services
+Lambda price are based on calls and duration. remember this for exams
+
+batch vs Lambda
+Lambda:
+    time limit
+    limited runtimes 
+    limited temporary
+    serverless
+Batch:
+    no time limit 
+    any runtimes as long as it's packaged as docker images 
+    rely on ebs / instances store for disk spaces 
+
+         amazon lightsail 
+is services that enable  you to use aws with little no of cloud. if you can not configure and do not wanna learn aws you can use lightsail
+you can launch instances simple web applications, and also database 
+
+                   aws cloud development 
+is open source that allows you to using your familiar programming language to write aws cloudformation configure. instead of writing pure YAML or JSON 
+configuration files, you can use familiar programming language like python,c#,java,and javascripts 
+
+                  aws Beanstalk 
+
+Beanstalk is aws services that allows you to create web-server without launch anything. it will launch for you everything you need 
+including instances,elastic load balancer and many more. you only configure what you wants and everything else will handle by Beanstalk,
+Beanstalk is good for developers they will only focus on code they write the rest leave to Beanstalk
+
+aws ssm session manager is the way you can open your server session with ssh key or login through the console. first you create instances and you do not attach
+the ssh key. when you are creating the instances you go to advanced setting and create IAM-Roles for you instances when creating IAM-Roles make sure you choose 
+aws-ssm-manager-instanced-core this is the correct IAM-Roles if you wanna start ssm session manager when you complete creating the role start your instances
+and go to systen manager on home console and look for session manager. from there you select your instances and start the session. without ssh key this is nice 
+services that you should Leverage 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

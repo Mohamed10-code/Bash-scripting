@@ -371,4 +371,6 @@ To check the current target or run-level
    >>systemctl get-default 
    >>who -r 
 
-
+mkfs -t xfs /dev/nvm1n1 
+above command will help you create filesystem in linux
+this is usefull when you create aws volume and attach it running instances 
