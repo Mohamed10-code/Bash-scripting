@@ -306,6 +306,34 @@ aws-ssm-manager-instanced-core this is the correct IAM-Roles if you wanna start 
 and go to systen manager on home console and look for session manager. from there you select your instances and start the session. without ssh key this is nice 
 services that you should Leverage 
 
+                 s3 transfer acceleration 
+increase the speed of the files transfer in s3 bucket. if you are uploading file from USA and the bucket is in India you can use the s3 transfer acceleration 
+which use edge location to that is closer to India and then transfer the file using aws private network which is faster for files transfer
+
+                              Aws  Global Accelerator
+Without Global Accelerator: A user in Ethiopia connects to your application through the normal internet route, which may be slow or congested.
+With Global Accelerator: The user connects to the nearest AWS edge location, and AWS carries the traffic across its high-speed global network to your application.
+
+Benefits
+Faster performance
+AWS often provides a shorter and more reliable network path than the public internet.
+Automatic failover
+If one region becomes unhealthy, traffic can be redirected to another region automatically.
+
+
+                                aws global accelerator vs cloudfornt 
+they both use the aws global network ans it's edge location around the world 
+both services are integrate with aws shield for DDos protection 
+cloudfornt - content delivery network
+    improves performance for your cacheable  content (such as image and video)
+    content is served at the edge
+
+Global accelerator
+    no caching proxying packets at the edge to applications running in one or more aws region
+    improves performance for a wide range of applications over TCP and UDP 
+    good for HTTP use cases that require static IP address
+    Good for HTTP use cases that require deterministic, fast region failover
+
 
 
 
