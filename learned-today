@@ -342,8 +342,28 @@ and also you can create dashboard for your cloudwatch. this is best practice a l
 
 when the instances is running you can create alarm for cloudwatch to recover when system is failing. how to do it 
 start your instances and choose action then troubleshoot and monitor then choose cloudwatch after you choose alarm notification in the configuration then 
-alarm threshold then go to "type of data to sample" then choose status check:failed and choose recover on alarm action then choose status check:failed and choose recover on alarm action. 
+alarm threshold then go to "type of data to sample" then choose status check:failed and choose recover on alarm action then choose 
+status check:failed and choose recover on alarm action. 
 
+when you wanna create one schedule go to event-bridge and choose event-bridge schedule then from that on you can create your one time event-bridge
+
+when you go to health dashboard you can find issues that happened in aws and what is the issues when it happened and does it resolved 
+this is general info and its good for investigation. it you face issues go there and see what is going on with aws 
+
+
+              Monitoring Summary 
+cloudwatch:
+    metrics: monitor the performance of aws service and billing metrics
+    alarm: automate notification perform EC2 action nofity to sns based on metrics
+    logs: collect log files form ec2 instances servers Lambda functions 
+    events(or event-bridge): react to events in aws or trigger a rule on a schedule
+    
+cloudtrail: audit api calls made within your aws account 
+cloudtrail insight: automate analysis of your cloudtrail events 
+x-ray: trace request made through your distribute applications
+aws health dashboard: status of all aws service across all region 
+aws account health dashboard: aws events that impact your infrastructure 
+amazon code-guru: automate code review and applications performance recommendation  
 
 
 
