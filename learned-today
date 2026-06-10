@@ -336,6 +336,16 @@ Global accelerator
 
 
 
+                         aws cloudwatch  
+you can create cloudwatch alarm that let you know when your instances or servers is above 80 cpu utilization. the cloudwatch will send you sns or email 
+and also you can create dashboard for your cloudwatch. this is best practice a lot for this
+
+when the instances is running you can create alarm for cloudwatch to recover when system is failing. how to do it 
+start your instances and choose action then troubleshoot and monitor then choose cloudwatch after you choose alarm notification in the configuration then 
+alarm threshold then go to "type of data to sample" then choose status check:failed and choose recover on alarm action then choose status check:failed and choose recover on alarm action. 
+
+
+
 
 
 
