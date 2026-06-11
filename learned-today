@@ -358,16 +358,27 @@ cloudwatch:
     logs: collect log files form ec2 instances servers Lambda functions 
     events(or event-bridge): react to events in aws or trigger a rule on a schedule
     
-cloudtrail: audit api calls made within your aws account 
-cloudtrail insight: automate analysis of your cloudtrail events 
+cloudtrail: audit API calls made within your aws account 
+cloudtrail insight: automate analysis of your cloud trail events 
 x-ray: trace request made through your distribute applications
 aws health dashboard: status of all aws service across all region 
 aws account health dashboard: aws events that impact your infrastructure 
 amazon code-guru: automate code review and applications performance recommendation  
 
 
+internet gateway or Nat gateway: help you access internet while your instances in private subnet 
+when your instances is private subnet it can not access the internet. So that we create internet gateway
+to allows our instances to access the internet
 
+the difference between the security groups and network acl: are the that network acl controls traffic from or to subnet and it has allow and deny policies 
+but the security groups controls the traffic that flow into instances and can only have deny
 
+when you hear vpc flow logs that as it wireshark. it analyze your log and tells you what is your problems
+\                  vpc peering 
+when you make peering two vpc as one they can communicate as one if you peering vpc A to B and vpc c to a then the c and b can not communicate
+
+when you have vpc endpoint gateway: you can only connect your private subnet instances to dynamoDB and s3 bucket. If you wanna connect to the rest 
+service you can use vpc endpoint interface
 
 
 
