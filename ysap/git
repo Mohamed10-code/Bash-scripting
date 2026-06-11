@@ -1,0 +1,10 @@
+#!/bin/bash
+
+direc="/home/moha/Study📚️/"
+if [[ -d "$direc" ]]; then
+  cd "$direc" || exit 1
+  git add .
+  git commit -m "notes from bash scripting"
+else
+  echo the file does not exist
+fi
