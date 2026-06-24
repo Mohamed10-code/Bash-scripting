@@ -374,11 +374,13 @@ the difference between the security groups and network acl: are the that network
 but the security groups controls the traffic that flow into instances and can only have deny
 
 when you hear vpc flow logs that as it wireshark. it analyze your log and tells you what is your problems
-\                  vpc peering 
+                  vpc peering 
 when you make peering two vpc as one they can communicate as one if you peering vpc A to B and vpc c to a then the c and b can not communicate
 
 when you have vpc endpoint gateway: you can only connect your private subnet instances to dynamoDB and s3 bucket. If you wanna connect to the rest 
 service you can use vpc endpoint interface
+
+
 
 
 
