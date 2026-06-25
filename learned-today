@@ -3,7 +3,7 @@
 today i have learned how to create user and add to group 
 i can also create the policy group and add to existing 
 users 
-i have leaned about cloudtrail which will help you to collect activist across your account and store in aws s3 
+i have leaned about cloudtrail which will help you to collect activist across your account and store in a.w.s s3 
 the service itself is free but you may pay for s3 and other related services 
 
 what i have learned today
@@ -16,7 +16,7 @@ IAM Access advisory
 This one is user level when was permission grand and when they last used and many more 
 you can find this permission on IAM-Users and last accessed section 
 
-both of this tools we use it for security purpose on aws clouds 
+both of this tools we use it for security purpose on a.w.s clouds 
 
 if you wanna allow IAM users to look at billing information you can go to root account and press account then IAM user and role access to Billing information
   press allow after all the user can see the billing information. but this is not good practice 
@@ -24,13 +24,13 @@ if you wanna allow IAM users to look at billing information you can go to root a
 
   learn more about billing. how to set billing
 
-aws instances pricing models 
+a.w.s instances pricing models 
 on-demand: you pay as you are using it like old internet coffes (this is one of expensive one)
-spot: aws may have unused servers they will rent it to you and when they need it they can suddely 
+spot: a.w.s may have unused servers they will rent it to you and when they need it they can suddely 
     take from you they give you 2 minutes notices only 
-reserved: long commitment you rent servers from aws for maybe 3 years 
+reserved: long commitment you rent servers from a.w.s for maybe 3 years 
 
-firewall around ec2 in aws 
+firewall around ec2 in a.w.s 
 you can allow any ip to connect to your ec2 
 or you can deny ip address to connect to your machine 
 this helps to secure your ec2 instances because you don't 
@@ -38,10 +38,10 @@ wants anybody to brute-force your instances
 
                                     IAM-role-for-instances
 you can create and attach IAM role to instances 
-that does this mean if you created instances and did not attach the IAM-Roles and you login to that instances and you use aws iam list-users the command 
+that does this mean if you created instances and did not attach the IAM-Roles and you login to that instances and you use a.w.s iam list-users the command 
 will not show you anything because it does not have IAM-Roles attached to it 
 when you type this command it the instances with IAM-Roles it will tell you. credential not found means the instances have not permission to perform this command.
-the command is (aws iam list-users)
+the command is (a.w.s iam list-users)
 
 i really like how IAM rules work i should learn more about iam roles for instances 
 
@@ -55,14 +55,14 @@ They solve completely different problems.
 
 
                  i have finish ec2 section 
-but ec2 or instances is the most pupolar or important services that aws offer 
+but ec2 or instances is the most pupolar or important services that a.w.s offer 
 and you need to learn more about it and do hand on it 
-fact about ec2 instances. ec2 is overall services that aws offer 
+fact about ec2 instances. ec2 is overall services that a.w.s offer 
 while instances is the servers. 
   when you launch instances you can attach role to it that can allow instance to perform action on behalf 
   of you. you can attachs role that allow instances to read-only roles that will make the instances to read-only 
   for you to find out the instances has iam roles you can use cli or the management console 
-    the cli is (aws iam list-users this command will help you list all the users in your account)
+    the cli is (a.w.s iam list-users this command will help you list all the users in your account)
 when you are buy the servers their some option mostly three which allows you to rent instances flixable 
 there on-demand,spot,reserved, there three is different when you buying the most expensive is the on-demand one 
 and the least expensive is spot one because they rent you the idle servers but they can take away time. they will 
@@ -80,7 +80,7 @@ identity access management: is the services that allows you to create user and a
 iam is not only for users it can be used for instances to you create roles and assign to your servers which will perform the action 
 on your behalf. iam is allows you to create and manager users and give them permissions.
 it not good idea to use root account for everyday task instead of that create user and give him administrator permissions.
-aws has lot of iam roles which ready to use but if you want you can create your own and customise it according to your needs
+a.w.s has lot of iam roles which ready to use but if you want you can create your own and customise it according to your needs
 and what you have to know iam is free services. of the best features is that iam help you set MFA to users can. you can also
 impose user to use strong password mean you can administrator the account. like what you have learned on linux course 
 IAM is much bigger than this you have play around it. put it in your toolbox 
@@ -101,7 +101,7 @@ security group you can't even ssh into your machine. everytime when you are crea
 new security group. create one nice and best that can fix your instances and always attach that one 
 
                                              Recycle Bin 
-aws has Recycle bin as the name indicate. it  Recycle what you have delete it 
+a.w.s has Recycle bin as the name indicate. it  Recycle what you have delete it 
 but when you are creating you need to specify how many day that the bin has to hold the resources 
 that you have delete it. and when creating the bin select retain all the resources and for the resources
 type specify ebs snapshot and give it name so that you can defferntial from the other Recycle bin if you have it one 
@@ -113,7 +113,7 @@ so that is work for you
 snapshot is the best way to prevent accidental deletion. i have to add to my project but find out more about the services whether is paid 
 or free. Recycle bin itself is not paid services but what you store there is still be paid like if you have ebs storage and you delete it 
 and went to the Recycle bin you will keep paying for the storage not the bin itself. Think the recycle bin trash on window or phones. it 
-greet when you are learning aws and cloud itself. you can turn it on and whenever you delete something you can store it back 
+greet when you are learning a.w.s and cloud itself. you can turn it on and whenever you delete something you can store it back 
 
 
 
@@ -133,7 +133,7 @@ unlike ebs. ebs is network storage you can attach and detach from any instance w
 but ebs is slow and compare to ec2 instance store
 
 
-EFS (elastic file system): it's for linux for system that aws offer you the best feature is that you can attach to 100 linux servers 
+EFS (elastic file system): it's for linux for system that a.w.s offer you the best feature is that you can attach to 100 linux servers 
 it's hightly available for storage and nice. ebs only attach to one server at a time. but efs can attach to many and it available 
 in multi-az
 
@@ -179,31 +179,31 @@ auto-scaling groups is good for managing your resources and your apps
 
 
 
-i learned to about aws policy Generator
-  :it's graphical interface of creating aws policies for json. instead of creating json configuration from scratch you can use
-  aws policy Generator:it's nice tool use it to Generate your iam roles or any json configuration
+i learned to about a.w.s policy Generator
+  :it's graphical interface of creating a.w.s policies for json. instead of creating json configuration from scratch you can use
+  a.w.s policy Generator:it's nice tool use it to Generate your iam roles or any json configuration
 
 
                              amazon s3 
-amazon s3 is a aws storage service and it's backbone of the aws. it's offers storage like google drives but this one is more advances that google
-and its has Infinite cloud storage most of the website on amazon uses aws s3 and they host their website like big company netflix and bbc 
+amazon s3 is a a.w.s storage service and it's backbone of the a.w.s. it's offers storage like google drives but this one is more advances that google
+and its has Infinite cloud storage most of the website on amazon uses a.w.s s3 and they host their website like big company netflix and bbc 
 
 how to use s3 storage when you create the Bucket give and name. when you wanna create statcic website their s3 policies or roles that you need to create 
-after creating the policy apply to S3. when you creating the policy you do not need to create the json configure from scratch use aws policy Generator.
+after creating the policy apply to S3. when you creating the policy you do not need to create the json configure from scratch use a.w.s policy Generator.
 it's free and nice graphical use 
 
-i hosted my website on aws statcic web
-first i created created Bucket then then uploaded my code to aws s3 Bucket and give it all the permission to s3 for user to access the code or web
+i hosted my website on a.w.s statcic web
+first i created created Bucket then then uploaded my code to a.w.s s3 Bucket and give it all the permission to s3 for user to access the code or web
 after that i added Json policy for the Bucket which allows everone to access the web. if you do not add the Json policy you can not access the web
 and the url will just show 4004 error 
 
 versionioning works as like me say as git but it's amazon native tool  
 how are you gonna use the version 
-first enable versioning and go to your code in your local machine and edit the code or add code after that come to aws console 
-and upload the same file that you edited to the aws s3 and refresh your website you will see the new code and version of your file 
+first enable versioning and go to your code in your local machine and edit the code or add code after that come to a.w.s console 
+and upload the same file that you edited to the a.w.s s3 and refresh your website you will see the new code and version of your file 
 to rull back to Previous delete the current file or version
 
-if you delete the file for example yare.css aws will keep this file as deleted marker but ill will disappear from your website
+if you delete the file for example yare.css a.w.s will keep this file as deleted marker but ill will disappear from your website
   if you wanna get back the file you delete the "deleted marker"
 
 amazon replication: is good for when you are copy data from account to another via asynchronous. we have what we call 
@@ -229,14 +229,14 @@ S3 Glacier Deep Archive: The lowest-cost storage option for long-term archival w
 when you create bucket  you can choose which type you want for your files. and then you can automate the process of changing the storage types which is very handy 
 if you have  bucket and the files it's contains is standard. yuo can go to the console and automate it. by creating lifecycle rules and then give it unique name 
   after that choose apply to all the object in the bucket and then lifecycle rule action choose transition current version of object between storage classess 
-then choose the s3 types and after how many day they have to transition to the next storage type level. This is handy when you wanna use aws s3 and reduces your cost 
+then choose the s3 types and after how many day they have to transition to the next storage type level. This is handy when you wanna use a.w.s s3 and reduces your cost 
 
 Database is something that you can download into your instances and manage it by yourself. but it can take a lot of time and resources it is better you use 
-aws database managed by aws. it's easy and they do everything for you. you just focus on your works 
+a.w.s database managed by a.w.s. it's easy and they do everything for you. you just focus on your works 
 
 when you create database you can also create snapshot of your database. then you can go to that snapshot and create new database out of that database. it handy when 
 you wanna create identical database but do not wanna repeat the process. and also you can copy your database from the snapshot and launch it in another AZ. can you also 
-share your database copy with another account. in short learn more about aws it's full of features 
+share your database copy with another account. in short learn more about a.w.s it's full of features 
 
                     read replica 
 read replica is when you have applications that server read and you have alot of customer that comes to read instead giving all the work to the main Database you can 
@@ -253,7 +253,7 @@ it's same as read replica but in the different region which we use for disaster 
 this is good for applications performance and it comes with cost
 
 
-elastiCache is database managed by aws as redis or memcached. it's fast in-memory database which uses ram(ramdon access memory) instead of ssd or disk. that what makes it 
+elastiCache is database managed by a.w.s as redis or memcached. it's fast in-memory database which uses ram(ramdon access memory) instead of ssd or disk. that what makes it 
 fast. and it can relief preasure from database or RDS
 
 
@@ -261,9 +261,9 @@ AWS Caching is a technique that stores frequently accessed data in a high-speed,
 temporary storage layer to reduce latency, lower costs, and improve scalability 
 by minimizing reliance on slower disk-based databases. 
 
-      dynamoDB: is nosql database that are managed by aws and its first and reliable. it's serverless services when you are using dynamoDB you only create the table 
-      the rest is handled by aws it's not relational database the table do not interlink. be carefull when creating the item in the dynamoDB. when we say it's 
-      serverless means the server is managed by aws. and dynamoDB can scale very fast from GB to TB which is huge and it's suitable for very business or apps 
+      dynamoDB: is nosql database that are managed by a.w.s and its first and reliable. it's serverless services when you are using dynamoDB you only create the table 
+      the rest is handled by a.w.s it's not relational database the table do not interlink. be carefull when creating the item in the dynamoDB. when we say it's 
+      serverless means the server is managed by a.w.s. and dynamoDB can scale very fast from GB to TB which is huge and it's suitable for very business or apps 
       and dynamoDB has something called dax(amazon dynamoDB accelerator) which is like caches for dynamoDB. it's help you accelerator your access to your database
       and it's 10x faster then the normal dynamoDB
 
@@ -287,28 +287,28 @@ Batch:
     rely on ebs / instances store for disk spaces 
 
          amazon lightsail 
-is services that enable  you to use aws with little no of cloud. if you can not configure and do not wanna learn aws you can use lightsail
+is services that enable  you to use a.w.s with little no of cloud. if you can not configure and do not wanna learn a.w.s you can use lightsail
 you can launch instances simple web applications, and also database 
 
-                   aws cloud development 
-is open source that allows you to using your familiar programming language to write aws cloudformation configure. instead of writing pure YAML or JSON 
+                   a.w.s cloud development 
+is open source that allows you to using your familiar programming language to write a.w.s cloudformation configure. instead of writing pure YAML or JSON 
 configuration files, you can use familiar programming language like python,c#,java,and javascripts 
 
-                  aws Beanstalk 
+                  a.w.s Beanstalk 
 
-Beanstalk is aws services that allows you to create web-server without launch anything. it will launch for you everything you need 
+Beanstalk is a.w.s services that allows you to create web-server without launch anything. it will launch for you everything you need 
 including instances,elastic load balancer and many more. you only configure what you wants and everything else will handle by Beanstalk,
 Beanstalk is good for developers they will only focus on code they write the rest leave to Beanstalk
 
-aws ssm session manager is the way you can open your server session with ssh key or login through the console. first you create instances and you do not attach
+a.w.s ssm session manager is the way you can open your server session with ssh key or login through the console. first you create instances and you do not attach
 the ssh key. when you are creating the instances you go to advanced setting and create IAM-Roles for you instances when creating IAM-Roles make sure you choose 
-aws-ssm-manager-instanced-core this is the correct IAM-Roles if you wanna start ssm session manager when you complete creating the role start your instances
+a.w.s-ssm-manager-instanced-core this is the correct IAM-Roles if you wanna start ssm session manager when you complete creating the role start your instances
 and go to systen manager on home console and look for session manager. from there you select your instances and start the session. without ssh key this is nice 
 services that you should Leverage 
 
                  s3 transfer acceleration 
 increase the speed of the files transfer in s3 bucket. if you are uploading file from USA and the bucket is in India you can use the s3 transfer acceleration 
-which use edge location to that is closer to India and then transfer the file using aws private network which is faster for files transfer
+which use edge location to that is closer to India and then transfer the file using a.w.s private network which is faster for files transfer
 
                               Aws  Global Accelerator
 Without Global Accelerator: A user in Ethiopia connects to your application through the normal internet route, which may be slow or congested.
@@ -321,22 +321,22 @@ Automatic failover
 If one region becomes unhealthy, traffic can be redirected to another region automatically.
 
 
-                                aws global accelerator vs cloudfornt 
-they both use the aws global network ans it's edge location around the world 
-both services are integrate with aws shield for DDos protection 
+                                a.w.s global accelerator vs cloudfornt 
+they both use the a.w.s global network ans it's edge location around the world 
+both services are integrate with a.w.s shield for DDos protection 
 cloudfornt - content delivery network
     improves performance for your cacheable  content (such as image and video)
     content is served at the edge
 
 Global accelerator
-    no caching proxying packets at the edge to applications running in one or more aws region
+    no caching proxying packets at the edge to applications running in one or more a.w.s region
     improves performance for a wide range of applications over TCP and UDP 
     good for HTTP use cases that require static IP address
     Good for HTTP use cases that require deterministic, fast region failover
 
 
 
-                         aws cloudwatch  
+                         a.w.s cloudwatch  
 you can create cloudwatch alarm that let you know when your instances or servers is above 80 cpu utilization. the cloudwatch will send you sns or email 
 and also you can create dashboard for your cloudwatch. this is best practice a lot for this
 
@@ -347,22 +347,22 @@ status check:failed and choose recover on alarm action.
 
 when you wanna create one schedule go to event-bridge and choose event-bridge schedule then from that on you can create your one time event-bridge
 
-when you go to health dashboard you can find issues that happened in aws and what is the issues when it happened and does it resolved 
-this is general info and its good for investigation. it you face issues go there and see what is going on with aws 
+when you go to health dashboard you can find issues that happened in a.w.s and what is the issues when it happened and does it resolved 
+this is general info and its good for investigation. it you face issues go there and see what is going on with a.w.s 
 
 
               Monitoring Summary 
 cloudwatch:
-    metrics: monitor the performance of aws service and billing metrics
+    metrics: monitor the performance of a.w.s service and billing metrics
     alarm: automate notification perform EC2 action nofity to sns based on metrics
     logs: collect log files form ec2 instances servers Lambda functions 
-    events(or event-bridge): react to events in aws or trigger a rule on a schedule
+    events(or event-bridge): react to events in a.w.s or trigger a rule on a schedule
     
-cloudtrail: audit API calls made within your aws account 
+cloudtrail: audit API calls made within your a.w.s account 
 cloudtrail insight: automate analysis of your cloud trail events 
 x-ray: trace request made through your distribute applications
-aws health dashboard: status of all aws service across all region 
-aws account health dashboard: aws events that impact your infrastructure 
+a.w.s health dashboard: status of all a.w.s service across all region 
+a.w.s account health dashboard: a.w.s events that impact your infrastructure 
 amazon code-guru: automate code review and applications performance recommendation  
 
 
@@ -370,10 +370,10 @@ internet gateway or Nat gateway: help you access internet while your instances i
 when your instances is private subnet it can not access the internet. So that we create internet gateway
 to allows our instances to access the internet
 
-the difference between the security groups and network acl: are the that network acl controls traffic from or to subnet and it has allow and deny policies 
+The difference between the security groups and network acl: are the that network acl controls traffic from or to subnet and it has allow and deny policies 
 but the security groups controls the traffic that flow into instances and can only have deny
 
-when you hear vpc flow logs that as it wireshark. it analyze your log and tells you what is your problems
+When you hear vpc flow logs think  wires-hark. it analyze your log and tells you what is your problems
                   vpc peering 
 when you make peering two vpc as one they can communicate as one if you peering vpc A to B and vpc c to a then the c and b can not communicate
 
