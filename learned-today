@@ -380,7 +380,10 @@ when you make peering two vpc as one they can communicate as one if you peering 
 when you have vpc endpoint gateway: you can only connect your private subnet instances to dynamoDB and s3 bucket. If you wanna connect to the rest 
 service you can use vpc endpoint interface
 
-
+aws shared responsibility -- aws will secure services of the cloud 
+and you need to secure the services in the cloud like your customer and servers
+it's up to you to secure your servers. For example you need to secure the IAM roles 
+and users and traffic into your systems
 
 
 
