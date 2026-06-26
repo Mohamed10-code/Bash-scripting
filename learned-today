@@ -386,6 +386,19 @@ it's up to you to secure your servers. For example you need to secure the IAM ro
 and users and traffic into your systems
 
 
+if you asked in the exam how to protect your entire vpc the answers is aws Network firewall
+
+aws firewall manager is the centralized security management services across all your aws account and services
+it let enforced policies to your account and services through centralized services
+you can have you own key or you can use aws managed key
+when you are creating you own key is it gonna cost you  $1
+
+An SSL (Secure Sockets Layer) 
+certificate is a digital data file hosted on a website's origin server. 
+It acts as an electronic "passport" that verifies the website's identity 
+and enables encrypted communication between a user's web browser and the
+
+
 
 
 
