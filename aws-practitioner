@@ -1542,6 +1542,38 @@ aws abuse: report aws resources used for abusive or illegal purposes
 
 
 
+                                  amazon Rekognition 
+find objects people,text,scenes in images and videos using ML 
+Facial analysis and facial search to do user verification.
+                                              
+                                              amazon Transcribe 
+automatically convert speech to text 
+uses a deep learning process called automatic speech recognition (ASR) 
+to convert speech to text quickly and accurately 
+                                        
+                                        amazon Polly 
+Turn text into lifelike speech using deep learning 
+allowing you to create applications that talks 
+
+
+                             Amazon Lex & Connect 
+
+amazon lex:(same technology that powers alexa)
+  ∙automatic speech recognition (ASR) tp convert speech to text 
+  ∙ Natural language understanding to recognize the intent of text callers 
+amazon connect:
+  ∙ Receive calls create contact flows cloud-based virtual contact center 
+                                         
+                                         amazon comprehend 
+
+for Natural language processing - NLP 
+  fully managed and server-less services 
+  uses cases: Machine learning to find insight and relationships in text 
+  extract key phrase place people brand or events 
+
+
+
+                                             amazon Sage-Maker AI
 
 
 
