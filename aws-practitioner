@@ -1574,9 +1574,29 @@ for Natural language processing - NLP
 
 
                                              amazon Sage-Maker AI
+Fully managed services for developer / data scientists to build ML models 
 
+                                                Amazon Kendra
+Fully managed document search services powered by machine learning 
+                                       
+                                       Amazon Personalize 
+full managed ML-services to build apps with real-time personalized recommendations 
 
+                                   Amazon Textrack 
+automatically extract text handwriting and data from any scanned document using AI and ML 
 
+                                     aws Machine learning -- Summary
+Rekognition: face detection, labelling celebrity recognition 
+Transcribe: audio to text 
+Polly: text to audio
+Translate: translation 
+Lex: build conversational bots - chatbots
+connect: cloud connect center 
+comprehend: Natural language processing
+Sage-Maker: machine learning for every developer and data scientists
+Kendra: ML-powered search engine 
+personalize: real-time personalized recommendations
+Textrack: detect text and data in document
 
 
 
