@@ -1596,7 +1596,28 @@ comprehend: Natural language processing
 Sage-Maker: machine learning for every developer and data scientists
 Kendra: ML-powered search engine 
 personalize: real-time personalized recommendations
-Textrack: detect text and data in document
+Textrack: detect text and data in document 
+
+                                                  Account Management, Billing & Support Section 
+allows to manage multiple aws accounts 
+The main account is the master account
+cost Benefit:
+      consolidated billing across all account -- single payment method 
+      pricing Benefit from aggregated usage 
+      API is available to automate aws account creation 
+      restricted account privileges using services control policies 
+      
+
+                                                           Services Control Policies (S.C.P)
+whitelist or blacklist IAM actions 
+applied at the organization unit(O.U) or account level
+does not apply to the master account
+S.C.P must have explicit allow (does not allow anything by default)
+uses case: ( the exam ) 
+              restrict access to certain services (for example can not use EMR)
+              enforce PCI compliance by explicit disabling services
+
+  
 
 
 
