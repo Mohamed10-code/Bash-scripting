@@ -708,7 +708,7 @@ if you need a high-performance hardware disk, use E.C.2 instance store
                     EFS -- Elastic File System 
 manage NFS (network file system) that can be mounted on 100 of servers 
 EFS works with linux e.c.2 instances in multi-AZ
-highly available,scaleble expensive (3xgp2), pay per use, no capacity planning 
+highly available,salable expensive (3xgp2), pay per use, no capacity planning 
 if you store 30G of storage you only pay for that 
 
 EFS Infrequent Access (EFS-IA)
@@ -1616,6 +1616,27 @@ S.C.P must have explicit allow (does not allow anything by default)
 uses case: ( the exam ) 
               restrict access to certain services (for example can not use EMR)
               enforce PCI compliance by explicit disabling services
+
+                                                            A.W.S Control Tower
+easy way to setup and govern a secure and compliant multiple-account 
+Aws environment based on best practice 
+      Benefit:  
+          automate the set up of your environment in a few clicks 
+          automate ongoing policy management using guardrials 
+          detect policy violation and remediate them (Remediate means to reverse, stop, or fix damage to something)
+          monitor compliance through an interactive dashboard
+
+aws control Tower setup aws organization to organize accounts and implement S.c.p
+
+                        Aws Resources Access Manager (aws RAM)
+shared aws resources that you own with other aws accounts 
+share with any account or within your organization
+avoid resources duplication 
+
+
+                                                 aws services catalog 
+users that are new to aws have too many options and may create stacks that are not compliant in line with rest of the organization
+
 
   
 

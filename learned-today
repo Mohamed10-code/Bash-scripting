@@ -400,7 +400,8 @@ and enables encrypted communication between a user's web browser and the
 
 
 
-
+aws catalog: when you are account admin and you create pre-approval resources or services that your team can use 
+for example we have team that can not use aws services you can create custom cloudformation template that they can use 
 
 
 
