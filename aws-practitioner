@@ -46,7 +46,7 @@ Today as May 11 i start a.w.s practitioner on Udemy
 
       🔙Functions 
         are managed VMs running managed containers 
-        known as serverless compute 
+        known as server-less compute 
         you upload piece of code, choose the amonut of memory and duration 
         only responsible for code and data, nothing else very cost-effective
         only pay for the time code is running 
@@ -905,9 +905,9 @@ Aurora is "a.w.s cloud optimized" and claim 5x performance improvement over Mysq
 Aurora storage automatically grows in (increment = is the process of increasing in number) of 10G, up to 256TB 
 Aurora costs more than RDS (20% more) - but is more Efficient
 
-                    amazon Aurora serverless
+                    amazon Aurora server-less
 automated database instantiation and auto-scaling based on actual usage 
-postgresql and Mysql are both supported as Aurora serverless DB 
+postgresql and Mysql are both supported as Aurora server-less DB 
 no capacity planning needed 
 least management overhead 
 pay per second, can be more cost-effective
@@ -931,7 +931,7 @@ Aws takes care of OS maintainance / patching, optimization setup configuration m
                                   DynamoDB
 fully managed highly available with replication across 3 AZ 
 NoSQL database, not a relational database
-scales to massive workloads distributed "serverless" database
+scales to massive workloads distributed "server-less" database
 million of request per second, trillion of row, 100s of TB of storage
 fast and consistent in performance
 single-digit millisecond latency low latency retrievel
@@ -961,7 +961,7 @@ Columnar storage of data (instead of row based)
 massively parallel query execution (MPP)highly available
 pay as you go based on the instances Provisioning
 
-               Redshift serverless
+               Redshift server-less
 automatically provision and scale data warehouse underlying capacity
 Run analyticss workloads without managing data warehouses infrastructure
 pay only for what you use (save costs)
@@ -979,16 +979,16 @@ auto-scaling and integrated with spot instances
 
 
                                   Amazon Athena
-serverless query service to perform analytics against s3 object
+server-less query service to perform analytics against s3 object
 uses standard SQL language to query the file 
 supports csv,json,orc,avro,and parquet(built on presto)
 
 use cases:
     business Intelligent/ analytics/reporting
-exap Tips: anayze data s3 using serverless SQL uses Athena 
+exap Tips: anayze data s3 using server-less SQL uses Athena 
 
                                 amazon QucikSight
-serverless machine learning-powered business Intelligent service to create interactive dashboard
+server-less machine learning-powered business Intelligent service to create interactive dashboard
 fast, automatically sscalable embedded with per-session pricing 
 use case:
       business analytics 
@@ -1004,7 +1004,7 @@ can store up to billion of relation and query the graph with miliseconds latency
 
                               a.w.s glue
 managed extract,transform and load(ETL)
-and it's serverless fully managed by a.w.s 
+and it's server-less fully managed by a.w.s 
                           
                           DMS 
 database Migration service
@@ -1019,10 +1019,10 @@ supports:
           Database Summary 
 relational database: OLTP RDS & Aurora
 in-memory database: ElastiCache
-key/value database: DynamoDB (serverless) 
+key/value database: DynamoDB (server-less) 
 warehouse - OLAP Redshift (sql)
 Hadoop cluster:EMR
-Athena: query data on amazon s3 (serverless & sql)
+Athena: query data on amazon s3 (server-less & sql)
 QucikSight: dashboard on your data
 documentdb: Aurora for mongodb (json -NoSQL database)
 amazon managed blockchain: managed hyperledge fabric & ethereum blockchains 
@@ -1041,7 +1041,7 @@ anytime you hear in the exam i wanna run docker on a.w.s think about ecs
                             Fargate 
 launch docker contianers on a.w.s 
 you do not provision the infrastructure (no e.c.2 instances to manage) -simpler 
-serverless offering
+server-less offering
  
                   ECR 
 elastic contianer registry 
@@ -1054,7 +1054,7 @@ allows you to launch managed kubernetes clusters on a.w.s
 kubernetes is an open-source system for management deployment and scaling of contianerized apps (docker)
 contianers can be hosted on 
       e.c.2 instances
-      Fargate (serverless)
+      Fargate (server-less)
 
       kubernetes is cloud-agnostic
         (can be used in any cloud Azure GCP)
@@ -1191,13 +1191,13 @@ Synchronous between applications can be problematic if there are sudden spikes o
                                        Amazon Simple Queue Service
 
 (SQS) is a fully managed, scalable message queuing service that enables decoupling and 
-asynchronous communication between distributed software components, microservices, and serverless applications.  
+asynchronous communication between distributed software components, microservices, and server-less applications.  
 It allows producers to send messages to a queue and consumers to retrieve and process them independently,
 preventing direct dependency bottlenecks and ensuring reliable message delivery across multiple A.W.S Availability Zones. 
 
  amazon SQS - Standard Queue
  oldest a.w.s offering (over 10 years)
- fully managed(serverless) use to decouple applications
+ fully managed(server-less) use to decouple applications
  scale from 1 messages per second to 10,000 per second
  default retention of messages: 4 days maximum of 14 days 
  No limit to how many message cab be in the queue
@@ -1254,7 +1254,7 @@ make sure IAM permission are correct
 
 
 A.W.S EventBridge 
-is the service used to create and manage serverless cron jobs on A.W.S, 
+is the service used to create and manage server-less cron jobs on A.W.S, 
 replacing the need for traditional Unix-based cron daemons on dedicated servers.  
 While cron refers to the standard syntax format for specifying time-based schedules, 
 EventBridge provides the infrastructure to trigger A.W.S resources—such as Lambda functions, 
@@ -1623,7 +1623,7 @@ Aws environment based on best practice
       Benefit:  
           automate the set up of your environment in a few clicks 
           automate ongoing policy management using guardrails 
-          detect policy violation and remediate them (Remediate means to reverse, stop, or fix damage to something)
+          detect policy violation and Remediate them. (Remediate means to reverse, stop, or fix damage to something)
           monitor compliance through an interactive dashboard
 
 aws control Tower setup aws organization to organize accounts and implement S.c.p
@@ -1637,22 +1637,83 @@ avoid resources duplication
                                                  aws services catalog 
 users that are new to aws have too many options and may create stacks that are not compliant in line with rest of the organization
 
-                                                Cost and Usage Report 
-Dive deeper into aws costs and usage 
-The aws cost and usage report contains the most comprehensive set of aws cost and usage data available,including additional metadata about services
-pricing and reservations(e,g ecs reserved instance)
 
-                                                       Cost Explorer 
-Visualize understand and manage your aws costs and usage over time 
-create custom reports that analyze cost and usage data 
-analyze your data at a high level: total costs and usage across all accounts 
-or Monthly hourly resources level granularity 
-choose an optimal saving plan 
-Forecast usage up to 12 months based on previous usage (The exam will test on this )
-
-  
+                                                     AWS Compute Optimizer 
+is a machine learning-powered service that analyzes your cloud resource usage and configuration 
+metrics to recommend optimal sizing. It helps you lower costs and boost 
+workload performance by right-sizing resources, identifying idle assets, 
+and pinpointing optimal configurations without compromising application health
 
 
+                                   Billing and Costing Tools    (for the exam you need to know all of this tools)
+Estimating costs in the cloud:
+                   pricing Calculator 
+Tracking cost in the cloud:
+          Billing dashboard
+          cost allocation tags 
+          cost and usage reports 
+          cost explorer 
+Monitoring against costs plans 
+            billing Alarms 
+            Budgets 
+
+                                         Aws Budget
+create Budget and send alarms when costs exceeds the Budget 
+4 types of Budget: usage,cost,reservation,saving,plans 
+
+      for reservations instances 
+        Track utilization 
+        supports ec2,ElastiCache,RDS,Redshift
+send up to 5 SNS notification per budgets 
+
+                                       Aws cost Anomaly Detection 
+continuously monitor your cost and usage using ML to detect unusual spends 
+it learn your unique,historic spend patterns to detect one-time cost spike 
+sends you the anomaly detection report with root-cause analysis 
+
+
+ 
+                                    AWS quota (formerly known as a "limit")
+is the maximum number of resources, actions, or items you can create or perform within your AWS account. 
+AWS sets these defaults to protect systems from over-provisioning and to ensure infrastructure reliability.
+
+
+                                                Trusted Advisor 
+no need to install anything - hight level aws account assessment
+analyze your aws account and provides recommendation on 6 categories 
+                      cost optimization 
+                      performance
+                      security
+                      fault tolerance 
+                      services limit 
+                      operational 
+you need to have business or enterprise support Plan 
+
+                                                 Account Best practices -- Summary
+operate multiple-account using organization
+use scp(services control policies ) to restrict account
+easily setup multiple-account with best-practices with aws tower control 
+use Tags & cost allocation tags for easy management & billing 
+IAM guidelines MFA least-privilege passwords policies and passwords rotation
+config to recall all resources configuration & compliances over time 
+cloudformation to deploy stacks across account and regions 
+Trust advisor to get insight support plan adapted to your needs 
+send services logs and access logs to s3 or Cloud-Watch logs 
+CloudTrail to record API calls made within your accounts 
+
+
+                                               Billing and Costing Tools 
+compute optimizer: recommends resources configuration to reduces cost 
+pricing Calculator: cost of services on aws 
+billing dashboard: high level overview
+cost allocation tags: tag resources to create detailed reports 
+cost and usage reports: most comprehensive billing dataset 
+cost explorer: view current usage (detailed) and forecast usage 
+billing alarms: in US-EAST-1 - track overall and per-service billing 
+budget: more advanced -- tracks usage cost RI and get alert
+saving plan: easy way to save based on long-term usage of aws 
+cost anomaly Detection: detect unusual spends using ML 
+services quotas: notify you when you're close to services quota threshold 
 
 
 
