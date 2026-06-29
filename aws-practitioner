@@ -1599,7 +1599,7 @@ personalize: real-time personalized recommendations
 Textrack: detect text and data in document 
 
                                                   Account Management, Billing & Support Section 
-allows to manage multiple aws accounts 
+allows  manage multiple aws accounts 
 The main account is the master account
 cost Benefit:
       consolidated billing across all account -- single payment method 
@@ -1609,7 +1609,7 @@ cost Benefit:
       
 
                                                            Services Control Policies (S.C.P)
-whitelist or blacklist IAM actions 
+white-list or blacklist IAM actions 
 applied at the organization unit(O.U) or account level
 does not apply to the master account
 S.C.P must have explicit allow (does not allow anything by default)
@@ -1622,7 +1622,7 @@ easy way to setup and govern a secure and compliant multiple-account
 Aws environment based on best practice 
       Benefit:  
           automate the set up of your environment in a few clicks 
-          automate ongoing policy management using guardrials 
+          automate ongoing policy management using guardrails 
           detect policy violation and remediate them (Remediate means to reverse, stop, or fix damage to something)
           monitor compliance through an interactive dashboard
 
