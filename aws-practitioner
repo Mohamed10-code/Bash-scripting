@@ -1637,6 +1637,18 @@ avoid resources duplication
                                                  aws services catalog 
 users that are new to aws have too many options and may create stacks that are not compliant in line with rest of the organization
 
+                                                Cost and Usage Report 
+Dive deeper into aws costs and usage 
+The aws cost and usage report contains the most comprehensive set of aws cost and usage data available,including additional metadata about services
+pricing and reservations(e,g ecs reserved instance)
+
+                                                       Cost Explorer 
+Visualize understand and manage your aws costs and usage over time 
+create custom reports that analyze cost and usage data 
+analyze your data at a high level: total costs and usage across all accounts 
+or Monthly hourly resources level granularity 
+choose an optimal saving plan 
+Forecast usage up to 12 months based on previous usage (The exam will test on this )
 
   
 
