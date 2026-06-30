@@ -1744,6 +1744,19 @@ IAM identity center: one login for multiple aws accounts & applications
 
 
 
+                                                Cloud Migration Strategies: The 7Rs 
+retire:
+      turn of things you do not need
+      helps with reducing the surfaces area for attacks
+retain:
+      do nothing for now (it's still a decision to make in a cloud migration)
+
+relocate:
+      move apps from  on-premise to it's cloud version 
+      move ec2 instances to different VPC,Aws account or aws region 
+re-host "lift and shift"
+         simple migration by re-hosting on aws (applications,database data)
+         migrate machine (physical,virtual,another cloud) to aws cloud
 
 
 
