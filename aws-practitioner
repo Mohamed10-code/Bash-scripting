@@ -1758,5 +1758,37 @@ re-host "lift and shift"
          simple migration by re-hosting on aws (applications,database data)
          migrate machine (physical,virtual,another cloud) to aws cloud
 
+re-platform "lift and re-shape"
+      example: migrate your database to RDS
+      not changing the core architecture, but leverage some cloud optimization 
+      save time and money by moving to a fully managed services or server-less
+Re-purchase "drop and shop"
+         moving to a different product while moving to the cloud 
+         often you move to a SaaS platform
+         expensive in short-term but quick to deploy 
+         example: CRM to saleforce.com HR to workday,CMS to Drupal 
+Re-factor / Re-architect 
+        Re-imagining how the application is architected using cloud native features 
+        driven by the need of the business to add feature and improve scalability performance
+
+
+                                              Aws Applications Discovery Services
+plan migration project by gathering information about on-premise data center
+server utilization data and dependencies mapping are important for migrations 
+
+Agent-less discovery (Aws Agent-less discovery connector)
+            VM inventory configuration and performance history such as CPU memory and disk usage 
+Agent-based discovery (Aws application discovery agent)
+            system configuration system performance running processing and detailed of the network connection between system
+
+                                   Aws applications Migration Services (MGN)
+lift-and-shift(re-host) solution which simplify migrating applications to aws 
+convert your physical virtual and cloud-based server to run natively on aws 
+supports wide range of platform operating system and database
+minimal down time reduce cost
+
+                                              aws Migration Hub
+central location to collect server and applications inventory data for the assessment,planning and tracking migration to aws 
+helps accelerate your migration to aws automate lift-and-shift
 
 
