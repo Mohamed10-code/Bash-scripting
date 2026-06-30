@@ -1716,6 +1716,34 @@ cost anomaly Detection: detect unusual spends using ML
 services quotas: notify you when you're close to services quota threshold 
 
 
+                                             Aws S.T.S(security Token services)
+enables you to create temporary limited-privileges credential to access aws resources
+short-term credential: you configure expiration period 
+
+                                              Amazon Cognito(simplified)
+identity for your web and mobile applications user(potentially million)
+instead of creating them IAM users, you create a user in Cognito
+we can use this services to sign-up and sign-in for web and mobile apps 
+
+
+                                                        Aws IAM identity Center
+one login (single sign-on) for all your aws accounts in aws organization
+
+
+                                                     Advanced Identity -- Summary
+IAM:
+      identity and access management inside your aws account 
+      for users that you trust and belong to your company 
+
+organization: 
+      manage multiple-accounts 
+security Token services (sts): temporary,limited-privileges credential to access aws resources
+cognito: create database of users for your mobile and web apps
+Directory services: integrated microsoft Active directory in aws 
+IAM identity center: one login for multiple aws accounts & applications
+
+
+
 
 
 
