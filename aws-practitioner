@@ -1428,7 +1428,7 @@ AWS Network Firewall:
 is a stateful, managed, network firewall and intrusion detection and prevention service
 for your virtual private cloud (VPC) that you create in Amazon Virtual Private Cloud (Amazon VPC).
 With Network Firewall, you can filter traffic at the perimeter of your VPC.
-This includes filtering traffic going to and coming from an internet gateway, NAT gateway, or over VPN or Direct Connect.
+This Includes filtering traffic going to and coming from an internet gateway, NAT gateway, or over VPN or Direct Connect.
 
 
                                         AWS Firewall Manager
@@ -1799,10 +1799,48 @@ automation: server-less infrastructure as a service auto scaling
 
                                                         Well Architect Framework 6 Pillar 
 1) operational excellence 
-2) security
+2) security 
 3) reliability 
 4) performance efficiency 
 5) cost optimization 
 6) sustainability 
 they are not something to balance or trade-off they're a synergy
+
+
+                                            1) operational excellence 
+Includes the ability to run and monitor systems to deliver business value and to continually improve supporting processes and procedures 
+design Principal 
+      ∙ perform operational as code -- infrastructure as code 
+
+                                          2) security
+Includes the ability to protect information systems and assets while delivering business value through risk assessment and mitigation Strategies
+
+                                       3) reliability
+ability of a system to recover from infrastructure or service disruption dynamically acquire computing resources to meet demand and mitigate disruption such as misconfiguration 
+or transient issue
+
+                                             4) performance efficiency
+Includes the ability to use compute resources efficiently to meet system requirement and to maintain that efficiency as demand changes and technologies evolve 
+
+                                              5) cost optimization
+Includes the ability to run systems to deliver business value at the lowest price point 
+
+
+                                             6) sustainability
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
