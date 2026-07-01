@@ -1791,4 +1791,18 @@ minimal down time reduce cost
 central location to collect server and applications inventory data for the assessment,planning and tracking migration to aws 
 helps accelerate your migration to aws automate lift-and-shift
 
+                                  Aws cloud Best Practices -- Design principal 
+scalability: vertical and Horizontal
+Disposable resources: server should be Disposable and easily configured 
+automation: server-less infrastructure as a service auto scaling 
+
+
+                                                        Well Architect Framework 6 Pillar 
+1) operational excellence 
+2) security
+3) reliability 
+4) performance efficiency 
+5) cost optimization 
+6) sustainability 
+they are not something to balance or trade-off they're a synergy
 
