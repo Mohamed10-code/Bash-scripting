@@ -1827,8 +1827,29 @@ Includes the ability to run systems to deliver business value at the lowest pric
 
 
                                              6) sustainability
+                                The AWS Cloud Adoption Framework (AWS CAF) 
+is a structured methodology and set of best practices created by Amazon Web Services.
+It guides organizations through seamless cloud migration and digital transformation
+by aligning technology goals with business needs, organizational culture, and governance, 
+thereby reducing risk and accelerating time-to-value.
 
+aws CAF groups it's capabilities in six perspectives:
+    business
+    people
+    governance 
+    platform
+    security
+    and operations 
 
+  Aws CAF Transformation Phases 
+envision:
+    demonstrate how the cloud will accelerate your business outcomes by identifying transformation opportunities and create a foundation for your digital transformation
+align:
+    identify capabilities gaps across the 6 aws CAF perspectives which results in an action plan 
+launch:
+    build and deliver pilot initiatives in production and demonstrate incremental business value
+scale:
+    expand pilot initiatives to the desired scale while realizing the desired business Benefit
 
 
 
