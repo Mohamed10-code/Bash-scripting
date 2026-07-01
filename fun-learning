@@ -1,0 +1,17 @@
+curl cheat.sh/bash (will show you all the bash useful info. you can use this instead of googling every time you need inf)
+this is very helpful when you are doing bash scripting 
+
+curl wttr.in/ethiopia 
+this will show you the weather info of ethiopia
+
+download browsh  
+and learn how to use w3m 
+dysk (it will show you. your filesystem and how much memory you used )
+
+rsync -av /path/to/source/ /path/to/backup/  (this command will help you backup from one file to another) 
+
+If you wanna add docker to the group and you wanna run docker without sudo docker you need to add docker to the sudo groups
+
+(sudo usermod -aG sudo docker $USER)
+then newgrp docker 
+after this you do not need to write sudo docker you just use docker
