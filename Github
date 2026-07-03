@@ -3,8 +3,9 @@
 direc="/home/moha/scripts/"
 if [[ -d "$direc" ]]; then
   cd "$direc" || exit 1
+  read -p "commit message: " msg
   git add .
-  git commit -m "aws-practitioner"
+  git commit -m "msg"
   git push -u origin main
 
 else
