@@ -3,6 +3,7 @@
 direc="/home/moha/scripts/"
 if [[ -d "$direc" ]]; then
   cd "$direc" || exit 1
+  git status --short
   read -p "commit message: " msg
   git add .
   git commit -m "msg"
