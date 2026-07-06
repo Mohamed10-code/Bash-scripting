@@ -205,6 +205,7 @@ If both are correct → you're good to go 🚀
 
 
 
-
+ Change the last commit message
+git commit --amend -m "A: add contents.md"
 
 
