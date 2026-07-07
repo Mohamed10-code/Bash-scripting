@@ -38,7 +38,7 @@ Today as May 11 i start a.w.s practitioner on Udemy
       🔙Containers 
 
       virtual machine running multiple Containers
-      by docker daemon is the name of the sofware layer that 
+      by docker daemon is the name of the software layer that 
       lets you run multiple containers 
       which is more cost-effective 
       multiple apps can run side by side without being limited 
@@ -47,7 +47,7 @@ Today as May 11 i start a.w.s practitioner on Udemy
       🔙Functions 
         are managed VMs running managed containers 
         known as server-less compute 
-        you upload piece of code, choose the amonut of memory and duration 
+        you upload piece of code, choose the amount of memory and duration 
         only responsible for code and data, nothing else very cost-effective
         only pay for the time code is running 
 
@@ -103,15 +103,15 @@ pay-as-you-go means it like elecricity you only pay for what you have used
     Here's what it means:
 
  
-                              stop spending money to run and maintain datacenter
-      instead of building your own data center you can use a.w.s prebuildt datacenter
+                              stop spending money to run and maintain data center
+      instead of building your own data center you can use a.w.s rebuilds data center
       which reduce cost and speedup your productivity 
 
 
 
-                            go global in munites 
-    business can go global in munites instead of building their own infrastructure in the 
-    other region that can just use a.w.s in munite
+                            go global in minutes 
+    business can go global in minutes instead of building their own infrastructure in the 
+    other region that can just use a.w.s in minute
 
 
 
@@ -209,7 +209,7 @@ public cloud
     on the csp also known as *cloud-native or cloud first 
 
 private cloud
-    everything build on company's datacenters 
+    everything build on company's data centers 
     also known as on-premise
     the cloud cloud be openstack
 
@@ -232,9 +232,9 @@ what is the a.w.s global infrastructure
       and datacenters that are physically network together to act 
       as one large resources for the end customer 
 
-The  a.w.s global infrastructure is made up of the following 
+The  A.w.s global infrastructure is made up of the following 
                         32 launched region 
-                        102 availablility zones 
+                        102 availability zones 
                         115 direct connection locations 
                         550+ points of presence 
                         35 local zone 
@@ -252,7 +252,7 @@ The  a.w.s global infrastructure is made up of the following
                                       when you are choose a region there are four factors you need to consider 
   1 - what Regulatory compliance does this region meet?
   2 - what is the cost of a.w.s services in this region?
-  3 - what are the a.w.s services are available in this region?
+  3 - what are the A.w.s services are available in this region?
   4 - what is the distances or latency to my end-users?
 
                                         region vs global services
@@ -263,13 +263,13 @@ The  a.w.s global infrastructure is made up of the following
 
   Global services
       some a.w.s services operate across multiple regions and the region will be fixed to global
-      e.g Amazon s3,cloudfront, Route53, IAM 
+      e.g Amazon s.3,cloudfront, Route 53, IAM 
 
 
-                                  availablility zones
-  an availablility zones (AZ) is physical location made up of one or more datacenter
+                                  Availability zones
+  an availability zones (AZ) is physical location made up of one or more datacenter
   a region will be generally contain 3 availablility zones
-  datacenter within region will be isolated from each other (different building).
+  data center within region will be isolated from each other (different building).
   but they will be close enought to provide low-latency(<10ms)
   AZ's are represented by a region code, followed by a letter idenfier e.g US-EAST-1a 
   you never choose the Az when launching resources.
@@ -287,11 +287,11 @@ each Amazon region is designed to be completely isolated from the other Amazon
   This achieves the greatest possible fault tolerance and stability 
 
           failure zone
-            availablility zones are physically separated within a typical metropolitian 
+            availability zones are physically separated within a typical metropolitian 
             region and are located in lower risk flood plains 
 
 
-            multi-AZ for hight availablility
+            multi-AZ for hight availability
         
 
 
@@ -300,17 +300,17 @@ means some services only available in global like a.w.s IAM,
 and some are region are different from another region
 for example your billing information only available
 in US-EAST-1. and when we say the region are different 
-we mean by the services prices and goverment compliance
+we mean by the services prices and government compliance
 so when you choose region and services you should see 
-the prices of that region and compliance and availablility 
+the prices of that region and compliance and availability 
 of services in that region some services are only available 
 in some region 
 
 
 
                                                Points of presence (pop)
-is an intermdediate location between an a.w.s region and the end user,
-and this location could be a datacenter or collection of hardware.
+is an intermdediate location between an A.w.s region and the end user,
+and this location could be a data center or collection of hardware.
 for a.w.s a points of presence is a data center owned by a.w.s or a trusted partner 
 that is utilized by a.w.s services related for content delivery or expediated upload 
                                
@@ -324,7 +324,7 @@ that is utilized by a.w.s services related for content delivery or expediated up
 
 region edge locations
         are datacenter that hold much larger caches
-        of less-popupar files to reduces a full round 
+        of less-popular files to reduces a full round 
         trip and also reduces the cost of transfer fees 
 
 a.w.s cloudfront is web service that is speed up distributions of your static 
@@ -332,7 +332,7 @@ and dynamic web content, such as .html .css.
 
 
                     A.W.S Global Network 
-the a.w.s global network represent the interconnection between a.w.s global infrastructure
+the A.w.s global network represent the interconnection between a.w.s global infrastructure
   commonly referred to as the "the backbone of a.w.s"
 Think of it as private expressway where things can move very fast between datacenters
 
@@ -341,7 +341,7 @@ Think of it as private expressway where things can move very fast between datace
     is a network that can reach every other network on the 
     internet without purchasing Ip transit or paying for peering 
 
-    a.w.s availablility zones are All
+    a.w.s availability zones are All
     redundantly connected to multiple 
     Tier 1 transit provider
 
@@ -357,8 +357,8 @@ Think of it as private expressway where things can move very fast between datace
 a.w.s direct connect is a private/dedicated connection between your datacenter,office,co-location and a.w.s 
 
                                 local zones 
-  local zones: are datacenters located very close to a densely populated area to 
-  provide single milisecond low latency performance for that area 
+  local zones: are data-centers located very close to a densely populated area to 
+  provide single millisecond low latency performance for that area 
 
                                 wavelength zones
 a.w.s wavelength zones allows for edge-computing on 5G networks 
@@ -372,16 +372,16 @@ what is data Residency
 
 what is compliance boundaries 
     a Regulatory compliance (legal requirement) by a 
-    goverment or organization that describes where 
+    government or organization that describes where 
     data and cloud resources are allowed to reside
 
 what is data sovereignty 
-      data sovereignty is the jurisdictional control or legel authority
+      data sovereignty is the jurisdictional control or legal authority
       that can be asserted over data because it's physical location 
       is within jurisdictional boundaries
 
 a.w.s outpost 
-      is physical racl of servers that you can put in your datacenter.
+      is physical rack of servers that you can put in your datacenter.
       your data will reside whenever the outpost physical reside 
       (This services is very expensive)
 a.w.s config 
@@ -391,15 +391,15 @@ a.w.s config
 
 
 my understanding
-compliance boundaries is what the  contracter tells  what you can do and can not do 
+compliance boundaries is what the  contractor tells  what you can do and can not do 
 and sovereignty is the country data must stay in that country
 for example kenya can say people's credit card information must 
 stay within kenya 
 
-                 govcloud 
-is usa based private cloud that is only accessable in usa soil. usa citizen only can excess it 
-and highly secured enviroment where usa goverment uses the services and is isolated enviroment
-where usa goverment can host sensitive data. also usa based contractor can host thier sensitive
+                 gov-cloud 
+is USA based private cloud that is only accessible in USA soil. USA citizen only can excess it 
+and highly secured environment where USA government uses the services and is isolated environment
+where USA government can host sensitive data. also USA based contractor can host their sensitive
 data 
 
                             sustainability 
@@ -408,8 +408,8 @@ a.w.s cloud's sustainability goals are composed of three parts:
     1 renewable Energy: a.w.s is working towards having their a.w.s global infrastructure
     powered by 100% renewable Energy by 2025
 
-    2 cloud efficieny: a.w.s infrastructure is 3.6 times more energy efficiency than 
-    the median of usa enterprise data centers
+    2 cloud efficiency: a.w.s infrastructure is 3.6 times more energy efficiency than 
+    the median of USA enterprise data centers
 
     3 water stewardship: direct evaporative technology to cool our data center
     uses of non-potable water for cooling purpose(recycle water)
@@ -430,7 +430,7 @@ video broadcasts
                                 and the ground location 
                                 •use the a.w.s ground station e.c.2 ami to launch e.c.2 instance that 
                                 will uplink and downlink data during the contact or receive downlinked 
-                                data in an amazon s3 bucket 
+                                data in an amazon s.3 bucket 
 
                                         Aws outpost
 is fully managed services that offer the same Aws infrastructure, a.w.s service, api's, and tools to virtually any datacenter, co-location
@@ -749,13 +749,13 @@ Dynamic scaling: respond to changing demand
 
 
 
-                                              A.W.S S3
-amazon s3 is one of the main building blocks of a.w.s 
+                                              A.W.S S.3
+amazon s.3 is one of the main building blocks of a.w.s 
 It's advertised as "inifinitely scaling" storage 
-many website uses amazon s3 as a backbone
-may a.w.s services use amazon s3 as an integrational as well 
+many website uses amazon s.3 as a backbone
+may a.w.s services use amazon s.3 as an integrational as well 
 
-amazon s3 use cases 
+amazon s.3 use cases 
 backup and storage
 disaster recovery
 archive 
@@ -766,16 +766,16 @@ data lakes & big data analytics
 sofware delivery
 static website 
 
-                                      amazon s3 - bucket
-amazon s3 allows people to store object(files) in bucket (directory)
+                                      amazon s.3 - bucket
+amazon s.3 allows people to store object(files) in bucket (directory)
 bucket are defined at the region level
-s3 looks like a global services but the bucket are created in a region
+s.3 looks like a global services but the bucket are created in a region
 
 
-                        amazon s3 objects 
+                        amazon s.3 objects 
 object(files) have a key 
 the key is full path 
-  s3://my-bucket/my_files.txt 
+  s.3://my-bucket/my_files.txt 
 the key is composed of prefix + object name
 there is no concept of "directory" within bucket 
   (although the UI will trick you to think otherwise)
@@ -785,12 +785,12 @@ there is no concept of "directory" within bucket
   if uploading more than 5GB, must use "multi-part" upload
 
 
-amazon s3 -security
+amazon s.3 -security
 user-based
   IAM policies -which API calls should be allowed for a specific user from IAM
      
      ☣️NOTE
-an IAM principal can access an s3 object if 
+an IAM principal can access an s.3 object if 
   the user IAM permission allow it or the resource policy allows it 
   and there's no explicit Deny 
 
@@ -800,8 +800,8 @@ an IAM principal can access an s3 object if
   Action: set of API to Allows or Deny
   principal: the account or the user to appy the policy to
 
-           Amazon s3 - Visioning 
-you can version your files in amazon s3 
+           Amazon s.3 - Visioning 
+you can version your files in amazon s.3 
 it is enable at the bucket level 
 same key overwrite will change the "version": 1 2 3 
      it is best practice to version your bucket 
@@ -814,40 +814,40 @@ same key overwrite will change the "version": 1 2 3
     suspending versioning does not delete the Previous versions 
     
 
-                                    amazon s3 Replication (CRR & SRR)
+                                    amazon s.3 Replication (CRR & SRR)
 Must enable versioning in source and destination bucket 
 cross-region replication (crr)
 same-region replication (srr)
 bucket can be in different a.w.s accounts 
  copy is asynchronous 
- Must given proper IAM permission to s3
+ Must given proper IAM permission to s.3
 
  uses case  
       CRR : compliance,lower latency access,replication across accounts 
       SRR : log Aggregation, live replication between producion and test accounts 
 
-                          S3 Storage Class
-amazon s3 stardard - general purpose
-amazon s3 standard-infrequent acces (ia)
-amazon s3 one zone-infraquent access
-amazon s3 Glazier instant retrievel 
-amazon s3 Glazier Flexible
-amazon s3 Glazier Deep archive 
-amazon s3 Intelligent Tiering 
+                          S.3 Storage Class
+amazon s.3 stardard - general purpose
+amazon s.3 standard-infrequent acces (ia)
+amazon s.3 one zone-infraquent access
+amazon s.3 Glazier instant retrievel 
+amazon s.3 Glazier Flexible
+amazon s.3 Glazier Deep archive 
+amazon s.3 Intelligent Tiering 
 
-                                  S3 Express One Zone 
+                                  S.3 Express One Zone 
 high performance,single availablility zone storage class 
 handle 100,000s request per second with single-digit millisecond latency
-upto 10x better performance than s3 stardard (50% lower costs)
+upto 10x better performance than s.3 stardard (50% lower costs)
 co-locate your storage and compute resources in the same AZ (reduces latency)
 
                             Aws storage Gateway
-Bridge between on-premise data and cloud data in s3
+Bridge between on-premise data and cloud data in s.3
 Hybrid storage service to allow on-premise to seamlessly use the a.w.s cloud
 use cases: disaster,recovery, backup,& restore tiered 
 
                            📊Database 
-storing data on disk (EFS,ebs,e.c.2 instances store s3) can have it's limits 
+storing data on disk (EFS,ebs,e.c.2 instances store s.3) can have it's limits 
 sometimes you want to store data in database 
 you can structure the data 
 you can indexes to Efficiently query / search through the data 
@@ -876,10 +876,10 @@ no-sql data example: json
    field can change over time 
    support for new types: arrays etc...
 
-                                   database & shared responsiblity on a.w.s 
+                                   database & shared responsibility on a.w.s 
 a.w.s offers use to manage different database
   Benefit include 
-      quick provisioning highl availablility vertrical and hortizonal scaling 
+      quick provisioning high availability vertical and horizontal scaling 
       automate and backup
       monitoring and alerting 
 
@@ -950,7 +950,7 @@ while ElastiCache can be used for other database
 
                         DynamoDB - Global Tables 
 makes a DynamoDB table accessible with low latency in multiple-region 
-active-atcive replication (read/write to any a.w.s region)
+active-active replication (read/write to any a.w.s region)
 
                              Redshift
 Redshift is based on postgreSQL but it's not used for OLTP 
@@ -979,13 +979,13 @@ auto-scaling and integrated with spot instances
 
 
                                   Amazon Athena
-server-less query service to perform analytics against s3 object
+server-less query service to perform analytics against s.3 object
 uses standard SQL language to query the file 
 supports csv,json,orc,avro,and parquet(built on presto)
 
 use cases:
     business Intelligent/ analytics/reporting
-exap Tips: anayze data s3 using server-less SQL uses Athena 
+exap Tips: anayze data s.3 using server-less SQL uses Athena 
 
                                 amazon QucikSight
 server-less machine learning-powered business Intelligent service to create interactive dashboard
@@ -1022,7 +1022,7 @@ in-memory database: ElastiCache
 key/value database: DynamoDB (server-less) 
 warehouse - OLAP Redshift (sql)
 Hadoop cluster:EMR
-Athena: query data on amazon s3 (server-less & sql)
+Athena: query data on amazon s.3 (server-less & sql)
 QucikSight: dashboard on your data
 documentdb: Aurora for mongodb (json -NoSQL database)
 amazon managed blockchain: managed hyperledge fabric & ethereum blockchains 
@@ -1163,8 +1163,8 @@ web service. You can use Route 53 to perform three main functions in any combina
 domain registration, DNS routing, and health checking.
 
 
-                                      s3 Transfer Acceleration 
-increase transfer speed by transferring file to an a.w.s edge location which will forward the data to the s3 bucket in the target region 
+                                      s.3 Transfer Acceleration 
+increase transfer speed by transferring file to an a.w.s edge location which will forward the data to the s.3 bucket in the target region 
 
 
                                      a.w.s global accelarator
@@ -1237,7 +1237,7 @@ can create CloudWatch dashboard of metrics
 E.C.2 instances: cpu utilization status checks Network (not RAM)
         default metrics is 5 minutes 
 EBS: volume disk Read/Write 
-s3 bucket: bucketsizeBytes number-of-object all-request 
+s.3 bucket: bucketsizeBytes number-of-object all-request 
 Billing: Total estimated charge (only in US-EAST-1)
 service limits: how much you've been using a service API
                           CloudWatch Alarms
@@ -1276,7 +1276,7 @@ Get an history of events / API calls made within your a.w.s account by
           SDK
           CLI 
           a.w.s service
-can put logs from CloudTrail into CloudWatch logs or s3
+can put logs from CloudTrail into CloudWatch logs or s.3
 
 
 
@@ -1356,7 +1356,7 @@ capture information about IP traffic going into your instances
     elastic network internet flow logs 
 Helps to monitor & Troubleshoot connectivity issues 
 capture network information from a.w.s managed interface too elastic load balancer, ElastiCache, RDS 
-V.P.C flow logs can be stored in s3 Cloud-Watch logs and amazon data fire-hose 
+V.P.C flow logs can be stored in s.3 Cloud-Watch logs and amazon data fire-hose 
 
                                        
                                        V.P.C Peering 
@@ -1370,8 +1370,8 @@ for each V.P.C that need to communicate with one another)
 Endpoints allows you to connect to a.w.s services using a private network instead of the public www network
 This gives you enhanced security and lower latency to access a.w.s services
 
-V.P.C Endpoints Gateways: s3 & DynamoDB (this only works for DynamoDB and s3 bucket)
-V.P.C Endpoints interface: most services (including s3 and DynamoDB) 
+V.P.C Endpoints Gateways: s.3 & DynamoDB (this only works for DynamoDB and s.3 bucket)
+V.P.C Endpoints interface: most services (including s.3 and DynamoDB) 
 
 
                                                         Transit Gateways
@@ -1401,7 +1401,7 @@ transit gateway: connect thousands of v.p.c and on-premises network together
                                   A.W.S Shared Responsibility Models 
 Aws responsiblity - security of the cloud 
   ∙ protecting infrastructure (hardware sofware facilities and network) that runs all the aws services
-  ∙ managed services like s3 DynamoDB RDS 
+  ∙ managed services like s.3 DynamoDB RDS 
 Customer Responsibility -- security in the cloud
   ∙ customer is responsible for management of the guest OS (including security patches and update) firewall & network configuration 
 
@@ -1520,7 +1520,7 @@ action that root user only can do:
       view certain tax invoice
       close your aws account
       restore IAM user permission
-      configure an amazon s3 bucket to enable MFA
+      configure an amazon s.3 bucket to enable MFA
 
 
                                    Security Summary and compliance
@@ -1534,7 +1534,7 @@ Guard-Duty: find malicious behavior with VPC DNS & CloudTrail
 inspector: find software vulnerability in ec2 ecr images and Lambda functions
 network firewall: Protect VPC against network attacks 
 config: track config changes and compliance against rules 
-Macie: find sensitive data (PII data) in amazon s3 bucket
+Macie: find sensitive data (PII data) in amazon s.3 bucket
 CloudTrail:  track api calls made by the users within account
 aws security Hub: gather security finding from multiple aws account
 amazon Detective: find the root cause of security issue or suspicious activities 
@@ -1698,7 +1698,7 @@ IAM guidelines MFA least-privilege passwords policies and passwords rotation
 config to recall all resources configuration & compliances over time 
 cloudformation to deploy stacks across account and regions 
 Trust advisor to get insight support plan adapted to your needs 
-send services logs and access logs to s3 or Cloud-Watch logs 
+send services logs and access logs to s.3 or Cloud-Watch logs 
 CloudTrail to record API calls made within your accounts 
 
 
