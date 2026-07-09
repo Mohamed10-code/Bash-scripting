@@ -212,5 +212,6 @@ git commit --amend -m "A: add contents.md"
 
 This comand will tell you detain of the this hash 
  git cat-file -p  149acd584f67c9d8f9cc7f44cece3df590e1fce0        
- 
+
+git branch -m (choosen_name) (will change your git branch name )
 
