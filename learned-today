@@ -420,14 +420,26 @@ Security: Manages risk, compliance, and ensures confidentiality, integrity, and 
 
 
 route 53 has 8 distinct routing policies 
-simple route: routes the traffic to the single web or s3 bucket
+simple route: routes the traffic to the single web or s.3 bucket
 Weighted: Routes specific percentages of traffic to multiple resources. Useful for A/B testing or shifting loads gradually to a new server (distribute traffic to multiple resource)
 Failover: Directs traffic to a primary active resource, and redirects to a standby/secondary resource if the primary fails. Works in conjunction with Route 53 Health Checks.
 Latency: Directs users to the AWS region that provides the fastest response time (lowest network latency). Ideal for applications deployed globally across multiple region
 Geolocation: Routes traffic based on the geographic location of the user (where the DNS query originates). Great for content localization or compliance.
-Geoproximity: Routes traffic based on the physical distance between your users and your resources. It allows you to "bias" or shift more traffic toward a specific region regardless of the exact distance
-Multivalue Answer: Similar to simple routing but allows you to return multiple IP addresses (up to 8) and link them to health checks. Route 53 returns healthy IPs in a randomized, round-robin fashion
+Geo-proximity: Routes traffic based on the physical distance between your users and your resources. It allows you to "bias" or shift more traffic toward a specific region regardless of the exact distance
+Multi-value Answer: Similar to simple routing but allows you to return multiple IP addresses (up to 8) and link them to health checks. Route 53 returns healthy IPs in a randomized, round-robin fashion
 IP-Based: Routes traffic based on the IP address of the client/user's local resolver. Excellent for directing traffic from specific ISPs, corporate networks, or localized ranges
+
+
+What resources can it optimize?
+
+For Cloud Practitioner, know that it can provide recommendations for:
+
+Amazon EC2 instances
+Amazon EC2 Auto Scaling groups
+Amazon EBS volumes
+AWS Lambda functions
+Amazon ECS services on AWS Fargate
+Amazon RDS database instances (supported engines)
 
 
 
