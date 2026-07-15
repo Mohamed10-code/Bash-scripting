@@ -445,11 +445,20 @@ AWS Lambda functions
 Amazon ECS services on AWS Fargate
 Amazon RDS database instances (supported engines)
 
+aws cloudwatch monitors your resources and sent you alarm when you use 80 of your instances cpu or storage and 
+aws budget sends you email when your exceed your monthly limit or used 50$ this months.
+Both sends alarm but one one is for budget(aws budget) and the other one (aws cloudwatch) is for resources used 
 
 
+Amazon Elastic Transcoder
+
+Amazon Elastic Transcoder lets you convert media files that you have stored in Amazon Simple Storage Service (Amazon S3) into media files in the formats required by consumer playback devices.
 
 
+All traffic between Availability Zones (AZ) is encrypted
 
+AWS Web Application Firewall (AWS WAF) can be deployed on which of the following services? The answers is 
+Amazon CloudFront, Application Load Balancer, Amazon API Gateway, AWS AppSync
 
 
 
