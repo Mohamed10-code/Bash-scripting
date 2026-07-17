@@ -462,8 +462,15 @@ Amazon CloudFront, Application Load Balancer, Amazon API Gateway, AWS AppSync
 
 
 
+This is aws s3 minimun storage dureation 
 
-
+| Storage Class                 | Minimum Storage Duration | Delete Early?            |
+| ----------------------------- | -----------------------: | ------------------------ |
+| S3 Standard                   |                     None | No penalty               |
+| S3 Standard-IA                |                  30 days | Charged for 30 days      |
+| S3 Glacier Instant Retrieval  |                  90 days | Charged for 90 days      |
+| S3 Glacier Flexible Retrieval |                  90 days | Charged for 90 days      |
+| **S3 Glacier Deep Archive**   |             **180 days** | **Charged for 180 days** |
 
 
 
