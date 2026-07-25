@@ -5,7 +5,7 @@ def main():
     print("x is squared", square(x))
 
 def square(n):
-    return n *n 
+    return n * n 
 main()
 
 
