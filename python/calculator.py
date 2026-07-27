@@ -9,6 +9,10 @@ def square(n):
 main()
 
 
+# also you can do 
+def main():
+    x = int(input("what is squared of x ", x * x))
+
 
 
 
