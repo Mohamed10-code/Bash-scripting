@@ -11,8 +11,8 @@ main()
 
  also you can do 
 def main():
-    x = int(input("what is squared of x ", x * x))
-
+    x = int(input("what is x: "))
+    print("x is: ", x * x)
 
 
 
