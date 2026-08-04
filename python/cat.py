@@ -1,5 +1,9 @@
 
 
+
+
+
+
 print("moew\n" * 3, end="")
 
 #for loop that print moew
