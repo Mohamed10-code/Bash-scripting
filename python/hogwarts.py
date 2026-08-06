@@ -1,4 +1,6 @@
 
+
+#This code show how you can use dict in python and for loop
 students = {
     "harry": "house-1",
     "hermone": "house-2",
