@@ -1,0 +1,343 @@
+As Thu Jul 23 12:38:20 PM CDT 2026 i have start solution architect course from udemy by stephene maarek
+The course is challenging but it's fun to learn and you are going to learn about over 30 services in depth 
+the previous was kind of name of the services and what they do but this you are gonna learn in depth. Working hard  will always pay off some Work hard 
+The course is not race take your time to understand and build valuable skill. I know myself i have not went to proper school and it's been so long since 
+i have Studied so i need to make good progress on my cloud journey. I have passed AWS cloud practitioner which was big deal for me and i have work hard and pass also this 
+before passing take your time and learn a lot. Good Luck
+
+
+IAM Roles for services
+some AWS services will need to perform actions on your behalf 
+To do so, we will assign permission to AWS services with IAM roles 
+common roles:
+      EC2 instances roles
+      Lambda function roles 
+      roles for cloudformation 
+
+AWS instances types 
+m5.2xlarge means 
+m: instances class
+5: generetion 
+2xlarge: size within the instances class
+
+AWS security groups
+All the inbound traffic is blocked by default 
+All the outbound traffic is authorised  by default 
+
+ Elastic Network Interfaces (E.N.I)
+ logical component in a vpc that represents a virtual Network card 
+ The E.N.I can have following attribute 
+ primary private ipv4 one or secondary ipv4
+ one Elastic ipv4 (ipv4)per per private ipv4
+ one public ipv4
+ one or more security groups  
+ A mac address 
+ You can create ENI independently and attach them on fly(move them)on ec2 instances for failover
+ The ENI is good for failover and to move your instances Network around incase one failed 
+you can attach and detach from instances it's nice read more about Elastic Network Interfaces
+
+
+EBS Volume
+it's Network drive (not physical drivve)
+it can be detached from instances ans attach to another one quickly 
+
+
+            Types of load balancer on AWS 
+AWS has 4 kinds of managed load balancers 
+Classic load balancer: (vl old generetion) - 2009 - CLI
+(HTTP,TTPS,TCP,SSL)
+
+Application load balancers:(v2 new generetion) -2016 ALB
+(websocket)
+
+Network load balancer(v2 new generetion) 2017 NLB
+(TCP,TLS, UDP)
+
+Gateway load balancer - 2020 GWLB 
+(operate at layer 3 Network layer) -IP protocol
+
+
+Network Load Balancer
+Network Load Balancer (layer 4) allow to:
+forward TCP and UDP traffic to your instances 
+handle millions of request per seconds 
+ultra-low latency
+
+NLB: has one static IP per AZ and supports assigning Elastic IP
+NLB are used for extreme perform,TCP and UDP traffic 
+
+
+Gateway Load Balancer
+
+deplo,scale and manage a fleet of 3rd party Network virtual appliance in AWS
+example: firewals intrusion detection and prevent system deep packet inspection 
+systems palyload manipulation 
+
+operate at layer 3 (Network layer) - IP packet
+uses GENEVE protocol on port 6081
+it has single entry and exit point
+
+
+((in AWS ther's a Network cost when data goes from one AZ to another))
+((for RDS read replicas within the same region you don't pay that fee))
+
+
+                                              Route 53 - Records Types 
+A -- maps a hostname to ipv4
+AAAA -- maps a hostname to ipv6 
+CNAME -- maps a hostname to another hostname
+
+
+
+                                              Routes 53 -- Hosted Zones 
+A container for records that define how to route traffic to a domain and it's subdomains 
+
+Route 53 -- Alias Records
+maps a hostname to AWS resources 
+when you have alias you can not set 
+TTL (time to live) route set for you 
+you can not set an alias records for an ec2 dns name
+
+
+
+
+
+        amazon S3 - Object 
+Object(files) have a key 
+The key is the FULL path:
+  s3://my-bucket/my_path
+
+  S3 Storage Classes 
+Amazon S3 standard - General purpose
+Amazon S3 standard-infrequent access(IA)
+Amazon S3 one zone-infrequent access  
+Amazon S3 Glacier instant retrieval
+Amazon S3 Glacier flexible retrieval
+Amazon S3 Glacier Deep archive 
+Amazon S3 intelligent Tiering 
+
+
+
+Amazon S3 Encryption - SSE-S3 
+Encryption using keys handled managed and owned by AWS
+Object is Encrypted server-side 
+Encryption type  is AES-256
+Must set header "x-amz-server-side-encryption:""AES-256"
+enbaled by default for new bucket & new Object
+
+
+Amazon S3 Encryption - SSE-KMS 
+Encryption using keys handles and managed by AWS KMS (key management services)
+KMS advantages: user control + audit usage using cloudtrail
+Must set header "x-amz-server-side-encryption:""AWS:kms"
+
+
+
+Amazon S3 Encryption - SSE-C 
+server-side Encryption using keys fully managed by the customer outside of AWS 
+amazon s3 does not store the Encryption key you provide 
+HTTPS must be used 
+
+
+
+Amazon S3 Encryption - client-side Encryption 
+client must Encrypt data themselves before sending to amazon s3 
+client must decrypt data themselves when retrieving from amazon s3
+
+
+
+                                                  Cloudfront - Origin
+
+S3 bucket 
+VPC Origin 
+custum Origin(HTTP)
+
+
+
+
+streAMIng data collection 
+producer and consumer code 
+realt-time 
+provisioned / on-demand mode 
+data storage up to 365 days 
+repalay capability
+
+
+Amazon data Firehos
+load streAMIng data in s3 / redshift / opensearch / 3rd party / custom HTTP
+fully managed 
+near real-time 
+automatic scaling 
+no data storage 
+Does not support replay capability 
+
+
+            Amazon MQ
+When migrating to the cloud, instead of re-engineering the Application to use sqs and sns, we can use Amazon MQ
+Amazon MQ is a managed message broker services for (rabbitMQ and activeMQ)
+Amazon MQ does not "scale" as much as sqs / sns
+Amazon MQ runs on servers can run in multi-AZ with failover
+
+
+                                      Amazon EKS 
+Amazon EKS = Amazon Elastic kubernetes service 
+it's a way to launch managed kubernetes clusters on AWS
+kubernetes is an open-sources system for automatic deployment scaling and management of containerized (usally Docker) Application
+it's an alternative to ecs, similar goal but different API
+EKS support ec2 if you wanna to deploy worker nodes or Fargate to deploy serverless containers  
+use case: if your company is already using kubernetes on-premises or in another cloud, and want to migrate to AWS using kubernetes
+kubernetes is cloud-agnostic (can be used in any cloud - azure and GCP) 
+
+                                                
+                                                    EKS Nodes Types
+(managed nodes groups) 
+creates and manages nodes (ec2 instances) for you 
+nodes are part of an ASG managed by EKS 
+
+(self-managed Nodes) 
+nodes are created by you and registered to the eks cluster and managedby an ASG
+you can use prebuilt AMI - Amazon optimized AMI
+
+
+                                                        Benefit of AWS Lambda  
+easy pricing 
+  pay per request and compute time 
+ integrated with the whole aws suite of service   
+ integrated with many programming languages 
+ increasing RAM will also improve CPU and network 
+
+
+                                            aws Lambda limit to know - per region
+   execution:
+    memory allocation 128 MB - 10G 
+    maximum execution time 900 second (15 minutes)
+    environment variable (4KB)
+
+    Deployment 
+    Lambda function deployment size (compressed .zip): 50 MB
+    can use the /tmp  directory to load other files at startup
+
+
+concurrency and asychronous invocations 
+
+If the function does not have enough concurrency available to process all event Additional request are throlled(mean they are intentionally denied) 
+if see error that says (429 that is throlling)
+
+
+cloudfront functions  vs Lambda@edge
+cloudfront functions:
+  lightweight functions written in javascript 
+  for high-scale latency-sensitive CDN customization's
+Lambda@edg:
+  Lambda functions written in nodeJs or python 
+  scales to 1000s of requests/second
+
+DynamoDB - Basic 
+DynamoDB is made of tables 
+each tables has a primary key (must be decided at creation)
+each tables can have an infinite number of items (= rows )
+each item has attribute (can be added over time - can be null)
+maximum size of an item is 400KB
+
+
+                                                                  
+                                                    AWS API Gateway
+aws Lambda + API Gateway: no infrastructure to manage 
+support for the websocket protocol
+handle API versioning 
+handle different environment (dev test prod)
+handle security (authentication and authorization)
+
+                                                API Gateway - endpoint Types 
+edge-optimized(default): fro global client 
+    :requests are routed through the cloudfront edge locations (improves latency) 
+    :The API Gateway still lives in only one region 
+Regional: 
+      | for client within the same region
+Private:  
+     | can only be accessed from your vpc using an interface  vpc endpoint (ENI)
+
+
+                                          AWS cognito
+give user an identity to interact with our web or mobile Application
+    
+      cognito user pools: 
+        sign in functionality for apps users 
+        integrated with API Gateway and Application load balancer
+
+      cognito identity pools (federated identity):
+        provide AWS credential to users so they can access AWS resources directly 
+        integrated with cognito user pools as an identity providers
+        
+
+
+                                          In this section we are learning about summary of Databases 
+
+managed postgressql /mysql /oracle/sql server /db2 / mariadb / custom
+provisioned rds instances size and EBS Volume type and size
+auto-scaling capability for storage 
+support for read replicas and multi-AZ
+security through IAM security groups KMS ssl in transit 
+
+
+DocumentDB:
+  DocumentDB: Aurora for mongodb (json -NoSQL database)
+  DocumentDB is the same for mongodb (which is a NoSQL database)
+  mongodb id used to store,query,and index JSON data
+  fully managed highly available with replication across 3 AZ
+
+Amazon Timestream: 
+  fully managed fast scalable serverless time series database
+  automatically scales up/down to adjust capacity 
+
+
+What is aws Athena: is sever-less Interactive query lets you analyze data directly in your S3
+used standard sql language to query the files (built on Presto)
+support csv,JSON orc avro and parquest
+(exam Tips: analyze data in s3 using serverless SQL use athena  )
+
+                    
+                    Redshift overview
+redshift is based on postgreSQL, but it's not used for OLTP 
+it's OLAP - online analytical processing (analytics and data warehousing)
+10x better performance than other data warehouses scales to PB's of data  
+
+
+                                 Amazon EMR 
+EMR stands for "Elastic MapReduce"
+EMR helps creating Hadoop cluster (Bif data ) to analyze and process vast amount of data 
+The cluster can be made of hundreds of EC2 instances
+    
+                              Amazon Quicksight  
+serverless machine learning-powered business intelligent service to create Interactive dashboards 
+
+Quicksight - Dashboard & analyze
+define user (standard versions ) and Groups (enterprise version)
+    👉 These users and groups only exist within Quicksight, not IAM
+
+                        AWS Glue =  a managed ETL services                     
+                        ETL means:  Extract ➡️  Transform  ➡️   Load
+Extract data from different sources. 
+Transform it clean it change formats, remove duplicate ETS
+Load the processed data somewhere useful, such as amazon s3 or amazon redshift
+
+Glue - Things to know at a hight-level 
+Glue jobs Bookmarks: prevent re-processing old data  
+Glue DataBrew: clean and normalize data using pre-built transformation 
+Glue  Studio: new GUI to create, run and monitor ETL jobs in Glue
+
+    Big data Ingestion Pipeline discussion 
+IoT core allows you to harvest data from IoT devices 
+Kinesis is great for real-time data collection
+Firehos helps with data delivery to s3 in near real-time (1 minute)
+
+
+                                Amazon Lex and Connect
+Amazon lex:  (same technology that powers Alexa)
+Amazon connect: is calls center in aws 
+    receives calls create contact flows,cloud-based virtual contact center 
+    can be integrate with other CRM system or aws 
+    it is  80 cheaper than traditional contact or call centers
+
+
+
