@@ -342,4 +342,17 @@ Amazon connect: is calls center in aws
     it is  80 cheaper than traditional contact or call centers
 
 
+             cloudwatch Logs for EC2 
+by default no logs from your EC2 machine will go to cloudwatch 
+you need to run a cloudwatch agent on EC2 to push the logs files you want
+
+cloudwatch container insights 
+  ecs,EKS, kubernetes on EC2 Fargate needs agent for kubernetes
+  metric and logs 
+cloudwatch Lambda insight
+  detailed metric to troubleshoot serverless Application
+cloudwatch Contributors insight
+  find "top-n" Contributors through cloudwatch logs
+cloudwatch Application insight
+  automatic dashboards to troubleshoot your Application and related aws services
 
