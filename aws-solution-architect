@@ -356,3 +356,18 @@ cloudwatch Contributors insight
 cloudwatch Application insight
   automatic dashboards to troubleshoot your Application and related aws services
 
+
+                              cloudwatch vs cloudtrail vs config 
+cloudwatch:
+  performance monitoring (metric CPU network ) and dashboards
+  event and alerting 
+  log aggregation and analysis 
+
+cloudtrail:
+  records API calls made within your account by everyone 
+  can define trails for specfic resources
+  
+config:
+  records configuration changes 
+  evaluate resources against compliance rules 
+  
