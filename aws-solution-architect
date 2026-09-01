@@ -369,5 +369,26 @@ cloudtrail:
   
 config:
   records configuration changes 
-  evaluate resources against compliance rules 
-  
+  evaluate resources against compliance rules  
+ 
+
+
+                                IAM permission Boundaries 
+IAM permission Boundaries are supported for users and roles (not for groups)
+advanced feature to use a managed policy to set the maximum permission an IAM entity can get
+
+
+
+Why Encryption ?
+server-side Encryption at rest 
+data is Encrypted after being receivesd by the server
+data is decrypted before being sent
+
+client-side Encryption
+data is Encrypted by the client and never decrypted by the server
+data will decrypted by a receiving client 
+The server should not be able to decrypted the data 
+
+
+
+
