@@ -7,11 +7,11 @@ def get_init():
     while True:
 
         try:
-            x = int(input("what is x: "))
+           return   int(input("what is x: "))
         except ValueError:
-            print("x is not integer ")
-        else:
-            break 
+            pass
+        # pass catches the error and just print nothing
+
 
 
 
