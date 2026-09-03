@@ -1,17 +1,15 @@
-
 def main():
-    x = get_init()
+    x = get_int("what is x: ")
     print(f"x is {x}")
-
-def get_init():
+    
+def get_int(prompt):  # prompt is just placeholder 
     while True:
-
         try:
-           return   int(input("what is x: "))
+                return  int(input(prompt))
+                break
         except ValueError:
-            pass
+                pass
         # pass catches the error and just print nothing
-
 
 
 
