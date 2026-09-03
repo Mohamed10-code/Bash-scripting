@@ -391,4 +391,58 @@ The server should not be able to decrypted the data
 
 
 
+AWS KMS (Key Management Services)
+
+anytime you hear "Encryption" for an aws services it's most likely KMS 
+ aws manages Encryption keys for us 
+ fully integrated with IAM for authentication
+
+
+                                AWS certificate manager (acm)
+easily provision,manage and deploy TLS certificate
+
+provision in-flight Encryption for website (HTTPS)
+
+
+                          We are in VPC section  the Lecturer said "it took me to while to understand VPC" do not rush take your time  
+
+AWS reserves 5 IP addresses in every subnet — not just the usual "network" 
+wand "broadcast" address like in normal networking.
+So a /24 subnet (256 addresses) really only gives you 251 usable addresses. 
+This trips people up a lot on the SAA exam.
+
+Memory trick: think "first 4, last 1" — the first 4 addresses in the block are reserved 
+(This website will help you calculate the CIDR "https://www.ipaddressguide.com/cidr")
+(network, router, DNS, future-use) and the very last one is reserved (broadcast).
+
+/32 	1	One single house
+/24	 256	A small neighborhood
+/16	 65,536	A small city
+/8	16 million+	A whole country
+understanding CIDR -- subnet 
+
+
+Private IP can only allow certain   value:
+  10.0.0.0 - 10.255.255.255 (10.0.0.0/8) ⬅️  in big network
+  172.16.0.0 - 172.31.255.255 (172.16.0./12) AWS default VPC in that range 
+
+  VPC in AWS - ipv4 
+  VPC = virtual private cloud 
+  you can have multiple VPC in an aws region (max 5 per region )
+  Max CIDR per VPC is 5 for each CIDR:
+  Mix size is /28 (16 ipv4 addresses)
+  Max size is /16 (65,536 ipv4 addresses)
+
+  Because VPC is private only the private ipv4 ranges are allowed: 
+
+
+
+                                       Internet Gateway 
+ allows resources (ec2) in a VPC connect to the internet
+ it scales horizontally and highly available and redundant 
+ must be created separately from a VPC
+ one VPC can only be attached to one IGW and vice versa 
+ internet Gateway on their own do not allow internet acccess 
+ Route tables muyst also be edited 
+
 
