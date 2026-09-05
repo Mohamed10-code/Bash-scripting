@@ -443,6 +443,27 @@ Private IP can only allow certain   value:
  must be created separately from a VPC
  one VPC can only be attached to one IGW and vice versa 
  internet Gateway on their own do not allow internet acccess 
- Route tables muyst also be edited 
+ Route tables muyst also be edited  
 
+
+                                NAT Gateway 
+AWS managed NAT higher bandwidth higher availability no administration 
+pay per hour for usage and bandwidth 
+NATGW is created in a specific availability zones, uses an Elastic ipv
+can't be used by ec2 instances in the same subnet (only from other subnet)
+No security Groups to manage / required
+
+
+                                    VPC Endpoint
+AWS VPC Endpoint is a general term for a way to connect resources in your VPC to AWS services privately, without needing the public internet.
+
+                                                Types of Endpoint
+interface Endpoint:
+provision an ENI (private Ip addresses) as an entry point (must attach security groups)
+An AWS Interface Endpoint is a way for resources inside your VPC to access an AWS service privately, 
+without going through the public internet, NAT Gateway, or an Internet Gateway.
+
+Gateway Endpoint:
+provision a Gateway and must be  used as a target in a route table (does not use security groups)
+supports both S3 and DynamoDB and it's free
 
