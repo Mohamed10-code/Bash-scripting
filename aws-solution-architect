@@ -466,4 +466,31 @@ without going through the public internet, NAT Gateway, or an Internet Gateway.
 Gateway Endpoint:
 provision a Gateway and must be  used as a target in a route table (does not use security groups)
 supports both S3 and DynamoDB and it's free
+ 
+ipv4 Troubleshooting 
+ipv4 cannot be disabled for your vpc and subnet
+so if you cannot launch an ec2 instances in your subnet
+it not Because it cannot acquire an ipv6 
+it Because there are no available ipv4 in your subnet
+
+solution: create a new ipv4 CIDR in your subnet
+ 
+
+
+                                                                VPC - section summary 
+CIDR it is ip range 
+subnet tied to an AZ we define a CIDR
+internet Gateway at the VPC level provide ipv4 and ipv6 internet access 
+Route table: must be edited to add route from subnet to the IGW VPC peering connection VPC endpoint
+Bastion Host: public ec2 instances ssh into that has ssh connectivity to ec2 instances in private subnet
+NAT instances: gives internet access to ec2 instances in private subnet old must be setup in a public in a public subnet disable source / destination check flag 
+NAT Gateway managed by aws provides scabale internet access to private ec2 instances when the target is an ipv4 addresses
+
+
+                                                        AWS Disaster Recovery
+Disaster Recovery strategies:
+  1) backup and restore 
+  2) pilot light: a small version of the app is always running in the cloud. Useful for the critical core (pilot light). faster than backup and restore as critical system ae already up
+  3) warm standy: full system is up and running, but at minimum size. upon disaster we can scale to production load 
+  4) hot site / multi site Approach
 
