@@ -492,5 +492,15 @@ Disaster Recovery strategies:
   1) backup and restore 
   2) pilot light: a small version of the app is always running in the cloud. Useful for the critical core (pilot light). faster than backup and restore as critical system ae already up
   3) warm standy: full system is up and running, but at minimum size. upon disaster we can scale to production load 
-  4) hot site / multi site Approach
+  4) hot site / multi site Approach: very low RTO (minutes or seconds) very expensive full production scale is running aws and on premise 
+
+
+
+                                                      AWS Backup Vault Lock
+enforce a WORM (write once read many) state for all the backup that you store in your aws backup Vault can not be deleted
+even the root user cannot delete backup when enabled
+
+
+
+
 
