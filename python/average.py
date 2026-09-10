@@ -1,3 +1,3 @@
-import statistics 
+import sys
 
-print(statistics.mean([100,70,60,29]))
+print("hello, my name is", sys.argv[1])
