@@ -404,7 +404,7 @@ easily provision,manage and deploy TLS certificate
 provision in-flight Encryption for website (HTTPS)
 
 
-                          We are in VPC section  the Lecturer said "it took me to while to understand VPC" do not rush take your time  
+                          We are in VPC section  the Lectures said "it took me to while to understand VPC" do not rush take your time  
 
 AWS reserves 5 IP addresses in every subnet — not just the usual "network" 
 wand "broadcast" address like in normal networking.
@@ -430,8 +430,9 @@ Private IP can only allow certain   value:
   VPC = virtual private cloud 
   you can have multiple VPC in an aws region (max 5 per region )
   Max CIDR per VPC is 5 for each CIDR:
-  Mix size is /28 (16 ipv4 addresses)
-  Max size is /16 (65,536 ipv4 addresses)
+     The minimum and maximum ip addresses you can have is 
+     Mix size is /28 (16 ipv4 addresses)
+     Max size is /16 (65,536 ipv4 addresses)
 
   Because VPC is private only the private ipv4 ranges are allowed: 
 
@@ -501,6 +502,32 @@ enforce a WORM (write once read many) state for all the backup that you store in
 even the root user cannot delete backup when enabled
 
 
+                                        Compute and Networking 
+ec2 enhanced Networking (sr-iov)
+higher bandwidth higher pps (packet per second) lower latency
+option-1: Elastic Network adapter (ena) up ro 100 Gbps 
+option-2: inter 82599 vf upto 10Gbps - legacy 
+
+Elastic Fabric Adapter (EFA)
+improved of ena for HPC only works for linux 
+
+                                               Batch vs Lambda
+Lambda:                                      Batch:
+  time limit                                 no  time limit 
+  limited runtime                            any runtime as long as it's packaged as a Docker image 
+  limited temporary disk space               rely on EBS / instances store for disk space
+  serverless
 
 
+
+
+This is classes of aws s3 storage 
+1) s3 standard
+2) s3 standard-IA 
+3) s3 intelligent-tiering 
+4) s3 one zone-IA 
+5) Glacier instant retrievel 
+6) Glacier flexible retrievel
+5) Glacier instant retrievel 
+6) Glacier deep archive 
 
