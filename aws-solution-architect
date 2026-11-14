@@ -351,6 +351,7 @@ cloudwatch container insights
   metric and logs 
 cloudwatch Lambda insight
   detailed metric to troubleshoot serverless Application
+find . -type f -exec grep -l "private" {} +
 cloudwatch Contributors insight
   find "top-n" Contributors through cloudwatch logs
 cloudwatch Application insight
@@ -456,10 +457,10 @@ No security Groups to manage / required
 
 
                                     VPC Endpoint
-AWS VPC Endpoint is a general term for a way to connect resources in your VPC to AWS services privately, without needing the public internet.
+AWS VPC Endpoint is a general term for a way to connect resources in your VPC to AWS services privately, without needing to connect the public internet.
 
                                                 Types of Endpoint
-interface Endpoint:
+Interface Endpoint:
 provision an ENI (private Ip addresses) as an entry point (must attach security groups)
 An AWS Interface Endpoint is a way for resources inside your VPC to access an AWS service privately, 
 without going through the public internet, NAT Gateway, or an Internet Gateway.
@@ -531,3 +532,100 @@ This is classes of aws s3 storage
 5) Glacier instant retrievel 
 6) Glacier deep archive 
 
+
+what is aws target tracking scaling 
+Is process of keeping your instances at 50 CPU at all times 
+how does it work. You define your rules in aws auto scaling group and the rules will be add instances if the CPU is abover 50% 
+remove instances if the CPU is below 50%
+
+              Target = 50% CPU
+                     │
+                     ▼
+             ┌──────────────┐
+             │   AWS checks │
+             │  CPU usage   │
+             └──────┬───────┘
+                    │
+          ┌─────────┴─────────┐
+          ▼                   ▼
+     CPU too high         CPU too low
+          │                   │
+          ▼                   ▼
+     Add instances       Remove instances
+          │                   │
+          └─────────┬─────────┘
+                    ▼
+              CPU moves toward
+                   50%
+
+websocket is persistent two-way connection betweeen a client and a servers 
+
+
+
+
+# WebSocket
+
+What it is:
+WebSocket is a protocol that creates a persistent, two-way connection between a client and server.
+
+### How it works
+
+1. Client starts with an HTTP/HTTPS request.
+2. Connection is upgraded to WebSocket.
+3. Connection stays open.
+4. Client and server can send data at any time.
+
+```text
+Client  <══════════════════>  Server
+        persistent connection
+```
+
+### WebSocket vs HTTP
+
+HTTP:
+Client → Request → Server → Response
+
+WebSocket:
+Client ⇄ Server continuously
+
+### Common uses
+
+ 💬 Chat
+ ⚽ Live sports scores
+ 🔔 Real-time notifications
+ 🎮 Multiplayer games
+ 📊 Live dashboards
+
+### Networking
+
+WebSocket operates over TCP.
+
+text
+WebSocket
+    ↓
+  TCP
+    ↓
+   IP
+```
+
+ `ws://` → WebSocket
+ `wss://` → WebSocket + TLS encryption
+
+### AWS
+
+Amazon API Gateway WebSocket APIs can provide managed WebSocket connections.
+
+```text
+Client
+  │
+  │ wss://
+  ▼
+API Gateway
+  │
+  ▼
+Lambda / Backend
+```
+
+Key idea:
+
+> WebSocket = a persistent, two-way communication channel between client and server.
