@@ -1,0 +1,20 @@
+what is aws egress-only internet gateways 
+
+egress-only internet gateways is used for ipv6 internet access in your private subnet 
+this mean you have private subnet where you hosted your aws instances that you want it to access
+internet. if your instances are ipv4 you can use Nat gateways but if you use ipv6 you can use 
+egress-only internet gateways which is stateful mean it will allow returned request and you 
+can only ask the request mean it allows outbound internet traffic only not inbound traffic
+
+
+aws transitive routing allow your vpc A to communicate vpc C through vpc B
+it allows to communicate to network that does not communicate or connected 
+through another network. aws transitive routin only supported by Transit gateways 
+not vpc peering
+
+
+AWS Direct connect gateways: allows you to connected your on-primises to multiple aws vpc in different region 
+can connect to Transit gateways or virtual private gateways 
+
+aws virtual private gateway: is vpn for your vpc which can help you connect to aws Privately but this works for one vpc when you 
+have soo many vpc use transit gateway it does the same jobs as aws virtual private gateway
