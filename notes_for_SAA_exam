@@ -58,4 +58,9 @@ non relational database means the database that uses non relation they use json 
 we use them for shopping cart,user session and product catalog
 
 
-
+AWS Virtual Private Gateway (VGW):
+- A gateway attached to an AWS VPC.
+- Provides connectivity between a VPC and an on-premises network.
+- Supports AWS Site-to-Site VPN and Direct Connect through a Direct Connect Gateway.
+- Used for hybrid cloud connectivity.
+- It is a Regional resource.
