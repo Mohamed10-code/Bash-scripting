@@ -629,3 +629,9 @@ Lambda / Backend
 Key idea:
 
 > WebSocket = a persistent, two-way communication channel between client and server.
+>
+
+
+
+Amazon RDS stands for Relation Databases Services
+it's managed DB services for db that use SQL as query language

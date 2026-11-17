@@ -18,3 +18,44 @@ can connect to Transit gateways or virtual private gateways
 
 aws virtual private gateway: is vpn for your vpc which can help you connect to aws Privately but this works for one vpc when you 
 have soo many vpc use transit gateway it does the same jobs as aws virtual private gateway
+
+RDS is a managed services: 
+  automated Provisioning, OS patching 
+  continuous backups and restore to specific timestamp (point in time restore)
+  monitoring dashboard 
+  read replicas for improved read performance 
+  multi AZ setup for DR (disaster recovery)
+  maintenance windows for upgrades 
+  storage backed by EBS 
+  scaling Capability
+  But you can not ssh into your instances (means the instances that the database are running on )
+
+
+  (when you have aws RDS read replica and the main database and read database are in same region they is no network cost for that )
+  (but if your database are in different region aws will charge you for the database transfer or network cost)
+
+  how can you go from single-AZ to Multi-AZ 
+    zero downtime operation (no need to stop the DB)
+    just click on "modify" for the database
+      (the following happens internally)
+      {
+          A snapshot is taken 
+          a new DB is restored form the snapshot in a new AZ
+          synchronization is established between the two database
+
+        }
+
+Read Replicas = Improve read performance and scale read traffic.
+Multi-AZ = Improve database availability and provide automatic failover.
+
+AWS RDS  means aws managed relational database services that allows you to run mysql,mariabd,oracle,postgresql, and microsoft sql server and IBM DB2 without 
+managed underlying database infrastructure yourself. Think of as excel spreadsheet. When do we use relational database. we use in Banking Financial transaction 
+employee records
+
+relational and non relational database also is called nosql: 
+relational that database or RDS in aws is database that have relation or the database that uses row and colums like mysql,mariabd,oracle, 
+non relational database means the database that uses non relation they use json like format and key and index like aws dynamodb. when to use non-relational database
+we use them for shopping cart,user session and product catalog
+
+
+
